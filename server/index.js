@@ -4,7 +4,7 @@ const app = express();
 const massive = require('massive');
 const session = require('express-session');
 const AC = require("./controllers/authController");
-const SC = require("./controllers/serv.Controller");
+const SC = require("./controllers/service.Controller");
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
 
 app.use(express.json());
@@ -30,8 +30,8 @@ app.post("/auth/login", AC.login);
 app.post("/auth/logout", AC.logout);
 
 //user service post endpoints
-app.get("/user/service", SC.getService);
-app.get("/user/:categoryId", SC.getCategory);
+app.get("/user/category", SC.getCategory);
+app.get("/user/:categoryId", SC.getService);
 app.post("/user/service", SC.addService);
 app.put("/user/service", SC.editService);
 app.delete("/user/:serviceId", SC.deleteService);
