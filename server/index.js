@@ -30,10 +30,13 @@ app.post("/auth/login", AC.login);
 app.post("/auth/logout", AC.logout);
 
 //user service post endpoints
-app.get("/user/category", SC.getCategory);
-app.get("/user/:categoryId", SC.getService);
+//below is a GET request that gets all by category.
+//this will be used to componentDidMount and display on homepage
+app.get("/user/service/category", SC.getCategory);
+//below is a GET request that get a service depending on its category
+app.get("/user/service/:category_id", SC.getService);
 app.post("/user/service", SC.addService);
 app.put("/user/service", SC.editService);
-app.delete("/user/:serviceId", SC.deleteService);
+app.delete("/user/service/:service_id", SC.deleteService);
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on Port ${SERVER_PORT}`));
