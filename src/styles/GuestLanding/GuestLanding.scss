@@ -1,0 +1,22 @@
+@import "../Header/Header.scss";
+
+@mixin login-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    form {
+        @include login-section;
+        border: 1px solid #000000;
+        width: 40vw;
+        height: 25vh;
+        padding: 50px;
+    }
+    @include login-section;
+    width: 100vw;
+    height: 80vh;
+    font-family: $nav-font;
+}

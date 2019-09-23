@@ -1,0 +1,22 @@
+.nav-container {
+  width: 100vw;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #C8C8C8;
+  font-family: "Exo", sans-serif;
+  font-size: 40px;
+}
+
+.logo {
+  width: 8vw;
+  height: 10vh;
+}
+/*# sourceMappingURL=Header.css.map */

@@ -1,12 +1,18 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react';
+import "../styles/Header/Header.scss";
 
 export default class Header extends Component {
-    
+
     render() {
         return (
-            <div className="logo">
-                <img alt="permian logo" src="https://i.imgur.com/eZaGQpe.png" />
-            </div>
+            <>
+                <header>
+                    <div className="nav-container">
+                        <img className="logo" alt="permian logo" src="https://i.imgur.com/5XhQnz3.png" />
+                        <h1>Permian</h1>
+                    </div>
+                </header>
+            </>
         )
     }
 }
