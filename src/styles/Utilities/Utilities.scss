@@ -4,8 +4,32 @@
     align-items: center;
 };
 
+@mixin login-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+};
+
+@mixin login-buttons {
+    width: 85px;
+    height: 20px;
+    border-radius: 7px;
+    color: $white;
+    font-size: $nav-size;
+    background: $black;
+    outline: none;
+};
+
+@mixin button-hover {
+    color: $black;
+    background: $header-gray;
+    text-shadow: 0 0 20px $black;
+};
+
 $web-font: 'Exo', sans-serif;
-$font-size: 40px;
+$title-size: 40px;
+$nav-size: 15px;
 $black: #000000;
 $header-gray: #C8C8C8;
 $white: white;

@@ -1,4 +1,4 @@
-.main-container {
+main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,7 +17,7 @@
   font-family: "Exo", sans-serif;
 }
 
-.main-container form {
+main form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,7 +38,7 @@
   background: whitesmoke;
 }
 
-.main-container button {
+main button {
   width: 70px;
   height: 20px;
   border-radius: 7px;
@@ -47,7 +47,7 @@
   outline: none;
 }
 
-.main-container button:hover {
+main button:hover {
   color: #000000;
   background: #C8C8C8;
   text-shadow: 0 0 20px #000000;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Loading from "./Loading";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
@@ -41,41 +41,46 @@ class GuestLanding extends Component {
         return (
             <main className="main-container">
                 {loading ? <Loading /> : null}
-                <div>
+                <div className="existing-user">
                     <form name="login" onSubmit={this.handleSubmit}>
                         <h1>Existing User:</h1>
                         <br />
                         <label>Username:</label>
                         <input 
                         name="username" 
+                        type="text"
                         onChange={this.handleInputChange} />
                         <br />
                         <label>Password:</label>
                         <input 
                         name="password" 
+                        type="password"
                         onChange={this.handleInputChange} />
                         <br />
                         <button type="submit">LOGIN</button>
                     </form>
                 </div>
                 <br />
-                <div>
+                <div className="new-user">
                     <form name="register" onSubmit={this.handleSubmit}>
                         <h1>New User:</h1>
                         <br />
                         <label>Name:</label>
                         <input 
                         name="name" 
+                        type="text"
                         onChange={this.handleInputChange} />
                         <br />
                         <label>Username:</label>
                         <input 
                         name="username" 
+                        type="text"
                         onChange={this.handleInputChange} />
                         <br />
                         <label>Password:</label>
                         <input 
                         name="password" 
+                        type="text"
                         onChange={this.handleInputChange} />
                         <br />
                         <button type="submit">REGISTER</button>

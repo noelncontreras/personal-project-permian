@@ -4,12 +4,28 @@
     width: 100vw;
     height: 10vh;
     @include box-center;
+    justify-content: space-around;
     background: $header-gray;
     font-family: $web-font;
-    font-size: $font-size;
-};
-
-.logo {
-    width: 8vw;
-    height: 10vh;
+    font-size: $title-size;
+    button {
+        @include login-buttons;
+        
+        &:hover {
+            @include button-hover;
+        };
+    };
+    .welcome-box{
+        width: 30vw;
+        @include box-center;
+        justify-content: space-around;
+        font-size: $nav-size;
+    };
+    ul {
+        width: 10vw;
+        color: $black;
+        text-decoration: none;
+        @include box-center;
+        justify-content: space-between;
+    }
 };

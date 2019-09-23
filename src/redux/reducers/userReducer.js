@@ -37,9 +37,10 @@ export function loginUser(user) {
 };
 
 export function logoutUser() {
-    axios.post("/auth/logout")
+    // axios.post("/auth/logout")
     return {
-        type: LOGOUT_USER
+        type: LOGOUT_USER,
+        payload: axios.post("/auth/logout")
     };
 };
 
@@ -51,7 +52,6 @@ export default function reducer(state=initialState, action) {
         case `${GET_SESSION}_PENDING`:
             return {
                 ...state,
-                loading: true
             }
         case `${GET_SESSION}_FULFILLED`:
             return {
@@ -96,7 +96,8 @@ export default function reducer(state=initialState, action) {
                 ...state,
                 user_id: null,
                 name: "",
-                username: ""
+                username: "",
+                loading: false
             }
         default:
             return state;

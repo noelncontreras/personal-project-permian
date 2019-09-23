@@ -1,36 +1,43 @@
 @import "../Utilities/Utilities.scss";
 
-@mixin login-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-};
-
-.main-container {
+main {
+    @include login-section;
+    width: 100vw;
+    height: 90vh;
+    font-family: $web-font;
+    background: url("https://images.unsplash.com/photo-1562237553-36ad661d6f2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     form {
         @include login-section;
-        border: 1px solid $black;
-        width: 40vw;
+        border: 1px solid transparent;
+        width: 20vw;
         height: 25vh;
         padding: 50px;
         background: $whitesmoke;
+        opacity: 0.8;
+        font-weight: bolder;
+        font-size: 25px;
     };
     button {
-        width: 70px;
-        height: 20px;
-        border-radius: 7px;
-        color: $white;
-        background: $black;
-        outline: none;
+        @include login-buttons;
     };
     button:hover {
-        color: $black;
-        background: $header-gray;
-        text-shadow: 0 0 20px $black;
+        @include button-hover;
     };
-    @include login-section;
-    width: 100vw;
-    height: 80vh;
-    font-family: $web-font;
 };
+
+.existing-user {
+    @mixin login-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    };
+};
+
+.new-user {
+    @extend .existing-user;
+}
+
+
