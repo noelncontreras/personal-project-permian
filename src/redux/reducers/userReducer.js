@@ -3,8 +3,9 @@ import axios from "axios";
 //initialState
 const initialState = {
     user_id: null,
+    name: "",
     username: "",
-    name: ""
+    loading: false
 };
 
 //constants
@@ -47,6 +48,56 @@ export default function reducer(state=initialState, action) {
     const {type, payload} = action;
 
     switch(type) {
+        case `${GET_SESSION}_PENDING`:
+            return {
+                ...state,
+                loading: true
+            }
+        case `${GET_SESSION}_FULFILLED`:
+            return {
+                ...state,
+                user_id: payload.data.user_id,
+                name: payload.data.name,
+                username: payload.data.username,
+                loading: false
+            }
+        case `${REGISTER_USER}_PENDING`:
+            return {
+                ...state,
+                loading: true
+            }
+        case `${REGISTER_USER}_FULFILLED`:
+            return {
+                ...state,
+                user_id: payload.data.user_id,
+                name: payload.data.name,
+                username: payload.data.username,
+                loading: false
+            }
+        case `${LOGIN_USER}_PENDING`:
+            return {
+                ...state,
+                loading: false
+            }
+        case `${LOGIN_USER}_FULFILLED`:
+            return {
+                ...state,
+                user_id: payload.data.user_id,
+                name: payload.data.name,
+                username: payload.data.username
+            }
+        case `${LOGOUT_USER}_PENDING`:
+            return {
+                ...state,
+                loading: true
+            }
+        case `${LOGOUT_USER}_FULFILLED`:
+            return {
+                ...state,
+                user_id: null,
+                name: "",
+                username: ""
+            }
         default:
             return state;
     };

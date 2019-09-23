@@ -1,22 +1,36 @@
-@import "../Header/Header.scss";
+@import "../Utilities/Utilities.scss";
 
 @mixin login-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+};
 
 .main-container {
     form {
         @include login-section;
-        border: 1px solid #000000;
+        border: 1px solid $black;
         width: 40vw;
         height: 25vh;
         padding: 50px;
-    }
+        background: $whitesmoke;
+    };
+    button {
+        width: 70px;
+        height: 20px;
+        border-radius: 7px;
+        color: $white;
+        background: $black;
+        outline: none;
+    };
+    button:hover {
+        color: $black;
+        background: $header-gray;
+        text-shadow: 0 0 20px $black;
+    };
     @include login-section;
     width: 100vw;
     height: 80vh;
-    font-family: $nav-font;
-}
+    font-family: $web-font;
+};

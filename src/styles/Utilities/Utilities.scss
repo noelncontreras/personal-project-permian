@@ -1,0 +1,12 @@
+@mixin box-center {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+};
+
+$web-font: 'Exo', sans-serif;
+$font-size: 40px;
+$black: #000000;
+$header-gray: #C8C8C8;
+$white: white;
+$whitesmoke: whitesmoke;

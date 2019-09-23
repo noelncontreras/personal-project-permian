@@ -1,0 +1,9 @@
+@import "../Utilities/Utilities.scss";
+
+.loading {
+    font-size: $font-size;
+    color: $black;
+    font-family: $web-font;
+    background: $white;
+    @include box-center;
+}
