@@ -18,10 +18,11 @@
 }
 
 .nav-container button {
-  width: 70px;
+  width: 85px;
   height: 20px;
   border-radius: 7px;
   color: white;
+  font-size: 15px;
   background: #000000;
   outline: none;
 }
@@ -50,8 +51,6 @@
 
 .nav-container ul {
   width: 10vw;
-  color: #000000;
-  text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,5 +63,10 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  text-decoration: none;
+}
+
+.nav-container ul li {
+  color: #000000;
 }
 /*# sourceMappingURL=Header.css.map */

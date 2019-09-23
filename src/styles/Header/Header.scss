@@ -23,9 +23,23 @@
     };
     ul {
         width: 10vw;
-        color: $black;
-        text-decoration: none;
         @include box-center;
         justify-content: space-between;
+        text-decoration: none;
+            li {
+                color: $black;
+            }
     }
 };
+
+// #links {
+//     width: 10vw;
+//     @include box-center;
+//     justify-content: space-between;
+//     // text-decoration: none;
+//     li {
+//         color: $black;
+//         // list-style-type: none;
+//         text-decoration: none;
+//     }
+// }

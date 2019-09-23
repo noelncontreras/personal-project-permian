@@ -41,8 +41,8 @@ class GuestLanding extends Component {
         return (
             <main className="main-container">
                 {loading ? <Loading /> : null}
-                <div className="existing-user">
-                    <form name="login" onSubmit={this.handleSubmit}>
+                <div>
+                    <form className="existing-user" name="login" onSubmit={this.handleSubmit}>
                         <h1>Existing User:</h1>
                         <br />
                         <label>Username:</label>
@@ -61,8 +61,8 @@ class GuestLanding extends Component {
                     </form>
                 </div>
                 <br />
-                <div className="new-user">
-                    <form name="register" onSubmit={this.handleSubmit}>
+                <div>
+                    <form className="new-user"name="register" onSubmit={this.handleSubmit}>
                         <h1>New User:</h1>
                         <br />
                         <label>Name:</label>
