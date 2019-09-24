@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import { connect } from "react-redux";
 import { getSession, logoutUser } from "../redux/reducers/userReducer";
 import "../styles/Header/Header.scss";
@@ -11,6 +11,7 @@ class Header extends Component {
 
     handleLogout = () => {
         this.props.logoutUser();
+        this.props.history.push("/");
     };
 
     render() {
@@ -27,8 +28,8 @@ class Header extends Component {
                                 <div className="welcome-box">
                                     <h6>Welcome, {userOnSession}</h6>
                                     <ul>
-                                        <Link to="/category"><li>Category</li></Link>
-                                        <Link to="/service/addService"><li>Add Service</li></Link>
+                                        <Link style={{textDecoration: "none"}} to="/category"><li>Home</li></Link>
+                                        <Link style={{textDecoration: "none"}} to="/service/addService"><li>Add Service</li></Link>
                                     </ul>
                                     <button
                                         className="logout-button"
@@ -50,4 +51,4 @@ const mapPropsToState = reduxState => {
     };
 };
 
-export default connect(mapPropsToState, { getSession, logoutUser })(Header);
+export default withRouter(connect (mapPropsToState, { getSession, logoutUser })(Header));

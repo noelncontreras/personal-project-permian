@@ -4,9 +4,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: flex-center;
-      -ms-flex-pack: flex-center;
-          justify-content: flex-center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -18,10 +18,11 @@
 }
 
 .nav-container button {
-  width: 85px;
+  width: 100px;
   height: 20px;
   border-radius: 7px;
   color: white;
+  font-weight: bold;
   font-size: 15px;
   background: #000000;
   outline: none;
@@ -29,8 +30,10 @@
 
 .nav-container button:hover {
   color: #000000;
+  font-weight: bold;
   background: #8C8C8C;
-  text-shadow: 0 0 20px #000000;
+  text-shadow: 0px 0px 10px white;
+  cursor: pointer;
 }
 
 .nav-container .welcome-box {
@@ -38,9 +41,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: flex-center;
-      -ms-flex-pack: flex-center;
-          justify-content: flex-center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -48,16 +51,17 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-size: 15px;
+  font-weight: bolder;
 }
 
 .nav-container ul {
-  width: 15vw;
+  width: 12vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: flex-center;
-      -ms-flex-pack: flex-center;
-          justify-content: flex-center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

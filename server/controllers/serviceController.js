@@ -4,13 +4,12 @@ module.exports = {
         const db = req.app.get("db")
 
         const categories = await db.category.getCategory();
-        console.log(categories)
-        res.status(200).json(categories)
-;    },
+        res.status(200).json(categories);
+    },
     getService: async (req, res) => {
         const category_id = +req.params.category_id;
         const db = req.app.get("db");
-
+        console.log(category_id, typeof category_id)
         const service = await db.service.getCategoryService(category_id);
 
         res.status(200).json(service);

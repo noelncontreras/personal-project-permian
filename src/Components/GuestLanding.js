@@ -39,7 +39,7 @@ class GuestLanding extends Component {
             return <Redirect to="/category" />
         }
         return (
-            <main className="main-container">
+            <main className="main-guestlanding">
                 {loading ? <Loading /> : null}
                 <div>
                     <form className="existing-user" name="login" onSubmit={this.handleSubmit}>

@@ -25,7 +25,7 @@ export function updateCategory() {
 export function updateService(category_id) {
     return {
         type: UPDATE_SERVICE,
-        payload: axios.get("/user/service/:category_id", category_id)
+        payload: axios.get(`/user/service/${category_id}`)
     };
 };
 
@@ -60,10 +60,20 @@ export default function reducer(state=initialState, action) {
             loading: true
         }
         case `${UPDATE_CATEGORY}_FULFILLED`:
-            console.log(payload)
             return {
             ...state,
             category: payload.data,
+            loading: false
+        }
+    case `${UPDATE_SERVICE}_PENDING`:
+        return {
+            ...state,
+            loading: true
+        }
+    case `${UPDATE_SERVICE}_FULFILLED`:
+        return {
+            ...state,
+            service: payload.data,
             loading: false
         }
         default:

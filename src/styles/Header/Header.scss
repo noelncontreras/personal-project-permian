@@ -20,9 +20,10 @@
         @include box-center;
         justify-content: space-between;
         font-size: $nav-size;
+        font-weight: bolder;
     };
     ul {
-        width: 15vw;
+        width: 12vw;
         @include box-center;
         justify-content: space-between;
         text-decoration: none;
@@ -31,15 +32,3 @@
             }
     }
 };
-
-// #links {
-//     width: 10vw;
-//     @include box-center;
-//     justify-content: space-between;
-//     // text-decoration: none;
-//     li {
-//         color: $black;
-//         // list-style-type: none;
-//         text-decoration: none;
-//     }
-// }

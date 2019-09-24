@@ -48,7 +48,6 @@ module.exports = {
                     username: foundUser[0].username,
                     name: foundUser[0].name
                 };
-                console.log(req.session.user)
                 res.status(200).json(req.session.user);
             }
         }
