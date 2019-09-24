@@ -27,7 +27,7 @@ class Header extends Component {
                                 <div className="welcome-box">
                                     <h6>Welcome, {userOnSession}</h6>
                                     <ul>
-                                        <Link to="/category"><li>Home</li></Link>
+                                        <Link to="/category"><li>Category</li></Link>
                                         <Link to="/service/addService"><li>Add Service</li></Link>
                                     </ul>
                                     <button

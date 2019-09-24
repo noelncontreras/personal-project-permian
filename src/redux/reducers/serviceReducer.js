@@ -3,7 +3,8 @@ import axios from "axios";
 //initialState
 const initialState = {
     category: [],
-    service: []
+    service: [],
+    loading: false,
 };
 
 //constants
@@ -53,6 +54,18 @@ export function deleteService(service_id) {
 export default function reducer(state=initialState, action) {
     const {type, payload} = action;
     switch(type) {
+    case `${UPDATE_CATEGORY}_PENDING`:
+        return {
+            ...state,
+            loading: true
+        }
+        case `${UPDATE_CATEGORY}_FULFILLED`:
+            console.log(payload)
+            return {
+            ...state,
+            category: payload.data,
+            loading: false
+        }
         default:
             return state;
     };

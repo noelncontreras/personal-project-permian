@@ -15,14 +15,14 @@
             @include button-hover;
         };
     };
-    .welcome-box{
-        width: 30vw;
+    .welcome-box {
+        width: 40vw;
         @include box-center;
-        justify-content: space-around;
+        justify-content: space-between;
         font-size: $nav-size;
     };
     ul {
-        width: 10vw;
+        width: 15vw;
         @include box-center;
         justify-content: space-between;
         text-decoration: none;

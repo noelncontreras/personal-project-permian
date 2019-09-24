@@ -4,7 +4,7 @@ module.exports = {
         const db = req.app.get("db")
 
         const categories = await db.category.getCategory();
-
+        console.log(categories)
         res.status(200).json(categories)
 ;    },
     getService: async (req, res) => {

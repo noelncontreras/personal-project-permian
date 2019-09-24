@@ -4,7 +4,7 @@ const app = express();
 const massive = require('massive');
 const session = require('express-session');
 const AC = require("./controllers/authController");
-const SC = require("./controllers/service.Controller");
+const SC = require("./controllers/serviceController");
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
 
 app.use(express.json());

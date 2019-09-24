@@ -2,9 +2,7 @@ const bcrypt = require("bcryptjs");
 
 module.exports = {
     getUser: (req, res) => {
-        if (!req.session.user) {
-            res.status(403).json("Please login or register");
-        } else {
+        if (req.session.user) {
             res.status(200).json(req.session.user);
         }
     },
@@ -50,7 +48,7 @@ module.exports = {
                     username: foundUser[0].username,
                     name: foundUser[0].name
                 };
-
+                console.log(req.session.user)
                 res.status(200).json(req.session.user);
             }
         }
