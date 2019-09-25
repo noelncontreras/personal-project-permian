@@ -27,9 +27,15 @@ class GuestLanding extends Component {
 
         if (formName === "login") {
             loginUser({username, password})
+            if(!username || !password) {
+                alert("Please enter Username/Password");
+            };
         }
         else {
             registerUser({name, username, password})
+            if(!name || !username || !password) {
+                alert("Please fill in credentials below");
+            }
         }
     };
 
@@ -44,6 +50,7 @@ class GuestLanding extends Component {
                 <div>
                     <form className="existing-user" name="login" onSubmit={this.handleSubmit}>
                         <h1>Existing User:</h1>
+                        <p>Please enter username and password</p>
                         <br />
                         <label>Username:</label>
                         <input 
@@ -64,6 +71,7 @@ class GuestLanding extends Component {
                 <div>
                     <form className="new-user"name="register" onSubmit={this.handleSubmit}>
                         <h1>New User:</h1>
+                        <p>Please fill in all credentials</p>
                         <br />
                         <label>Name:</label>
                         <input 
@@ -83,7 +91,7 @@ class GuestLanding extends Component {
                         type="text"
                         onChange={this.handleInputChange} />
                         <br />
-                        <button type="submit">REGISTER</button>
+                        <button type="submit" disabled={!this.state.name || !this.state.password || !this.state.username}>REGISTER</button>
                     </form>
                 </div>
             </main>

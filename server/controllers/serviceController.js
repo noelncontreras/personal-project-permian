@@ -9,7 +9,7 @@ module.exports = {
     getService: async (req, res) => {
         const category_id = +req.params.category_id;
         const db = req.app.get("db");
-        console.log(category_id, typeof category_id)
+
         const service = await db.service.getCategoryService(category_id);
 
         res.status(200).json(service);
@@ -33,6 +33,7 @@ module.exports = {
         //be saved to a variable and passed to my edit method in reducer and then sent to backend
         //to have massive change it in my database. See how eric did it in Posts.js: lines 20-23,
         //postsReducer.js: lines 35-40, and then to backend at postsController.js: lines 29-34.
+        console.log(req.body)
         const {category_id, service_id, service_description} = req.body;
         const db = req.app.get("db");
 

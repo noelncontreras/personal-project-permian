@@ -19,6 +19,9 @@
         font-weight: bolder;
         font-size: 25px;
     };
+    p {
+        font-size: $nav-size;
+    };
     button {
         @include login-buttons;
     };

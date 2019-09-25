@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Loading from "./Loading";
+// import Loading from "./Loading";
 import { connect } from "react-redux";
 import { updateService, addService, editService, deleteService } from "../redux/reducers/serviceReducer";
 
@@ -7,7 +7,7 @@ class Service extends Component {
     constructor() {
         super();
         this.state = {
-            serviceDescription: "",
+            service_description: "",
             edit: false
         }
     }
@@ -16,32 +16,29 @@ class Service extends Component {
         this.props.updateService(this.props.match.params.category_id);
     };
 
-    handleEdit = (category_id, service_id) => {
-        this.setState({ edit: true });
-        const serviceInfo = { category_id, service_id, serviceDescription: this.state.serviceDescription };
-
-        this.props.editService(serviceInfo);
+    handleEdit = (service_description) => {
+        this.setState({ edit: true, service_description });
     };
 
-    handleInputChange = e => {
-        this.setState({ serviceDescription: e.target.value })
+    handleEditChange = e => {
+        this.setState({service_description: e.target.value })
+    };
+
+    handleSubmit = (category_id, service_id) => {
+        const serviceInfo = { category_id, service_id, service_description: this.state.service_description };
+
+        this.props.editService(serviceInfo).then(res => {
+            this.setState({service_description: res.data})
+        });
+
+        this.setState({edit: false});
     };
 
     render() {
         // const { loading } = this.props.userReducer;
         const serviceMapped = this.props.service.map((service, i) => {
-            console.log(this.props.user_id)
-            console.log(service.user_id)
             return (
                 <div key={i}>
-                    {
-                        this.props.user_id === service.user_id ? (
-                            <div>
-                                <button onClick={this.handleEdit}>EDIT</button>
-                                <button>DELETE</button>
-                            </div>
-                        ) : null
-                    }
                     {!this.state.edit ?
                         <div>
                             <h1>{service.name}</h1>
@@ -50,13 +47,22 @@ class Service extends Component {
                         :
                         <div>
                             <input
-                                value={service.service_description}
-                                onChange={this.handleInputChange} />
+                                // name="serviceDescription"
+                                value={this.state.service_description}
+                                onChange={this.handleEditChange} />
                             <div>
-                                <button>SUBMIT</button>
+                                <button onClick={() => this.handleSubmit(service.category_id, service.service_id)}>SUBMIT</button>
                                 <button>CANCEL</button>
                             </div>
                         </div>
+                    }
+                    {
+                        this.props.user_id === service.user_id ? (
+                            <div>
+                                <button onClick={() => this.handleEdit(service.service_description)}>EDIT</button>
+                                <button>DELETE</button>
+                            </div>
+                        ) : null
                     }
                 </div>
             )

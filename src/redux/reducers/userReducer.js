@@ -74,6 +74,14 @@ export default function reducer(state=initialState, action) {
                 username: payload.data.username,
                 loading: false
             }
+        case `${REGISTER_USER}_REJECTED`:
+            return {
+                ...state,
+                user_id: null,
+                name: "",
+                username: "",
+                loading: false
+            }
         case `${LOGIN_USER}_PENDING`:
             return {
                 ...state,
@@ -85,6 +93,14 @@ export default function reducer(state=initialState, action) {
                 user_id: payload.data.user_id,
                 name: payload.data.name,
                 username: payload.data.username,
+                loading: false
+            }
+        case `${LOGIN_USER}_REJECTED`:
+            return {
+                ...state,
+                user_id: null,
+                name: "",
+                username: "",
                 loading: false
             }
         case `${LOGOUT_USER}_PENDING`:

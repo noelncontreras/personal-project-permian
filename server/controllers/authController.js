@@ -13,7 +13,7 @@ module.exports = {
         const foundUser = await db.auth.checkForUsername(username);
 
         if(foundUser[0]) {
-            res.status(409).json("Username Taken")
+            res.status(409).json("Username Taken");
         } else {
             const salt = bcrypt.genSaltSync(10);
             const hash = bcrypt.hashSync(password, salt);
@@ -36,12 +36,12 @@ module.exports = {
         const foundUser = await db.auth.checkForUsername(username);
 
         if(!foundUser[0]) {
-            res.status(403).json("Username or Password Incorrect")
+            res.status(403).json("Username or Password Incorrect");
         } else {
             const isAuthenticated = bcrypt.compareSync(password, foundUser[0].password)
 
             if(!isAuthenticated) {
-                res.status(403).json("Username or Password Incorrect")
+                res.status(403).json("Username or Password Incorrect");
             } else {
                 req.session.user = {
                     user_id: foundUser[0].user_id,
@@ -49,8 +49,8 @@ module.exports = {
                     name: foundUser[0].name
                 };
                 res.status(200).json(req.session.user);
-            }
-        }
+            };
+        };
     },
     logout: (req, res) => {
         req.session.destroy();
