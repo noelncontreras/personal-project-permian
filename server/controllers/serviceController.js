@@ -26,7 +26,7 @@ module.exports = {
             res.status(200).json(newService);
         }
     },
-    editService: (req, res) => {
+    editService: async (req, res) => {
         //service_description is a placeholder for now. I "hard-coded" it to test in postman.
         //when i set up the edit method in reducer and change the state in Service component,
         //i will need to replace service_description to property name that is in state, which will
@@ -37,15 +37,15 @@ module.exports = {
         const {category_id, service_id, service_description} = req.body;
         const db = req.app.get("db");
 
-        const editService = db.service.editService(category_id, service_id, service_description);
-
+        const editService = await db.service.editService(category_id, service_id, service_description);
+        console.log(editService)
         res.status(200).json(editService);
     },
     deleteService: async (req, res) => {
-        const {service_id} = req.params;
+        const {service_id, category_id} = req.params;
         const db = req.app.get("db");
 
-        const services = await db.service.deleteService(service_id);
+        const services = await db.service.deleteService(service_id, category_id);
 
         res.status(200).json(services);
     }

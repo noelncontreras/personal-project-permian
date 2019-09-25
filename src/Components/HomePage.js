@@ -12,10 +12,10 @@ class HomePage extends Component {
     };
 
     render() {
-        const { loading } = this.props.userReducer;
         if (!this.props.user_id) {
             return <Redirect to="/" />
         };
+        const { loading } = this.props.userReducer;
         const categoryMapped = this.props.category.map((category, i) => {
             return (
                 <div key={i}>

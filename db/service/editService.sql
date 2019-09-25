@@ -1,7 +1,6 @@
 UPDATE service
 SET service_description = $3
-WHERE service_id = $2
-RETURNING *;
+WHERE service_id = $2;
 
 SELECT s.service_id, s.category_id, s.user_id, s.service_description, u.user_id FROM service s
 INNER JOIN category c

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import Loading from "./Loading";
+import Loading from "./Loading";
 import { connect } from "react-redux";
 import { updateService, addService, editService, deleteService } from "../redux/reducers/serviceReducer";
 
@@ -9,8 +9,8 @@ class Service extends Component {
         this.state = {
             service_description: "",
             edit: false
-        }
-    }
+        };
+    };
 
     componentDidMount() {
         this.props.updateService(this.props.match.params.category_id);
@@ -27,15 +27,21 @@ class Service extends Component {
     handleSubmit = (category_id, service_id) => {
         const serviceInfo = { category_id, service_id, service_description: this.state.service_description };
 
-        this.props.editService(serviceInfo).then(res => {
-            this.setState({service_description: res.data})
-        });
+        this.props.editService(serviceInfo)
 
         this.setState({edit: false});
     };
 
+    handleCancel = () => {
+        this.setState({edit: false});
+    };
+
+    handleDelete = (service_id, category_id) => {
+        this.props.deleteService(service_id, category_id);
+    };
+
     render() {
-        // const { loading } = this.props.userReducer;
+        const { loading } = this.props.userReducer;
         const serviceMapped = this.props.service.map((service, i) => {
             return (
                 <div key={i}>
@@ -47,12 +53,11 @@ class Service extends Component {
                         :
                         <div>
                             <input
-                                // name="serviceDescription"
                                 value={this.state.service_description}
                                 onChange={this.handleEditChange} />
                             <div>
                                 <button onClick={() => this.handleSubmit(service.category_id, service.service_id)}>SUBMIT</button>
-                                <button>CANCEL</button>
+                                <button onClick={this.handleCancel}>CANCEL</button>
                             </div>
                         </div>
                     }
@@ -60,7 +65,7 @@ class Service extends Component {
                         this.props.user_id === service.user_id ? (
                             <div>
                                 <button onClick={() => this.handleEdit(service.service_description)}>EDIT</button>
-                                <button>DELETE</button>
+                                <button onClick={() => this.handleDelete(service.service_id, service.category_id)}>DELETE</button>
                             </div>
                         ) : null
                     }
@@ -68,11 +73,10 @@ class Service extends Component {
             )
         });
 
-
         return (
             <div>
                 <main>
-                    {/* {loading ? <Loading /> : null} */}
+                    {loading ? <Loading /> : null}
                     <div>
                         <h1>Services</h1>
                     </div>
@@ -86,7 +90,8 @@ class Service extends Component {
 const mapPropsToState = reduxState => {
     return {
         user_id: reduxState.userReducer.user_id,
-        service: reduxState.serviceReducer.service
+        service: reduxState.serviceReducer.service,
+        userReducer: reduxState.userReducer
     };
 };
 

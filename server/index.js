@@ -46,6 +46,6 @@ app.post("/user/service", SC.addService);
 //below will PUT, or edit a user's service
 app.put("/user/service", SC.editService);
 //below will DELETE a user's service
-app.delete("/user/service/:service_id", SC.deleteService);
+app.delete("/user/service/:service_id/:category_id", SC.deleteService);
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on Port ${SERVER_PORT}`));

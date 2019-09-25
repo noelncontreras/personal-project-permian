@@ -4,7 +4,7 @@ import axios from "axios";
 const initialState = {
     category: [],
     service: [],
-    loading: false,
+    loading: false
 };
 
 //constants
@@ -46,10 +46,10 @@ export function editService(serviceInfo) {
     };
 };
 
-export function deleteService(service_id) {
+export function deleteService(service_id, category_id) {
     return {
         type: DELETE_SERVICE,
-        payload: axios.delete(`/user/service/:${service_id}`)
+        payload: axios.delete(`/user/service/${service_id}/${category_id}`)
     };
 };
 
@@ -74,6 +74,24 @@ export default function reducer(state=initialState, action) {
             loading: true
         }
     case `${UPDATE_SERVICE}_FULFILLED`:
+        return {
+            ...state,
+            service: payload.data,
+            loading: false
+        }
+    case `${EDIT_SERVICE}_PENDING`:
+        return {
+            ...state,
+            loading: true
+        }
+    case `${EDIT_SERVICE}_FULFILLED`:
+        console.log(payload.data)
+        return {
+            ...state,
+            service: payload.data,
+            loading: false
+        }
+    case `${DELETE_SERVICE}_FULFILLED`:
         return {
             ...state,
             service: payload.data,
