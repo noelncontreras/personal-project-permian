@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Loading from "./Loading";
 import {connect} from "react-redux";
-import {withRouter} from "react-router-dom";
+import {Redirect} from "react-router-dom";
 import {addService} from "../redux/reducers/serviceReducer";
 
 class AddService extends Component {
@@ -27,7 +27,8 @@ class AddService extends Component {
         const newService = {category_id: category_id, user_id, service_description: service_description }
         if(category_id === 0) {
             alert("Please choose a category");
-            this.props.history.push("/service/addService");
+            // this.setState({service_description: ""});
+            return <Redirect to="/service/addService" />
         }
         console.log(category_id)
 
@@ -81,4 +82,4 @@ const mapPropsToState = reduxState => {
     };
 };
 
-export default withRouter (connect(mapPropsToState, {addService})(AddService));
+export default connect(mapPropsToState, {addService})(AddService);

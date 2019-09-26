@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import {registerUser, loginUser} from "../redux/reducers/userReducer";
 import "../styles/GuestLanding/GuestLanding.scss";
+import Axios from "axios";
 
 class GuestLanding extends Component {
     constructor() {
@@ -25,18 +26,24 @@ class GuestLanding extends Component {
         const {name, username, password} = this.state;
         const {registerUser, loginUser} = this.props;
 
-        if (formName === "login") {
-            loginUser({username, password})
-            if(!username || !password) {
-                alert("Please enter Username/Password");
+        if(formName === "login") {
+            // loginUser({username, password})
+            Axios.post("/auth/login ").then(response => {
+                
+            })
+            if (!username || !password) {
+                alert ("Please enter Username/Password");
             };
-        }
-        else {
+        if(username !== this.props.username || password !== this.props.password) {
+                alert ("Please enter correct Username/Password");
+            };
+        };
+        if(formName === "register") {
             registerUser({name, username, password})
             if(!name || !username || !password) {
                 alert("Please fill in credentials below");
-            }
-        }
+            };
+        };
     };
 
     render() {
@@ -102,6 +109,8 @@ class GuestLanding extends Component {
 const mapStateToProps = reduxState => {
     return {
         user_id: reduxState.userReducer.user_id,
+        username: reduxState.userReducer.username,
+        password: reduxState.userReducer.password,
         userReducer: reduxState.userReducer
     };
 };
