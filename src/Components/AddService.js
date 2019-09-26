@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import Loading from "./Loading";
 import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 import {addService} from "../redux/reducers/serviceReducer";
 
 class AddService extends Component {
@@ -23,25 +25,32 @@ class AddService extends Component {
         const {category_id, service_description} = this.state;
         const {user_id} = this.props;
         const newService = {category_id: category_id, user_id, service_description: service_description }
+        if(category_id === 0) {
+            alert("Please choose a category");
+            this.props.history.push("/service/addService");
+        }
         console.log(category_id)
 
         console.log(newService)
         if (user_id) {
             this.props.addService(newService);
         }
+        this.props.history.push(`/service/${category_id}`);
     };
 
 
     render() {
+        const {loading} = this.props;
         return (
-            <div>
+            <section>
+                {loading ? <Loading /> : null}
                 <div>
                     <h1>Add a Service</h1>
                 </div>
                 <div>
                     <label>Category: </label>
                     <select onChange={this.handleMenuChange} >
-                        <option value="0">Pick a category</option>
+                        <option value="0">Choose a category</option>
                         <option value="1">HotShot</option>
                         <option value="2">Graphic Design</option>
                     </select>
@@ -60,15 +69,16 @@ class AddService extends Component {
                         <button type="submit">SUBMIT</button>
                     </form>
                 </div>
-            </div>
+            </section>
         )
     };
 };
 
 const mapPropsToState = reduxState => {
     return {
-        user_id: reduxState.userReducer.user_id
+        user_id: reduxState.userReducer.user_id,
+        userReducer: reduxState.userReducer
     };
 };
 
-export default connect(mapPropsToState, {addService})(AddService);
+export default withRouter (connect(mapPropsToState, {addService})(AddService));

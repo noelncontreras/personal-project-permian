@@ -60,7 +60,7 @@ class Service extends Component {
                                 <button onClick={this.handleCancel}>CANCEL</button>
                             </div>
                         </div>
-                    };
+                    }
                     {
                         this.props.user_id === service.user_id ? (
                             <div>
@@ -68,7 +68,7 @@ class Service extends Component {
                                 <button onClick={() => this.handleDelete(service.service_id, service.category_id)}>DELETE</button>
                             </div>
                         ) : null
-                    };
+                    }
                 </div>
             )
         });
@@ -80,6 +80,7 @@ class Service extends Component {
                     <div>
                         <h1>Services</h1>
                     </div>
+                    <br />
                     <span>{serviceMapped}</span>
                 </main>
             </div >
