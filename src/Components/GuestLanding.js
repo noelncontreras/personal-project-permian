@@ -27,7 +27,7 @@ class GuestLanding extends Component {
         const {registerUser, loginUser} = this.props;
 
         if(formName === "login") {
-            // loginUser({username, password})
+            loginUser({username, password})
             Axios.post("/auth/login ").then(response => {
                 
             })

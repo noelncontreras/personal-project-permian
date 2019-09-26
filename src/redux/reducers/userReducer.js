@@ -29,12 +29,12 @@ export function registerUser(newUser) {
     };
 };
 
-// export function loginUser(user) {
-//     return {
-//         type: LOGIN_USER,
-//         payload: axios.post("/auth/login", user)
-//     };
-// };
+export function loginUser(user) {
+    return {
+        type: LOGIN_USER,
+        payload: axios.post("/auth/login", user)
+    };
+};
 
 export function logoutUser() {
     return {
