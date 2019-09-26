@@ -27,10 +27,10 @@ class GuestLanding extends Component {
         const {registerUser, loginUser} = this.props;
 
         if(formName === "login") {
-            loginUser({username, password})
-            Axios.post("/auth/login ").then(response => {
+            // Axios.post("/auth/login ").then(response => {
                 
-            })
+                // })
+                loginUser({username, password})
             if (!username || !password) {
                 alert ("Please enter Username/Password");
             };
