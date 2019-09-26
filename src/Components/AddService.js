@@ -24,18 +24,17 @@ class AddService extends Component {
     handleSubmit = () => {
         const {category_id, service_description} = this.state;
         const {user_id} = this.props;
-        const newService = {category_id: category_id, user_id, service_description: service_description }
+        const newService = {category_id: category_id, user_id, service_description: service_description };
         if(category_id === 0) {
             alert("Please choose a category");
-            // this.setState({service_description: ""});
             return <Redirect to="/service/addService" />
-        }
+        };
         console.log(category_id)
 
         console.log(newService)
-        if (user_id) {
+        if(user_id) {
             this.props.addService(newService);
-        }
+        };
         this.props.history.push(`/service/${category_id}`);
     };
 

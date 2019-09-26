@@ -87,10 +87,6 @@ export default function reducer(state=initialState, action) {
             service: payload.data,
             loading: false
         }
-    // case `${ADD_SERVICE}_REJECTED`:
-    //     return {
-
-    //     }
     case `${EDIT_SERVICE}_PENDING`:
         return {
             ...state,

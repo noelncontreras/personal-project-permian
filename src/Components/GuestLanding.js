@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import Loading from "./Loading";
+import axios from "axios";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import {registerUser, loginUser} from "../redux/reducers/userReducer";
 import "../styles/GuestLanding/GuestLanding.scss";
-import Axios from "axios";
 
 class GuestLanding extends Component {
     constructor() {
         super();
         this.state = {
-            name: "",
+            realName: "",
             username: "",
             password: ""
         };
@@ -23,26 +23,42 @@ class GuestLanding extends Component {
     handleSubmit = e => {
         e.preventDefault();
         const formName = e.target.name;
-        const {name, username, password} = this.state;
+
+        const {realName, username, password} = this.state;
         const {registerUser, loginUser} = this.props;
 
         if(formName === "login") {
-            // Axios.post("/auth/login ").then(response => {
-                
-                // })
-                loginUser({username, password})
-            if (!username || !password) {
-                alert ("Please enter Username/Password");
-            };
-        if(username !== this.props.username || password !== this.props.password) {
-                alert ("Please enter correct Username/Password");
-            };
+            // loginUser({username, password})
+            axios.post("/auth/login", {
+                username, password
+            }).then(response => {
+                loginUser(response.data);
+            }).catch(e => {
+                if(e.response.data === "Username or Password Incorrect") {
+                    alert(e.response.data);
+                };
+            });
+        //     if (!username || !password) {
+        //         alert ("Please enter Username/Password");
+        //     };
+        // if(username !== this.props.username || password !== this.props.password) {
+        //         alert ("Please enter correct Username/Password");
+        //     };
         };
         if(formName === "register") {
-            registerUser({name, username, password})
-            if(!name || !username || !password) {
-                alert("Please fill in credentials below");
-            };
+            // registerUser({name, username, password})
+            axios.post("/auth/register", {
+                name: realName, username, password
+            }).then(response => {
+                registerUser(response.data);
+            }).catch(e => {
+                if(e.response.status === 409) {
+                    alert(e.response.data);
+                };
+            });
+            // if(!name || !username || !password) {
+            //     alert("Please fill in credentials below");
+            // };
         };
     };
 
@@ -50,7 +66,7 @@ class GuestLanding extends Component {
         const {loading} = this.props.userReducer;
         if(this.props.user_id) {
             return <Redirect to="/category" />
-        }
+        };
         return (
             <main className="main-guestlanding">
                 {loading ? <Loading /> : null}
@@ -61,12 +77,14 @@ class GuestLanding extends Component {
                         <br />
                         <label>Username:</label>
                         <input 
+                        required
                         name="username" 
                         type="text"
                         onChange={this.handleInputChange} />
                         <br />
                         <label>Password:</label>
                         <input 
+                        required
                         name="password" 
                         type="password"
                         onChange={this.handleInputChange} />
@@ -82,29 +100,32 @@ class GuestLanding extends Component {
                         <br />
                         <label>Name:</label>
                         <input 
-                        name="name" 
+                        required
+                        name="realName" 
                         type="text"
                         onChange={this.handleInputChange} />
                         <br />
                         <label>Username:</label>
                         <input 
+                        required
                         name="username" 
                         type="text"
                         onChange={this.handleInputChange} />
                         <br />
                         <label>Password:</label>
                         <input 
+                        required
                         name="password" 
                         type="text"
                         onChange={this.handleInputChange} />
                         <br />
-                        <button type="submit" disabled={!this.state.name || !this.state.password || !this.state.username}>REGISTER</button>
+                        <button type="submit">REGISTER</button>
                     </form>
                 </div>
             </main>
         )
-    }
-}
+    };
+};
 
 const mapStateToProps = reduxState => {
     return {
