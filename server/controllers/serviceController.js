@@ -16,6 +16,7 @@ module.exports = {
     },
     addService: async (req, res) => {
         const {category_id, user_id, service_description} = req.body;
+        console.log(category_id)
         const db = req.app.get("db");
 
         if(!service_description) {

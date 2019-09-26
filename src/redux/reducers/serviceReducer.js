@@ -37,9 +37,6 @@ export function addService(newService) {
 };
 
 export function editService(serviceInfo) {
-    // let data = axios.put("/user/service", serviceInfo).then(res => {
-    //     this.setState({service_description: res.data})
-    // })
     return {
         type: EDIT_SERVICE,
         payload: axios.put("/user/service", serviceInfo)

@@ -27,7 +27,7 @@ class Service extends Component {
     handleSubmit = (category_id, service_id) => {
         const serviceInfo = { category_id, service_id, service_description: this.state.service_description };
 
-        this.props.editService(serviceInfo)
+        this.props.editService(serviceInfo);
 
         this.setState({edit: false});
     };
@@ -60,7 +60,7 @@ class Service extends Component {
                                 <button onClick={this.handleCancel}>CANCEL</button>
                             </div>
                         </div>
-                    }
+                    };
                     {
                         this.props.user_id === service.user_id ? (
                             <div>
@@ -68,7 +68,7 @@ class Service extends Component {
                                 <button onClick={() => this.handleDelete(service.service_id, service.category_id)}>DELETE</button>
                             </div>
                         ) : null
-                    }
+                    };
                 </div>
             )
         });
@@ -83,7 +83,7 @@ class Service extends Component {
                     <span>{serviceMapped}</span>
                 </main>
             </div >
-        );
+        )
     };
 };
 
