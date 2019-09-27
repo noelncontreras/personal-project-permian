@@ -3,9 +3,11 @@ const express = require('express');
 const app = express();
 const massive = require('massive');
 const session = require('express-session');
+const twilio = require("twilio")
 const AC = require("./controllers/authController");
 const SC = require("./controllers/serviceController");
-const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env;
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, ACCOUNT_SID, AUTH_TOKEN, TWILIO_NUMBER } = process.env;
+const client = new twilio(ACCOUNT_SID, AUTH_TOKEN);
 
 app.use(express.json());
 
@@ -47,5 +49,24 @@ app.post("/user/service", SC.addService);
 app.put("/user/service", SC.editService);
 //below will DELETE a user's service
 app.delete("/user/service/:service_id/:category_id", SC.deleteService);
+
+//below is twilio POST request to send user message to person of contact
+app.post("/sms", (req, res) => {
+    client.messages.create({
+        from: TWILIO_NUMBER,
+        to: req.body.service.user_phone_number,
+        body: req.body.message
+    })
+    .then(() => {
+        res.json({sucess: true})
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({success: false})
+    })
+});
+
+
+
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on Port ${SERVER_PORT}`));

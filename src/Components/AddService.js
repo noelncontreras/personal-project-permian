@@ -25,6 +25,7 @@ class AddService extends Component {
         const {category_id, service_description} = this.state;
         const {user_id} = this.props;
         const newService = {category_id: category_id, user_id, service_description: service_description };
+        
         if(category_id === 0) {
             alert("Please choose a category");
             return <Redirect to="/service/addService" />
