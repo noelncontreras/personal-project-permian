@@ -3,6 +3,7 @@ import Loading from "./Loading";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import {addService} from "../redux/reducers/serviceReducer";
+import "../styles/AddService/AddService.scss";
 
 class AddService extends Component {
     constructor() {
@@ -43,11 +44,12 @@ class AddService extends Component {
     render() {
         const {loading} = this.props;
         return (
-            <section>
+            <section className="section-addService">
                 {loading ? <Loading /> : null}
-                <div>
+                <div className="addService-title">
                     <h1>Add a Service</h1>
                 </div>
+                <br />
                 <div>
                     <label>Category: </label>
                     <select onChange={this.handleMenuChange} >

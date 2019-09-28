@@ -4,10 +4,10 @@
     // width: 100vw;
     height: 90vh;
     background: url("https://images.unsplash.com/photo-1541969487406-1f1adf3884ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
-    background-size: 100%;
-    background-position: bottom;
+    background-size: 100% 100%;
+    background-position: initial;
     background-repeat: no-repeat;
-}
+};
 
 .main-homepage {
     height: 50vh;
@@ -16,19 +16,14 @@
     flex-direction: column;
     align-items: center;
     font-family: $web-font;
-}
+};
 
-.service-categories {
-    height: 10vh;
-    font-size: $title-size;
-}
-
-#category-box {
-    width: 50vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
+h2:hover {
+    width: 6vw;
+    height: 6vh;
+    font-size: 27px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+};
 
 .category-links {
     @include box-center;
@@ -36,9 +31,23 @@
     width: 5vw;
     height: 5vh;
     padding: 50px;
-    color: $black;
+    color: $ebony;
     background: $whitesmoke;
     opacity: 0.8;
     font-weight: bolder;
     font-size: 25px;
-}
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+};
+
+.service-categories {
+    height: 10vh;
+    font-size: $title-size;
+};
+
+
+#category-box {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+};

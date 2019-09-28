@@ -28,7 +28,20 @@
         justify-content: space-between;
         text-decoration: none;
             li {
-                color: $black;
-            }
+                color: $ebony;
+            };
+                .home-route:hover {
+                    font-size: 20px;
+                    text-decoration: underline;
+                };
+                .addService-route:hover {
+                    @extend .home-route, :hover;
+                };
     }
+    .logout-button:hover {
+        @include button-hover;
+        outline: none;
+        background: $logout;
+        text-shadow: 0px 0px 10px $header-gray;
+    };
 };

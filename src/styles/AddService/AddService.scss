@@ -1,0 +1,11 @@
+@import "../Utilities//Utilities.scss";
+@import "../HomePage/HomePage.scss";
+
+.section-addService {
+    @extend .main-homepage
+};
+
+.addService-title {
+    height: 10vh;
+    font-size: $title-size;
+};

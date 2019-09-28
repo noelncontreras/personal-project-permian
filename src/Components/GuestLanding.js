@@ -80,8 +80,9 @@ class GuestLanding extends Component {
                         <label>Username:</label>
                         <input 
                         required
-                        name="username" 
                         type="text"
+                        name="username" 
+                        placeholder="Username"
                         onChange={this.handleInputChange} />
                         <br />
                         <label>Password:</label>
@@ -89,6 +90,7 @@ class GuestLanding extends Component {
                         required
                         name="password" 
                         type="password"
+                        placeholder="Password"
                         onChange={this.handleInputChange} />
                         <br />
                         <button type="submit">LOGIN</button>
@@ -103,30 +105,34 @@ class GuestLanding extends Component {
                         <label>Name:</label>
                         <input 
                         required
-                        name="realName" 
                         type="text"
+                        name="realName" 
+                        placeholder="Name"
                         onChange={this.handleInputChange} />
                         <br />
                         <label>Username:</label>
                         <input 
                         required
-                        name="username" 
                         type="text"
+                        name="username" 
+                        placeholder="Username"
                         onChange={this.handleInputChange} />
                         <br />
                         <label>Password:</label>
                         <input 
                         required
-                        name="password" 
                         type="text"
+                        name="password" 
+                        placeholder="Password"
                         onChange={this.handleInputChange} />
                         <br />
                         <label>Your Phone Number:</label>
                         <p>In the format(12223334444)</p>
                         <input 
                         required
-                        name="user_phone_number" 
                         type="tel" 
+                        name="user_phone_number" 
+                        placeholder="12223334444"
                         pattern="[1]{1}[0-9]{3}[0-9]{3}[0-9]{4}"
                         onChange={this.handleInputChange} />
                         <br />

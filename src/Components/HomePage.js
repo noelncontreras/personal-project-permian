@@ -20,7 +20,7 @@ class HomePage extends Component {
             return (
                 <div key={i}>
                     <Link style={{ textDecoration: "none" }} to={`/service/${category.category_id}`}>
-                        <h1 className="category-links">{category.category_name}</h1>
+                        <h2 className="category-links">{category.category_name}</h2>
                     </Link>
                 </div>
             )
