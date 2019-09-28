@@ -7,7 +7,7 @@ module.exports = {
         }
     },
     register: async (req, res) => {
-        const {name, username, password} = req.body;
+        const {name, username, password, user_phone_number} = req.body;
         const db = req.app.get("db");
 
         const foundUser = await db.auth.checkForUsername(username);
@@ -18,12 +18,13 @@ module.exports = {
             const salt = bcrypt.genSaltSync(10);
             const hash = bcrypt.hashSync(password, salt);
 
-            const newUser = await db.auth.registerUser(name, username, hash);
+            const newUser = await db.auth.registerUser(name, username, hash, user_phone_number);
 
             req.session.user = {
                 user_id: newUser[0].user_id,
                 username: newUser[0].username,
-                name: newUser[0].name
+                name: newUser[0].name,
+                user_phone_number: newUser[0].user_phone_number
             };
 
             res.status(200).json(req.session.user);

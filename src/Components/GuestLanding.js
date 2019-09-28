@@ -12,7 +12,8 @@ class GuestLanding extends Component {
         this.state = {
             realName: "",
             username: "",
-            password: ""
+            password: "",
+            user_phone_number: ""
         };
     };
 
@@ -24,7 +25,8 @@ class GuestLanding extends Component {
         e.preventDefault();
         const formName = e.target.name;
 
-        const {realName, username, password} = this.state;
+        const {realName, username, password, user_phone_number} = this.state;
+
         const {registerUser, loginUser} = this.props;
 
         if(formName === "login") {
@@ -48,7 +50,7 @@ class GuestLanding extends Component {
         if(formName === "register") {
             // registerUser({name, username, password})
             axios.post("/auth/register", {
-                name: realName, username, password
+                name: realName, username, password, user_phone_number
             }).then(response => {
                 registerUser(response.data);
             }).catch(e => {
@@ -94,7 +96,7 @@ class GuestLanding extends Component {
                 </div>
                 <br />
                 <div>
-                    <form className="new-user"name="register" onSubmit={this.handleSubmit}>
+                    <form className="new-user" name="register" onSubmit={this.handleSubmit}>
                         <h1>New User:</h1>
                         <p>Please fill in all credentials</p>
                         <br />
@@ -117,6 +119,13 @@ class GuestLanding extends Component {
                         required
                         name="password" 
                         type="text"
+                        onChange={this.handleInputChange} />
+                        <br />
+                        <label>Your Phone Number:</label>
+                        <input 
+                        required
+                        name="user_phone_number" 
+                        type="tel"
                         onChange={this.handleInputChange} />
                         <br />
                         <button type="submit">REGISTER</button>
