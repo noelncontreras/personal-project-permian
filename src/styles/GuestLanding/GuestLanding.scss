@@ -10,14 +10,16 @@
     background-repeat: no-repeat;
     form {
         @include login-section;
+        flex-direction: column;
         border: 1px solid transparent;
         width: 20vw;
-        height: 25vh;
+        height: 40vh;
         padding: 50px;
         background: $whitesmoke;
-        opacity: 0.8;
+        opacity: 0.95;
         font-weight: bolder;
         font-size: 25px;
+        margin: 50px;
     };
     p {
         font-size: $nav-size;

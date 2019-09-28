@@ -54,11 +54,11 @@ app.delete("/user/service/:service_id/:category_id", SC.deleteService);
 app.post("/sms", (req, res) => {
     client.messages.create({
         from: TWILIO_NUMBER,
-        to: req.body.service.user_phone_number,
-        body: req.body.message
+        to: req.body.number,
+        body: `Hello ${req.body.name}. I found your service on Permian. ${req.body.message}. Please contact me at: ${req.body.userNumber}`
     })
     .then(() => {
-        res.json({sucess: true})
+        res.json({success: true})
     })
     .catch(err => {
         console.log(err)

@@ -48,6 +48,7 @@ class GuestLanding extends Component {
         //     };
         };
         if(formName === "register") {
+            //setup IF statement to make user  put a 1 in front of their phone number
             // registerUser({name, username, password})
             axios.post("/auth/register", {
                 name: realName, username, password, user_phone_number
@@ -122,10 +123,12 @@ class GuestLanding extends Component {
                         onChange={this.handleInputChange} />
                         <br />
                         <label>Your Phone Number:</label>
+                        <p>In the format(12223334444)</p>
                         <input 
                         required
                         name="user_phone_number" 
-                        type="tel"
+                        type="tel" 
+                        pattern="[1]{1}[0-9]{3}[0-9]{3}[0-9]{4}"
                         onChange={this.handleInputChange} />
                         <br />
                         <button type="submit">REGISTER</button>

@@ -9,6 +9,8 @@ export default class EditCheck extends Component {
             service_description: "",
             edit: false,
             contactButton: false,
+            number: "",
+            userNumber: "",
             message: ""
         };
     };
@@ -25,10 +27,24 @@ export default class EditCheck extends Component {
         this.setState({ message: e.target.value })
     };
 
-    // handleSendMessage = () => {
-    //     axios
-    //         .post("/sms", {number, message})
+    handleUserNumberChange = e => {
+        this.setState({ userNumber: e.target.value })
+    }
+
+    // handleSendTwilio = e => {
+    //     e.preventDefault();
+    //     this.sendMessage()
     // }
+
+    sendMessage = (number, name) => {
+        console.log(number)
+        const {userNumber, message} = this.state;
+        axios
+            .post("/sms", {number, name, userNumber, message})
+            .then(res => {
+                console.log(res.data)
+            })
+    };
 
     handleSubmit = (category_id, service_id) => {
         const serviceInfo = { category_id, service_id, service_description: this.state.service_description };
@@ -84,7 +100,13 @@ export default class EditCheck extends Component {
                     <form>
                         <div>
                             <div>
-                                <form>
+                                <div>
+                                    <label>Your Phone Number:</label>
+                                    <input 
+                                    required
+                                    placeholder="Please provide a number to be contacted"
+                                    value={this.state.userNumber}
+                                    onChange={this.handleUserNumberChange}/>
                                     <label>Message:</label>
                                     <textarea 
                                     rows="4"
@@ -93,9 +115,9 @@ export default class EditCheck extends Component {
                                     required 
                                     value={this.state.message}
                                     onChange={this.handleMessageChange}/>
-                                    <button onClick={this.sendMessage}>Send</button>
+                                    <button onClick={() => this.sendMessage(service.user_phone_number, service.name)}>Send</button>
                                     <button onClick={this.handleCancel}>Cancel</button>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </form>
