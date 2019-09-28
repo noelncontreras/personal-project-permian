@@ -11,8 +11,8 @@ class GuestLanding extends Component {
         super();
         this.state = {
             realName: "",
-            username: "",
-            password: "",
+            username: "noelnc",
+            password: "0000",
             user_phone_number: ""
         };
     };
@@ -79,7 +79,7 @@ class GuestLanding extends Component {
                         <br />
                         <label>Username:</label>
                         <input 
-                        required
+                        // required
                         type="text"
                         name="username" 
                         placeholder="Username"
@@ -87,7 +87,7 @@ class GuestLanding extends Component {
                         <br />
                         <label>Password:</label>
                         <input 
-                        required
+                        // required
                         name="password" 
                         type="password"
                         placeholder="Password"

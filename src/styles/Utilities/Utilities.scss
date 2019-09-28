@@ -11,6 +11,12 @@
     align-items: center;
 };
 
+@mixin column-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @mixin login-buttons {
     width: 100px;
     height: 20px;
@@ -18,6 +24,7 @@
     color: $white;
     font-weight: bold;
     font-size: $nav-size;
+    font-family: $web-font;
     background: $ebony;
     outline: none;
 };
@@ -30,9 +37,21 @@
     cursor: pointer;
 };
 
+@mixin box-background {
+    border: 1px solid transparent;
+    padding: 50px;
+    color: $ebony;
+    background: $whitesmoke;
+    opacity: 0.95;
+    font-weight: bolder;
+    font-size: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
 $web-font: 'Exo', sans-serif;
 $title-size: 40px;
 $nav-size: 15px;
+$label-size: 22px;
 $header-gray: #8C8C8C;
 $white: white;
 $whitesmoke: whitesmoke;

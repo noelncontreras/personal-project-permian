@@ -18,7 +18,7 @@ class HomePage extends Component {
         const { loading } = this.props.userReducer;
         const categoryMapped = this.props.category.map((category, i) => {
             return (
-                <div key={i}>
+                <div key={i} className="category-name">
                     <Link style={{ textDecoration: "none" }} to={`/service/${category.category_id}`}>
                         <h2 className="category-links">{category.category_name}</h2>
                     </Link>

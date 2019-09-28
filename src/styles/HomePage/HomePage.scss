@@ -2,20 +2,24 @@
 
 .background-img {
     // width: 100vw;
-    height: 90vh;
-    background: url("https://images.unsplash.com/photo-1541969487406-1f1adf3884ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+    height: 100%;
+    background: url("https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    // background: url("https://images.unsplash.com/photo-1541969487406-1f1adf3884ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
     background-size: 100% 100%;
     background-position: initial;
     background-repeat: no-repeat;
 };
 
-.main-homepage {
-    height: 50vh;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    font-family: $web-font;
+.category-name {
+    height: 29%;
+    margin-top: 10px;
+};
+
+.category-links {
+    width: 5vw;
+    height: 5vh;
+    @include box-center;
+    @include box-background;
 };
 
 h2:hover {
@@ -25,29 +29,26 @@ h2:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.8);
 };
 
-.category-links {
-    @include box-center;
-    border: 1px solid transparent;
-    width: 5vw;
-    height: 5vh;
-    padding: 50px;
-    color: $ebony;
-    background: $whitesmoke;
-    opacity: 0.8;
-    font-weight: bolder;
-    font-size: 25px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+.main-homepage {
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    font-family: $web-font;
 };
 
 .service-categories {
-    height: 10vh;
+    height: 30vh;
+    margin-top: 40px;
+    margin-bottom: 10px;
     font-size: $title-size;
 };
 
-
 #category-box {
-    width: 50vw;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 };
