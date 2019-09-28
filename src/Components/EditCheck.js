@@ -31,19 +31,19 @@ export default class EditCheck extends Component {
         this.setState({ userNumber: e.target.value })
     }
 
-    // handleSendTwilio = e => {
-    //     e.preventDefault();
-    //     this.sendMessage()
-    // }
-
     sendMessage = (number, name) => {
-        console.log(number)
         const {userNumber, message} = this.state;
         axios
             .post("/sms", {number, name, userNumber, message})
             .then(res => {
-                console.log(res.data)
+                if(res.data.success === true) {
+                    alert(`Message was successfully sent to ${name}.`)
+                    this.setState({contactButton: false, userNumber: "", message: ""})
+                } else {
+                    alert("Sorry. Message was not sent successfully. Please try again.")
+                }
             })
+            
     };
 
     handleSubmit = (category_id, service_id) => {
@@ -86,14 +86,13 @@ export default class EditCheck extends Component {
                     </div>
                 }
                 {
-                    this.props.userId === service.user_id ? (
+                    this.props.userId === service.user_id ? 
                         <div>
                             <button onClick={() => this.handleEdit(service.service_description)}>EDIT</button>
                             <button onClick={() => this.handleDelete(service.service_id, service.category_id)}>DELETE</button>
                         </div>
-                    ) : <button onClick={() => this.setState({ contactButton: true })}>CONTACT</button>
+                    : <button onClick={() => this.setState({ contactButton: true })}>CONTACT</button>
                 }
-                {/* contact form. service.user_phone */}
                 {!this.state.contactButton ?
                     null
                     :
@@ -104,9 +103,11 @@ export default class EditCheck extends Component {
                                     <label>Your Phone Number:</label>
                                     <input 
                                     required
-                                    placeholder="Please provide a number to be contacted"
+                                    type="tel" 
+                                    placeholder={`To be contacted by ${service.name}`}
                                     value={this.state.userNumber}
                                     onChange={this.handleUserNumberChange}/>
+                                    <br />
                                     <label>Message:</label>
                                     <textarea 
                                     rows="4"
@@ -115,8 +116,10 @@ export default class EditCheck extends Component {
                                     required 
                                     value={this.state.message}
                                     onChange={this.handleMessageChange}/>
-                                    <button onClick={() => this.sendMessage(service.user_phone_number, service.name)}>Send</button>
-                                    <button onClick={this.handleCancel}>Cancel</button>
+                                    <button 
+                                    disabled={!this.state.userNumber}
+                                    onClick={() => this.sendMessage(service.user_phone_number, service.name)}>SEND</button>
+                                    <button onClick={this.handleCancel}>CANCEL</button>
                                 </div>
                             </div>
                         </div>

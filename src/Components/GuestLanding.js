@@ -48,7 +48,6 @@ class GuestLanding extends Component {
         //     };
         };
         if(formName === "register") {
-            //setup IF statement to make user  put a 1 in front of their phone number
             // registerUser({name, username, password})
             axios.post("/auth/register", {
                 name: realName, username, password, user_phone_number
