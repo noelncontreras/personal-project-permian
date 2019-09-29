@@ -26,15 +26,15 @@
                 font-family: $web-font;
             };
     };
-    p {
-        font-size: $nav-size;
-    };
-    button {
-        @include login-buttons;
-    };
-    button:hover {
-        @include button-hover;
-    };
+        p {
+            font-size: $nav-size;
+        };
+        button {
+            @include login-buttons;
+        };
+        button:hover {
+            @include button-hover;
+        };
 };
 
 .existing-user {

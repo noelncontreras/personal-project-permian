@@ -1,0 +1,205 @@
+.background-home {
+  width: 100vw;
+  height: 90vh;
+  background: url("https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-size: 100% 100%;
+  background-position: initial;
+  background-repeat: no-repeat;
+}
+
+.category-name {
+  height: 29%;
+  margin-top: 10px;
+}
+
+.category-links {
+  width: 5vw;
+  height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid transparent;
+  padding: 50px;
+  color: #0A0708;
+  background: whitesmoke;
+  opacity: 0.95;
+  font-weight: bolder;
+  font-size: 25px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+h2:hover {
+  width: 6vw;
+  height: 6vh;
+  font-size: 27px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.main-homepage, .background-addService {
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Exo", sans-serif;
+}
+
+.service-categories {
+  height: 30vh;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+#category-box {
+  width: 100vw;
+  height: 65vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.background-addService {
+  background: url("https://images.unsplash.com/photo-1496902526517-c0f2cb8fdb6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+  background-size: 100% 100%;
+  background-position: initial;
+  background-repeat: no-repeat;
+}
+
+.addService-title {
+  height: 10vh;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 40px;
+  color: whitesmoke;
+}
+
+.category {
+  width: 8vw;
+  height: 8vh;
+  color: whitesmoke;
+  font-weight: bolder;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid transparent;
+  padding: 50px;
+  color: #0A0708;
+  background: whitesmoke;
+  opacity: 0.95;
+  font-weight: bolder;
+  font-size: 25px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.category label {
+  font-size: 22px;
+}
+
+.category .dropdown {
+  outline: none;
+  cursor: pointer;
+  background: #0A0708;
+  color: whitesmoke;
+  font-family: "Exo", sans-serif;
+}
+
+.service-description {
+  width: 15vw;
+  height: 15vh;
+  color: #0A0708;
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid transparent;
+  padding: 50px;
+  color: #0A0708;
+  background: whitesmoke;
+  opacity: 0.95;
+  font-weight: bolder;
+  font-size: 25px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.service-description label {
+  font-size: 22px;
+}
+
+.service-description form > textarea::-webkit-input-placeholder {
+  color: #0A0708;
+  font-family: "Exo", sans-serif;
+}
+
+.service-description form > textarea:-ms-input-placeholder {
+  color: #0A0708;
+  font-family: "Exo", sans-serif;
+}
+
+.service-description form > textarea::-ms-input-placeholder {
+  color: #0A0708;
+  font-family: "Exo", sans-serif;
+}
+
+.service-description form > textarea::placeholder {
+  color: #0A0708;
+  font-family: "Exo", sans-serif;
+}
+
+.service-description button {
+  width: 100px;
+  height: 20px;
+  border-radius: 7px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: "Exo", sans-serif;
+  background: #0A0708;
+  outline: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=AddService.css.map */

@@ -24,12 +24,13 @@
   color: white;
   font-weight: bold;
   font-size: 15px;
-  background: #000000;
+  font-family: "Exo", sans-serif;
+  background: #0A0708;
   outline: none;
 }
 
-.nav-container button:hover {
-  color: #000000;
+.nav-container button:hover, .nav-container ul button.addService-route:hover {
+  color: #0A0708;
   font-weight: bold;
   background: #8C8C8C;
   text-shadow: 0px 0px 10px white;
@@ -72,6 +73,22 @@
 }
 
 .nav-container ul li {
-  color: #000000;
+  color: #0A0708;
+}
+
+.nav-container ul .home-route:hover, .nav-container ul .addService-route:hover {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.nav-container .logout-button:hover, .nav-container ul .logout-button.addService-route:hover {
+  color: #0A0708;
+  font-weight: bold;
+  background: #8C8C8C;
+  text-shadow: 0px 0px 10px white;
+  cursor: pointer;
+  outline: none;
+  background: #F51720;
+  text-shadow: 0px 0px 10px #8C8C8C;
 }
 /*# sourceMappingURL=Header.css.map */
