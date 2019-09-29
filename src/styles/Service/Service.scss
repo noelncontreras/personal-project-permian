@@ -1,7 +1,7 @@
 @import "../Utilities//Utilities.scss";
 
 .background-services {
-
+    height: 100%;
     background: url("https://images.unsplash.com/photo-1489997645632-af2cfd1359f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
     // use this below when boxes are ready if you want
     // background: url("https://images.unsplash.com/photo-1461268819612-35d5049e338b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
@@ -33,9 +33,9 @@
             align-items: center;
             flex-wrap: wrap;
         };
-        #service-box div {
+        #service-box .user-and-description {
             width: 20vw;
-            height: 200px;
+            height: 20vh;
             display: flex;
             flex-direction: column;
             justify-content: center;

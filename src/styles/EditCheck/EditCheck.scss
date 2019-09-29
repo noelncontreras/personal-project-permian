@@ -6,12 +6,56 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    margin: 30px;
+    text-align: center;
+        textarea {
+            font-family: $web-font;
+                textarea::placeholder {
+                    color: $ebony;
+                    opacity: 0.95;
+                    font-family: $web-font;
+                };
+        };
+        button {
+            @include login-buttons;
+        };
+            button:hover {
+                @include button-hover;
+            };
 };
 
 .editFalse-info {
-    margin-bottom: 50px;
-    z-index: 1;
+    margin-bottom: 10px;
+        h1 {
+            font-size: 20px;
+        };
         h3 {
             font-size: $nav-size;
+        };
+};
+
+#stacked-buttons {
+    @include box-center;
+    flex-direction: row;
+};
+
+.contact-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+        input::placeholder {
+            color: $ebony;
+            opacity: 0.95;
+            font-family: $web-font;
+        };
+        textarea::placeholder {
+            color: $ebony;
+            opacity: 0.95;
+            font-family: $web-font;
+        };
+        #number-input {
+            width: 15vw;
         };
 };
