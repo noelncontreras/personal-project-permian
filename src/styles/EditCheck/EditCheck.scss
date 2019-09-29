@@ -1,0 +1,17 @@
+@import "../Utilities//Utilities.scss";
+
+.user-and-description {
+    @include box-background;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+};
+
+.editFalse-info {
+    margin-bottom: 50px;
+    z-index: 1;
+        h3 {
+            font-size: $nav-size;
+        };
+};

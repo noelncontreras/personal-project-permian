@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../styles/EditCheck/EditCheck.scss";
 
 
 export default class EditCheck extends Component {
@@ -32,18 +33,18 @@ export default class EditCheck extends Component {
     }
 
     sendMessage = (number, name) => {
-        const {userNumber, message} = this.state;
+        const { userNumber, message } = this.state;
         axios
-            .post("/sms", {number, name, userNumber, message})
+            .post("/sms", { number, name, userNumber, message })
             .then(res => {
-                if(res.data.success === true) {
+                if (res.data.success === true) {
                     alert(`Message was successfully sent to ${name}.`)
-                    this.setState({contactButton: false, userNumber: "", message: ""})
+                    this.setState({ contactButton: false, userNumber: "", message: "" })
                 } else {
                     alert("Sorry. Message was not sent successfully. Please try again.")
                 }
             })
-            
+
     };
 
     handleSubmit = (category_id, service_id) => {
@@ -56,7 +57,7 @@ export default class EditCheck extends Component {
 
     handleCancel = () => {
         this.setState({ edit: false, contactButton: false });
-        this.setState({message: ""});
+        this.setState({ message: "" });
     };
 
     handleDelete = (service_id, category_id) => {
@@ -67,16 +68,19 @@ export default class EditCheck extends Component {
         const { service } = this.props;
 
         return (
-            <div key={this.props.key}>
+            <div key={this.props.key} className="user-and-description">
 
                 {!this.state.edit ?
-                    <div>
+                    <div className="editFalse-info">
                         <h1>{service.name}</h1>
+                        <br />
                         <h3>{service.service_description}</h3>
                     </div>
                     :
                     <div>
-                        <input
+                        <textarea
+                            rows="10"
+                            cols="50"
                             value={this.state.service_description}
                             onChange={this.handleEditChange} />
                         <div>
@@ -86,12 +90,12 @@ export default class EditCheck extends Component {
                     </div>
                 }
                 {
-                    this.props.userId === service.user_id ? 
+                    this.props.userId === service.user_id ?
                         <div>
                             <button onClick={() => this.handleEdit(service.service_description)}>EDIT</button>
                             <button onClick={() => this.handleDelete(service.service_id, service.category_id)}>DELETE</button>
                         </div>
-                    : <button onClick={() => this.setState({ contactButton: true })}>CONTACT</button>
+                        : <button onClick={() => this.setState({ contactButton: true })}>CONTACT</button>
                 }
                 {!this.state.contactButton ?
                     null
@@ -101,24 +105,25 @@ export default class EditCheck extends Component {
                             <div>
                                 <div>
                                     <label>Your Phone Number:</label>
-                                    <input 
-                                    required
-                                    type="tel" 
-                                    placeholder={`To be contacted by ${service.name}`}
-                                    value={this.state.userNumber}
-                                    onChange={this.handleUserNumberChange}/>
-                                    <br />
+                                    <input
+                                        required
+                                        rows="10" 
+                                        cols="30"
+                                        type="tel"
+                                        placeholder={`To be contacted by ${service.name}`}
+                                        value={this.state.userNumber}
+                                        onChange={this.handleUserNumberChange} />
                                     <label>Message:</label>
-                                    <textarea 
-                                    rows="4"
-                                    cols="30"
-                                    placeholder= {`Please leave a message to send to ${service.name}`}
-                                    required 
-                                    value={this.state.message}
-                                    onChange={this.handleMessageChange}/>
-                                    <button 
-                                    disabled={!this.state.userNumber}
-                                    onClick={() => this.sendMessage(service.user_phone_number, service.name)}>SEND</button>
+                                    <textarea
+                                        rows="10"
+                                        cols="50"
+                                        placeholder={`Please leave a message to send to ${service.name}`}
+                                        required
+                                        value={this.state.message}
+                                        onChange={this.handleMessageChange} />
+                                    <button
+                                        disabled={!this.state.userNumber}
+                                        onClick={() => this.sendMessage(service.user_phone_number, service.name)}>SEND</button>
                                     <button onClick={this.handleCancel}>CANCEL</button>
                                 </div>
                             </div>

@@ -3,6 +3,7 @@ import Loading from "./Loading";
 import EditCheck from "./EditCheck";
 import { connect } from "react-redux";
 import { updateService, addService, editService, deleteService } from "../redux/reducers/serviceReducer";
+import "../styles/Service/Service.scss";
 
 class Service extends Component {
     
@@ -24,14 +25,13 @@ class Service extends Component {
         });
 
         return (
-            <div>
-                <main>
+            <div className="background-services">
+                <main className="main-services">
                     {loading ? <Loading /> : null}
-                    <div>
+                    <div className="services-title">
                         <h1>Services</h1>
                     </div>
-                    <br />
-                    <span>{serviceMapped}</span>
+                    <span id="service-box">{serviceMapped}</span>
                 </main>
             </div >
         )

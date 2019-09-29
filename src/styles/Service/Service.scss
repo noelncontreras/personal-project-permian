@@ -1,0 +1,54 @@
+@import "../Utilities//Utilities.scss";
+
+.background-services {
+
+    background: url("https://images.unsplash.com/photo-1489997645632-af2cfd1359f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+    // use this below when boxes are ready if you want
+    // background: url("https://images.unsplash.com/photo-1461268819612-35d5049e338b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+    background-size: 100% 100%;
+    background-position: initial;
+    background-repeat: no-repeat;
+};
+
+.main-services {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    font-family: $web-font;
+        .services-title {
+            height: 10vh;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-size: $title-size;
+        };
+        #service-box {
+            width: 100vw;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        };
+        #service-box div {
+            width: 20vw;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+                // #service-box > .user-and-description {
+                //     width: 5vw;
+                //     height: 5vh;
+                // }
+        };
+        // .service-and-button {
+        //     // width: 30vw;
+        //     // height: 30vh;
+        //     border: 1px solid $ebony;
+        // }
+};

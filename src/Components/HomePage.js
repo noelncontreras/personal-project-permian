@@ -27,13 +27,15 @@ class HomePage extends Component {
         });
 
         return (
-            <div className="background-img">
+            <div className="background-home">
                 <main className="main-homepage">
                     {loading ? <Loading /> : null}
                     <div className="service-categories">
                         <h1>Service Categories</h1>
                     </div>
+                    <div className="service-and-button">
                     <span id="category-box">{categoryMapped}</span>
+                    </div>
                 </main>
             </div>
         );

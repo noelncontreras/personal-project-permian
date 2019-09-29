@@ -44,7 +44,7 @@ class AddService extends Component {
     render() {
         const {loading} = this.props;
         return (
-            <section className="section-addService">
+            <section className="background-addService">
                 {loading ? <Loading /> : null}
                 <div className="addService-title">
                     <h1>Add a Service</h1>
