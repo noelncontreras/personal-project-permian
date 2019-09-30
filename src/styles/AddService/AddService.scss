@@ -19,8 +19,8 @@
 };
 
 .category {
-    width: 10vw;
-    height: 10vh;
+    width: 20vw;
+    height: 20vh;
     color: $whitesmoke;
     text-align: center;
     font-weight: bolder;
@@ -70,13 +70,13 @@
 
 @media screen and (max-width: 600px) {
     .category, .category-title {
-        width: 30vw;
-        height: 10vh;
+        width: 40vw;
+        height: 15vh;
         font-size: 30px;
     };
     .service-description, service-description-title {
         width: 40vw;
-        height: 20vh;
+        height: 15vh;
         font-size: 30px;
     };
     .service-description textarea {
