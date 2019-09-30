@@ -3,6 +3,7 @@
 
 .background-addService {
     @extend .main-homepage;
+    font-family: $web-font;
     background: url("https://images.unsplash.com/photo-1496902526517-c0f2cb8fdb6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
     background-size: 100% 100%;
     background-position: initial;

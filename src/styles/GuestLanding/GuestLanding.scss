@@ -1,15 +1,21 @@
 @import "../Utilities/Utilities.scss";
 
-.main-guestlanding {
+.main-guestLanding {
     @include login-section;
+    justify-content: space-around;
     width: 100vw;
     height: 90vh;
     font-family: $web-font;
     background: url("https://images.unsplash.com/photo-1562237553-36ad661d6f2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
     background-size: 100% 100%;
+    background-position: initial;
     background-repeat: no-repeat;
-    form {
+    .form-box {
+        width: 40vw;
         @include login-section;
+        align-items: center;
+    }
+    form {
         flex-direction: column;
         border: 1px solid transparent;
         width: 20vw;
@@ -18,8 +24,7 @@
         background: $whitesmoke;
         opacity: 0.95;
         font-weight: bolder;
-        font-size: 25px;
-        margin: 50px;
+        font-size: $label-size;
         box-shadow: 0 0 10px rgba(0,0,0,0.8);
             input::placeholder {
                 color: $ebony;
@@ -28,6 +33,7 @@
     };
         p {
             font-size: $nav-size;
+            text-align: center;
         };
         button {
             @include login-buttons;
@@ -38,12 +44,8 @@
 };
 
 .existing-user {
-    @mixin login-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    };
+    @include column-box;
+    justify-content: center;
 };
 
 .new-user {
@@ -51,3 +53,25 @@
 };
 
 
+@media only screen and (max-width: 1080px) {
+    .main-guestLanding, h4, p, label {
+        font-size: 15px;
+    };
+};
+
+@media only screen and (max-width: 780px) {
+    .main-guestLanding, h4, p, label {
+        font-size: 12px;
+        form button {
+            width: 85px;
+            height: 18px;
+            font-size: 13px;
+        };
+    };
+};
+
+// @media only screen and (max-width: 680px) {
+//     .main-guestLanding {
+        
+//     }
+// }

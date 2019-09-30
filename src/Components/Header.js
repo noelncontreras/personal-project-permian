@@ -22,7 +22,6 @@ class Header extends Component {
         return (
             <>
                 <header>
-                    <div>
                         <div className="nav-container">
                             <h1>Permian</h1>
                             {this.props.user_id ?
@@ -44,7 +43,6 @@ class Header extends Component {
                                 </div>
                                 : null}
                         </div>
-                    </div>
                 </header>
             </>
         )

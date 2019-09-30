@@ -70,11 +70,11 @@ class GuestLanding extends Component {
             return <Redirect to="/category" />
         };
         return (
-            <main className="main-guestlanding">
+            <main className="main-guestLanding">
                 {loading ? <Loading /> : null}
-                <div>
+                <div className="form-box">
                     <form className="existing-user" name="login" onSubmit={this.handleSubmit}>
-                        <h1>Existing User:</h1>
+                        <h4>Existing User:</h4>
                         <p>Please enter username and password</p>
                         <br />
                         <label>Username:</label>
@@ -97,9 +97,9 @@ class GuestLanding extends Component {
                     </form>
                 </div>
                 <br />
-                <div>
+                <div className="form-box">
                     <form className="new-user" name="register" onSubmit={this.handleSubmit}>
-                        <h1>New User:</h1>
+                        <h4>New User:</h4>
                         <p>Please fill in all credentials</p>
                         <br />
                         <label>Name:</label>
