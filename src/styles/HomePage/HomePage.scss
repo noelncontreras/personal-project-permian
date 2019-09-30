@@ -1,8 +1,6 @@
 @import "../Utilities//Utilities.scss";
 
 .background-home {
-    width: 100vw;
-    height: 90vh;
     background: url("https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500");
     background-size: 100% 100%;
     background-position: initial;
@@ -50,4 +48,11 @@ h2:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+};
+
+
+@media screen and (max-width: 420px) {
+    #homepage-title {
+        font-size: 30px;
+    };
 };

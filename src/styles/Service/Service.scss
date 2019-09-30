@@ -1,10 +1,7 @@
 @import "../Utilities//Utilities.scss";
 
 .background-services {
-    height: 100%;
     background: url("https://images.unsplash.com/photo-1489997645632-af2cfd1359f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
-    // use this below when boxes are ready if you want
-    // background: url("https://images.unsplash.com/photo-1461268819612-35d5049e338b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
     background-size: 100% 100%;
     background-position: initial;
     background-repeat: no-repeat;
@@ -18,9 +15,9 @@
     flex-direction: column;
     align-items: center;
     font-family: $web-font;
-        .services-title {
+        .services-title h1 {
             height: 10vh;
-            margin-top: 40px;
+            margin-top: 80px;
             margin-bottom: 10px;
             font-size: $title-size;
         };

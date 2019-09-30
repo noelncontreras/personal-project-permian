@@ -31,7 +31,7 @@ class HomePage extends Component {
                 <main className="main-homepage">
                     {loading ? <Loading /> : null}
                     <div className="service-categories">
-                        <h1>Service Categories</h1>
+                        <h1 id="homepage-title">Service Categories</h1>
                     </div>
                     <div className="service-and-button">
                     <span id="category-box">{categoryMapped}</span>

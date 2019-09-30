@@ -119,13 +119,13 @@
           justify-content: center;
 }
 
-@media only screen and (max-width: 1080px) {
+@media screen and (max-width: 1080px) {
   .main-guestLanding, h4, p, label {
     font-size: 15px;
   }
 }
 
-@media only screen and (max-width: 780px) {
+@media screen and (max-width: 780px) {
   .main-guestLanding, h4, p, label {
     font-size: 12px;
   }
@@ -133,6 +133,30 @@
     width: 85px;
     height: 18px;
     font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .main-guestLanding {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main-guestLanding form, .main-guestLanding .existing-user, .main-guestLanding .new-user, .main-guestLanding .new-user {
+    width: 40vw;
+    height: 28vh;
+  }
+  .main-guestLanding form p, .main-guestLanding .existing-user p, .main-guestLanding .new-user p, .main-guestLanding .new-user p {
+    font-size: 10px;
+  }
+  .main-guestLanding form button, .main-guestLanding .existing-user button, .main-guestLanding .new-user button, .main-guestLanding .new-user button {
+    width: 60px;
+    height: 15px;
+    font-size: 10px;
   }
 }
 /*# sourceMappingURL=GuestLanding.css.map */

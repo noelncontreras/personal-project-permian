@@ -1,6 +1,4 @@
 .background-home {
-  width: 100vw;
-  height: 90vh;
   background: url("https://images.pexels.com/photos/2391/dirty-industry-stack-factory.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500");
   background-size: 100% 100%;
   background-position: initial;
@@ -82,6 +80,12 @@ h2:hover {
           justify-content: space-evenly;
 }
 
+@media screen and (max-width: 420px) {
+  #homepage-title {
+    font-size: 30px;
+  }
+}
+
 .background-addService {
   font-family: "Exo", sans-serif;
   background: url("https://images.unsplash.com/photo-1496902526517-c0f2cb8fdb6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
@@ -99,9 +103,10 @@ h2:hover {
 }
 
 .category {
-  width: 8vw;
-  height: 8vh;
+  width: 10vw;
+  height: 10vh;
   color: whitesmoke;
+  text-align: center;
   font-weight: bolder;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,8 +145,8 @@ h2:hover {
 }
 
 .service-description {
-  width: 15vw;
-  height: 15vh;
+  width: 20vw;
+  height: 20vh;
   color: #0A0708;
   text-align: center;
   font-weight: bolder;
@@ -202,5 +207,35 @@ h2:hover {
   background: #0A0708;
   outline: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .service-description textarea {
+    resize: horizontal;
+    max-width: 215px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .category, .category-title {
+    width: 30vw;
+    height: 10vh;
+    font-size: 30px;
+  }
+  .service-description, service-description-title {
+    width: 40vw;
+    height: 20vh;
+    font-size: 30px;
+  }
+  .service-description textarea {
+    resize: horizontal;
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .background-addService h1 {
+    font-size: 30px;
+  }
 }
 /*# sourceMappingURL=AddService.css.map */

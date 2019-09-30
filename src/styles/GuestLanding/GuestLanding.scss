@@ -14,7 +14,7 @@
         width: 40vw;
         @include login-section;
         align-items: center;
-    }
+    };
     form {
         flex-direction: column;
         border: 1px solid transparent;
@@ -53,13 +53,13 @@
 };
 
 
-@media only screen and (max-width: 1080px) {
+@media screen and (max-width: 1080px) {
     .main-guestLanding, h4, p, label {
         font-size: 15px;
     };
 };
 
-@media only screen and (max-width: 780px) {
+@media screen and (max-width: 780px) {
     .main-guestLanding, h4, p, label {
         font-size: 12px;
         form button {
@@ -70,8 +70,21 @@
     };
 };
 
-// @media only screen and (max-width: 680px) {
-//     .main-guestLanding {
-        
-//     }
-// }
+@media screen and (max-width: 420px) {
+    .main-guestLanding {
+        flex-direction: column;
+        justify-content: center;
+        form, .existing-user, .new-user {
+            width: 40vw;
+            height: 28vh;
+            p {
+                font-size: 10px;
+            };
+            button {
+                width: 60px;
+                height: 15px;
+                font-size: 10px;
+            };
+        };
+    };
+};
