@@ -8,7 +8,7 @@
     background: $header-gray;
     font-family: $web-font;
     font-size: $title-size;
-    button {
+    .logout-button {
         @include login-buttons;
         
         &:hover {
@@ -18,7 +18,7 @@
     .welcome-box {
         width: 40vw;
         @include box-center;
-        justify-content: space-between;
+        justify-content: space-evenly;
         font-size: $nav-size;
         font-weight: bolder;
     };
@@ -37,11 +37,112 @@
                 .addService-route:hover {
                     @extend .home-route, :hover;
                 };
-    }
+    };
     .logout-button:hover {
         @include button-hover;
         outline: none;
         background: $logout;
         text-shadow: 0px 0px 10px $header-gray;
+    };
+};
+
+@media (max-width: 1080px) {
+    .welcome-box, h6, ul, button {
+        width: 15vw;
+        font-size: 10px;
+        .logout-button {
+                width: 55px;
+                font-size: 10px;
+        };
+    };
+};
+
+@media (max-width: 780px) {
+    .welcome-box, h6, ul, button {
+        width: 12vw;
+        font-size: 9px;
+        .logout-button {
+            width: 40px;
+            height: 18px;
+            font-size: 7px;
+        };
+    };
+};
+
+@media (max-width: 680px) {
+    .welcome-box, h6, ul, button {
+        width: 10vw;
+        font-size: 8px;
+        .logout-button {
+            width: 35px;
+            height: 15px;
+            font-size: 6px;
+        };
+        li {
+            pointer-events: none;
+        };
+    };
+};
+
+@media (max-width: 560px) {
+    .welcome-box, h6, ul, button {
+        width: 9vw;
+        font-size: 7px;
+        .logout-button {
+            width: 34px;
+            height: 14px;
+            font-size: 5px;
+        };
+    };
+};
+
+@media (max-width: 500px) {
+    .welcome-box, h6, ul, button {
+        width: 8.5vw;
+        font-size: 6.5px;
+        .logout-button {
+            width: 33px;
+            height: 14px;
+            font-size: 5px;
+        };
+    };
+};
+
+@media (max-width: 460px) {
+    .welcome-box, h6, ul, button {
+        width: 7.5vw;
+        font-size: 5.5px;
+        .logout-button {
+            width: 32px;
+            height: 13px;
+            font-size: 5px;
+        };
+    };
+};
+
+@media (max-width: 420px) {
+    .nav-container h1 {
+        font-size: 30px;
+    };
+    .welcome-box, h6, ul, button {
+        width: 10px;
+        font-size: 5.5px;
+    };
+    .logout-button {
+        width: 30px;
+        height: 8px;
+        font-size: 4px;
+    };
+};
+
+@media (max-width: 385px) {
+    .welcome-box, h6, ul, button {
+        width: 6.5vw;
+        font-size: 5px;
+        .logout-button {
+            width: 28px;
+            height: 12px;
+            font-size: 4px;
+        };
     };
 };

@@ -5,6 +5,7 @@ import { getSession, logoutUser } from "../redux/reducers/userReducer";
 import "../styles/Header/Header.scss";
 
 class Header extends Component {
+
     componentDidMount() {
         this.props.getSession();
     };
