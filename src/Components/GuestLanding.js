@@ -77,7 +77,7 @@ class GuestLanding extends Component {
                 <div className="form-box">
                     <form className="existing-user" name="login" onSubmit={this.handleSubmit}>
                         <h4>Existing User:</h4>
-                        <p>Please enter username and password</p>
+                        <p id="existing-user-p">Please enter username and password</p>
                         <br />
                         <label>Username:</label>
                         <input
@@ -102,7 +102,7 @@ class GuestLanding extends Component {
                 <div className="form-box">
                     <form className="new-user" name="register" onSubmit={this.handleSubmit}>
                         <h4>New User:</h4>
-                        <p>Please fill in all credentials</p>
+                        <p id="new-user-p">Please fill in all credentials</p>
                         <br />
                         <label>Name:</label>
                         <input
@@ -129,7 +129,7 @@ class GuestLanding extends Component {
                             onChange={this.handleInputChange} />
                         <br />
                         <label>Your Phone Number:</label>
-                        <p>In the format(12223334444)</p>
+                        <p id="number-format">In the format(12223334444)</p>
                         <input
                             required
                             type="tel"
