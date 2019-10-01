@@ -21,15 +21,15 @@ export default class EditCheck extends Component {
     };
 
     handleEditChange = e => {
-        this.setState({ service_description: e.target.value })
+        this.setState({ service_description: e.target.value });
     };
 
     handleMessageChange = e => {
-        this.setState({ message: e.target.value })
+        this.setState({ message: e.target.value });
     };
 
     handleUserNumberChange = e => {
-        this.setState({ userNumber: e.target.value })
+        this.setState({ userNumber: e.target.value });
     }
 
     sendMessage = (number, name) => {
@@ -39,12 +39,11 @@ export default class EditCheck extends Component {
             .then(res => {
                 if (res.data.success === true) {
                     alert(`Message was successfully sent to ${name}.`)
-                    this.setState({ contactButton: false, userNumber: "", message: "" })
+                    this.setState({ contactButton: false, userNumber: "", message: "" });
                 } else {
-                    alert("Sorry. Message was not sent successfully. Please try again.")
-                }
-            })
-
+                    alert("Sorry. Message was not sent successfully. Please try again.");
+                };
+            });
     };
 
     handleSubmit = (category_id, service_id) => {
@@ -76,7 +75,7 @@ export default class EditCheck extends Component {
                         <h3>{service.service_description}</h3>
                     </div>
                     :
-                    <div>
+                    <div className="editTrue-info">
                         <h1>{service.name}</h1>
                         <textarea
                             rows="3"
@@ -100,7 +99,7 @@ export default class EditCheck extends Component {
                 {!this.state.contactButton ?
                     null
                     :
-                    <form>
+                    <form className="contact-form">
                         <div className="contact-labels">
                             <label>Your Phone Number:</label>
                             <input
@@ -129,6 +128,6 @@ export default class EditCheck extends Component {
                     </form>
                 }
             </div>
-        )
+        );
     };
 };

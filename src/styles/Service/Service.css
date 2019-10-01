@@ -51,7 +51,7 @@
 }
 
 .main-services #service-box .user-and-description {
-  width: 20vw;
+  width: 30vw;
   height: 20vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,5 +66,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 420px) {
+  h1#serviceMQ {
+    font-size: 30px;
+  }
 }
 /*# sourceMappingURL=Service.css.map */

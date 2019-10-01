@@ -73,16 +73,21 @@
   cursor: pointer;
 }
 
-.editFalse-info {
+.editFalse-info, .editTrue-info {
   margin-bottom: 10px;
+  text-align: center;
 }
 
-.editFalse-info h1 {
+.editFalse-info h1, .editTrue-info h1 {
   font-size: 20px;
 }
 
-.editFalse-info h3 {
+.editFalse-info h3, .editTrue-info h3 {
   font-size: 15px;
+}
+
+.editTrue-info {
+  margin-bottom: 20px;
 }
 
 #stacked-buttons {
@@ -167,6 +172,126 @@
 }
 
 .contact-labels #number-input {
-  width: 15vw;
+  width: 22vw;
+}
+
+@media screen and (max-width: 1106px) {
+  form.contact-form label {
+    font-size: 15px;
+  }
+  div.editFalse-info h1, div.editTrue-info h1 {
+    font-size: 18px;
+  }
+  div.editFalse-info h3, div.editTrue-info h3 {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 809px) {
+  .contact-labels textarea {
+    resize: vertical;
+    max-height: 30px;
+    resize: horizontal;
+    max-width: 250px;
+  }
+  .contact-labels #number-input {
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  div.user-and-description {
+    height: 10vh;
+  }
+  .editFalse-info textarea, .editTrue-info textarea {
+    resize: horizontal;
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  div.editFalse-info h1, div.editTrue-info h1 {
+    font-size: 18px;
+  }
+  div.editFalse-info h3, div.editTrue-info h3 {
+    font-size: 13px;
+  }
+  div.editFalse-info h1, div.editTrue-info h1 {
+    font-size: 17.75px;
+  }
+  div.editFalse-info h3, div.editTrue-info h3 {
+    font-size: 11.75px;
+  }
+}
+
+@media screen and (max-width: 539px) {
+  .user-and-description button {
+    width: 75px;
+    height: 20px;
+    font-size: 12px;
+  }
+  .editFalse-info textarea, .editTrue-info textarea {
+    resize: horizontal;
+    max-width: 215px;
+  }
+  div.editFalse-info h1, div.editTrue-info h1 {
+    font-size: 17.5px;
+  }
+  div.editFalse-info h3, div.editTrue-info h3 {
+    font-size: 11.5px;
+  }
+  .contact-labels textarea {
+    resize: horizontal;
+    max-width: 220px;
+  }
+  .contact-labels #number-input {
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 431px) {
+  div.editFalse-info h1, div.editTrue-info h1 {
+    font-size: 17.25px;
+  }
+  div.editFalse-info h3, div.editTrue-info h3 {
+    font-size: 11.25px;
+  }
+}
+
+@media screen and (max-width: 421px) {
+  div.editFalse-info h1, div.editTrue-info h1 {
+    font-size: 17.20px;
+  }
+  div.editFalse-info h3, div.editTrue-info h3 {
+    font-size: 11.20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .user-and-description button {
+    width: 70px;
+    height: 18px;
+    font-size: 10px;
+  }
+  .editFalse-info textarea, .editTrue-info textarea {
+    resize: horizontal;
+    max-width: 150px;
+  }
+  div.editTrue-info h1 {
+    font-size: 18px;
+  }
+  div.editFalse-info h1, div.editTrue-info h1 {
+    font-size: 17px;
+  }
+  div.editFalse-info h3, div.editTrue-info h3 {
+    font-size: 11px;
+  }
+  .contact-labels textarea {
+    resize: horizontal;
+    max-width: 200px;
+  }
+  .contact-labels #number-input {
+    width: 40vw;
+  }
 }
 /*# sourceMappingURL=EditCheck.css.map */

@@ -44,14 +44,13 @@ export function logoutUser() {
 };
 
 //reducer
-export default function reducer(state=initialState, action) {
-    const {type, payload} = action;
-
-    switch(type) {
+export default function reducer(state = initialState, action) {
+    const { type, payload } = action;
+    switch (type) {
         case `${GET_SESSION}_PENDING`:
             return {
                 ...state,
-            }
+            };
         case `${GET_SESSION}_FULFILLED`:
             return {
                 ...state,
@@ -59,19 +58,19 @@ export default function reducer(state=initialState, action) {
                 name: payload.data.name,
                 username: payload.data.username,
                 loading: false
-            }
-            case REGISTER_USER:
-                    return {
-                        ...state,
-                        user_id: payload.user_id,
-                        name: payload.name,
-                        username: payload.username,
-                    }
+            };
+        case REGISTER_USER:
+            return {
+                ...state,
+                user_id: payload.user_id,
+                name: payload.name,
+                username: payload.username,
+            };
         // case `${REGISTER_USER}_PENDING`:
         //     return {
         //         ...state,
         //         loading: true
-        //     }
+        //     };
         // case `${REGISTER_USER}_FULFILLED`:
         //     return {
         //         ...state,
@@ -79,7 +78,7 @@ export default function reducer(state=initialState, action) {
         //         name: payload.data.name,
         //         username: payload.data.username,
         //         loading: false
-        //     }
+        //     };
         // case `${REGISTER_USER}_REJECTED`:
         //     return {
         //         ...state,
@@ -87,12 +86,12 @@ export default function reducer(state=initialState, action) {
         //         name: "",
         //         username: "",
         //         loading: false
-        //     }
+        //     };
         // case `${LOGIN_USER}_PENDING`:
         //     return {
         //         ...state,
         //         loading: true
-        //     }
+        //     };
         // case `${LOGIN_USER}_FULFILLED`:
         //     return {
         //         ...state,
@@ -100,14 +99,14 @@ export default function reducer(state=initialState, action) {
         //         name: payload.data.name,
         //         username: payload.data.username,
         //         loading: false
-        //     }
+        //     };
         case LOGIN_USER:
             return {
                 ...state,
                 user_id: payload.user_id,
                 name: payload.name,
                 username: payload.username,
-            }
+            };
         // case `${LOGIN_USER}_REJECTED`:
         //     return {
         //         ...state,
@@ -115,12 +114,12 @@ export default function reducer(state=initialState, action) {
         //         name: "",
         //         username: "",
         //         loading: false
-        //     }
+        //     };
         case `${LOGOUT_USER}_PENDING`:
             return {
                 ...state,
                 loading: true
-            }
+            };
         case `${LOGOUT_USER}_FULFILLED`:
             return {
                 ...state,
@@ -128,7 +127,7 @@ export default function reducer(state=initialState, action) {
                 name: "",
                 username: "",
                 loading: false
-            }
+            };
         default:
             return state;
     };

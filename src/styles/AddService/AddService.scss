@@ -30,7 +30,7 @@
         label {
             font-size: $label-size;
         };
-        .dropdown {
+        .dropDown {
             outline: none;
             cursor: pointer;
             background: $ebony;
@@ -74,7 +74,7 @@
         height: 15vh;
         font-size: 30px;
     };
-    .service-description, service-description-title {
+    .service-description, .service-description-title {
         width: 40vw;
         height: 15vh;
         font-size: 30px;
@@ -84,8 +84,17 @@
     };
 };
 
+@media screen and (max-width: 495px) {
+    label.category-title, label.service-description-title {
+        font-size: 18px;
+    };
+};
+
 @media screen and (max-width: 420px) {
     .background-addService h1 {
         font-size: 30px;
+    };
+    label.category-title, label.service-description-title {
+        font-size: 17px;
     };
 };

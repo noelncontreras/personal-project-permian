@@ -51,60 +51,60 @@ export function deleteService(service_id, category_id) {
 };
 
 //reducer
-export default function reducer(state=initialState, action) {
-    const {type, payload} = action;
-    switch(type) {
-    case `${UPDATE_CATEGORY}_PENDING`:
-        return {
-            ...state,
-            loading: true
-        }
+export default function reducer(state = initialState, action) {
+    const { type, payload } = action;
+    switch (type) {
+        case `${UPDATE_CATEGORY}_PENDING`:
+            return {
+                ...state,
+                loading: true
+            };
         case `${UPDATE_CATEGORY}_FULFILLED`:
             return {
-            ...state,
-            category: payload.data,
-            loading: false
-        }
-    case `${UPDATE_SERVICE}_PENDING`:
-        return {
-            ...state,
-            loading: true
-        }
-    case `${UPDATE_SERVICE}_FULFILLED`:
-        return {
-            ...state,
-            service: payload.data,
-            loading: false
-        }
-    case `${ADD_SERVICE}_PENDING`:
-        return {
-            ...state,
-            loading: true
-        }
-    case `${ADD_SERVICE}_FULFILLED`:
-        return {
-            ...state,
-            service: payload.data,
-            loading: false
-        }
-    case `${EDIT_SERVICE}_PENDING`:
-        return {
-            ...state,
-            loading: true
-        }
-    case `${EDIT_SERVICE}_FULFILLED`:
-        console.log(payload.data)
-        return {
-            ...state,
-            service: payload.data,
-            loading: false
-        }
-    case `${DELETE_SERVICE}_FULFILLED`:
-        return {
-            ...state,
-            service: payload.data,
-            loading: false
-        }
+                ...state,
+                category: payload.data,
+                loading: false
+            };
+        case `${UPDATE_SERVICE}_PENDING`:
+            return {
+                ...state,
+                loading: true
+            };
+        case `${UPDATE_SERVICE}_FULFILLED`:
+            return {
+                ...state,
+                service: payload.data,
+                loading: false
+            };
+        case `${ADD_SERVICE}_PENDING`:
+            return {
+                ...state,
+                loading: true
+            };
+        case `${ADD_SERVICE}_FULFILLED`:
+            return {
+                ...state,
+                service: payload.data,
+                loading: false
+            };
+        case `${EDIT_SERVICE}_PENDING`:
+            return {
+                ...state,
+                loading: true
+            };
+        case `${EDIT_SERVICE}_FULFILLED`:
+            console.log(payload.data)
+            return {
+                ...state,
+                service: payload.data,
+                loading: false
+            };
+        case `${DELETE_SERVICE}_FULFILLED`:
+            return {
+                ...state,
+                service: payload.data,
+                loading: false
+            };
         default:
             return state;
     };

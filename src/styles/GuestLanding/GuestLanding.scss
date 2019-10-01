@@ -2,7 +2,7 @@
 
 .main-guestLanding {
     @include login-section;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100vw;
     height: 90vh;
     font-family: $web-font;

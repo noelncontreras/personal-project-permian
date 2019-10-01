@@ -22,30 +22,30 @@ class Header extends Component {
         return (
             <>
                 <header>
-                        <div className="nav-container">
-                            <h1>Permian</h1>
-                            {this.props.user_id ?
-                                <div className="welcome-box">
-                                    <h6>Welcome, {userOnSession}</h6>
-                                    <ul>
-                                        <Link 
-                                        style={{ textDecoration: "none" }} 
-                                        to="/category"><li 
-                                        className="home-route">Home</li></Link>
-                                        <Link 
-                                        style={{ textDecoration: "none" }} 
-                                        to="/service/addService"><li 
-                                        className="addService-route">Add Service</li></Link>
-                                    </ul>
-                                    <button
-                                        className="logout-button"
-                                        onClick={this.handleLogout}>LOGOUT</button>
-                                </div>
-                                : null}
-                        </div>
+                    <div className="nav-container">
+                        <h1>Permian</h1>
+                        {this.props.user_id ?
+                            <div className="welcome-box">
+                                <h6>Welcome, {userOnSession}</h6>
+                                <ul>
+                                    <Link
+                                        style={{ textDecoration: "none" }}
+                                        to="/category"><li
+                                            className="home-route">Home</li></Link>
+                                    <Link
+                                        style={{ textDecoration: "none" }}
+                                        to="/service/addService"><li
+                                            className="addService-route">Add Service</li></Link>
+                                </ul>
+                                <button
+                                    className="logout-button"
+                                    onClick={this.handleLogout}>LOGOUT</button>
+                            </div>
+                            : null}
+                    </div>
                 </header>
             </>
-        )
+        );
     };
 };
 

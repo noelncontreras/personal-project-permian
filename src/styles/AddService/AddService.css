@@ -136,7 +136,7 @@ h2:hover {
   font-size: 22px;
 }
 
-.category .dropdown {
+.category .dropDown {
   outline: none;
   cursor: pointer;
   background: #0A0708;
@@ -222,7 +222,7 @@ h2:hover {
     height: 15vh;
     font-size: 30px;
   }
-  .service-description, service-description-title {
+  .service-description, .service-description-title {
     width: 40vw;
     height: 15vh;
     font-size: 30px;
@@ -233,9 +233,18 @@ h2:hover {
   }
 }
 
+@media screen and (max-width: 495px) {
+  label.category-title, label.service-description-title {
+    font-size: 18px;
+  }
+}
+
 @media screen and (max-width: 420px) {
   .background-addService h1 {
     font-size: 30px;
+  }
+  label.category-title, label.service-description-title {
+    font-size: 17px;
   }
 }
 /*# sourceMappingURL=AddService.css.map */

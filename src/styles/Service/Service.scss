@@ -31,21 +31,17 @@
             flex-wrap: wrap;
         };
         #service-box .user-and-description {
-            width: 20vw;
+            width: 30vw;
             height: 20vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            
-                // #service-box > .user-and-description {
-                //     width: 5vw;
-                //     height: 5vh;
-                // }
         };
-        // .service-and-button {
-        //     // width: 30vw;
-        //     // height: 30vh;
-        //     border: 1px solid $ebony;
-        // }
+};
+
+@media screen and (max-width: 420px) {
+    h1#serviceMQ {
+        font-size: 30px;
+    };
 };

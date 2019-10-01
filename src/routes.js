@@ -1,5 +1,5 @@
 import React from "react";
-import {Switch, Route} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import GuestLanding from "./Components/GuestLanding";
 import HomePage from "./Components/HomePage";
 import Service from "./Components/Service";

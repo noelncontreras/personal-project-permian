@@ -57,13 +57,13 @@ app.post("/sms", (req, res) => {
         to: req.body.number,
         body: `Hello ${req.body.name}. I found your service on Permian. ${req.body.message}. Please contact me at: ${req.body.userNumber}`
     })
-    .then(() => {
-        res.json({success: true})
-    })
-    .catch(err => {
-        console.log(err)
-        res.json({success: false})
-    })
+        .then(() => {
+            res.json({ success: true });
+        })
+        .catch(err => {
+            console.log(err);
+            res.json({ success: false });
+        })
 });
 
 

@@ -16,6 +16,7 @@ class HomePage extends Component {
             return <Redirect to="/" />
         };
         const { loading } = this.props.userReducer;
+
         const categoryMapped = this.props.category.map((category, i) => {
             return (
                 <div key={i} className="category-name">
@@ -23,7 +24,7 @@ class HomePage extends Component {
                         <h2 className="category-links">{category.category_name}</h2>
                     </Link>
                 </div>
-            )
+            );
         });
 
         return (
@@ -34,7 +35,7 @@ class HomePage extends Component {
                         <h1 id="homepage-title">Service Categories</h1>
                     </div>
                     <div className="service-and-button">
-                    <span id="category-box">{categoryMapped}</span>
+                        <span id="category-box">{categoryMapped}</span>
                     </div>
                 </main>
             </div>

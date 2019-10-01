@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import "../styles/Loading/Loading.scss";
 
 export default function Loading() {
@@ -6,5 +6,5 @@ export default function Loading() {
         <div className="loading">
             <h1>Loading... Please Wait...</h1>
         </div>
-    )
-}
+    );
+};

@@ -6,22 +6,23 @@ import { updateService, addService, editService, deleteService } from "../redux/
 import "../styles/Service/Service.scss";
 
 class Service extends Component {
-    
+
     componentDidMount() {
         this.props.updateService(this.props.match.params.category_id);
     };
 
     render() {
         const { loading } = this.props.userReducer;
+
         const serviceMapped = this.props.service.map((service, i) => {
             return (
-                <EditCheck 
-                key={i}
-                service={service} 
-                userId={this.props.user_id} 
-                editService={this.props.editService} 
-                deleteService={this.props.deleteService} />
-            )
+                <EditCheck
+                    key={i}
+                    service={service}
+                    userId={this.props.user_id}
+                    editService={this.props.editService}
+                    deleteService={this.props.deleteService} />
+            );
         });
 
         return (
@@ -29,12 +30,12 @@ class Service extends Component {
                 <main className="main-services">
                     {loading ? <Loading /> : null}
                     <div className="services-title">
-                        <h1>Services</h1>
+                        <h1 id="serviceMQ">Services</h1>
                     </div>
                     <span id="service-box">{serviceMapped}</span>
                 </main>
             </div >
-        )
+        );
     };
 };
 

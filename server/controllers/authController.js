@@ -4,15 +4,15 @@ module.exports = {
     getUser: (req, res) => {
         if (req.session.user) {
             res.status(200).json(req.session.user);
-        }
+        };
     },
     register: async (req, res) => {
-        const {name, username, password, user_phone_number} = req.body;
+        const { name, username, password, user_phone_number } = req.body;
         const db = req.app.get("db");
 
         const foundUser = await db.auth.checkForUsername(username);
 
-        if(foundUser[0]) {
+        if (foundUser[0]) {
             res.status(409).json("Username Taken");
         } else {
             const salt = bcrypt.genSaltSync(10);
@@ -28,20 +28,20 @@ module.exports = {
             };
 
             res.status(200).json(req.session.user);
-        }
+        };
     },
     login: async (req, res) => {
-        const {username, password} = req.body;
+        const { username, password } = req.body;
         const db = req.app.get("db");
 
         const foundUser = await db.auth.checkForUsername(username);
 
-        if(!foundUser[0]) {
+        if (!foundUser[0]) {
             res.status(403).json("Username or Password Incorrect");
         } else {
-            const isAuthenticated = bcrypt.compareSync(password, foundUser[0].password)
+            const isAuthenticated = bcrypt.compareSync(password, foundUser[0].password);
 
-            if(!isAuthenticated) {
+            if (!isAuthenticated) {
                 res.status(403).json("Username or Password Incorrect");
             } else {
                 req.session.user = {

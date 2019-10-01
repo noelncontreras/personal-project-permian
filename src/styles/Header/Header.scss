@@ -61,7 +61,7 @@
 
 @media screen and (max-width: 780px) {
     .welcome-box, h6, ul, button {
-        width: 12vw;
+        width: 16vw;
         font-size: 9px;
         .logout-button {
             width: 40px;
@@ -76,7 +76,7 @@
 
 @media screen and (max-width: 680px) {
     .welcome-box, h6, ul, button {
-        width: 10vw;
+        width: 15vw;
         font-size: 8px;
         .logout-button {
             width: 35px;
@@ -86,9 +86,9 @@
     };
 };
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 625px) {
     .welcome-box, h6, ul, button {
-        width: 9vw;
+        width: 15vw;
         font-size: 7px;
         .logout-button {
             width: 34px;
@@ -98,10 +98,10 @@
     };
 };
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 545px) {
     .welcome-box, h6, ul, button {
-        width: 8.5vw;
-        font-size: 6.5px;
+        width: 20vw;
+        font-size: 7px;
         .logout-button {
             width: 33px;
             height: 14px;
@@ -110,10 +110,10 @@
     };
 };
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 490px) {
     .welcome-box, h6, ul, button {
-        width: 7.5vw;
-        font-size: 5.5px;
+        width: 22vw;
+        font-size: 6.5px;
         .logout-button {
             width: 32px;
             height: 13px;
@@ -122,10 +122,21 @@
     };
 };
 
-@media screen and (max-width: 420px) {
-    .nav-container h1 {
-        font-size: 30px;
+@media screen and (max-width: 460px) {
+    .welcome-box, h6, ul, button {
+        font-size: 6.25px;
+        .logout-button {
+            width: 32px;
+            height: 13px;
+            font-size: 5px;
+        };
     };
+    .welcome-box h6 {
+        width: 20vw;
+    };
+};
+
+@media screen and (max-width: 425px) {
     .welcome-box, h6, ul, button {
         width: 10px;
         font-size: 5.5px;
@@ -134,6 +145,12 @@
         width: 30px;
         height: 8px;
         font-size: 4px;
+    };
+};
+
+@media screen and (max-width: 420px) {
+    .nav-container h1 {
+        font-size: 30px;
     };
 };
 
