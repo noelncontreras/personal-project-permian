@@ -55,7 +55,7 @@ app.post("/sms", (req, res) => {
     client.messages.create({
         from: TWILIO_NUMBER,
         to: req.body.number,
-        body: `Hello ${req.body.name}. I found your service on Permian. ${req.body.message}. Please contact me at: ${req.body.userNumber}`
+        body: `Hello ${req.body.name}. I found your service on Permian. ${req.body.message}. Please contact me at: ${req.body.userNumber}.`
     })
         .then(() => {
             res.json({ success: true });
@@ -65,8 +65,5 @@ app.post("/sms", (req, res) => {
             res.json({ success: false });
         })
 });
-
-
-
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on Port ${SERVER_PORT}`));
