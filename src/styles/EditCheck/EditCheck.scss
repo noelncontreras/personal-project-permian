@@ -24,6 +24,10 @@
             };
 };
 
+.underline {
+    text-decoration: underline;
+};
+
 .editFalse-info {
     margin-bottom: 10px;
     text-align: center;
@@ -40,8 +44,10 @@
     margin-bottom: 20px;
 };
 
-#stacked-buttons {
+.stacked-buttons {
     @include box-center;
+    width: 30vw;
+    justify-content: space-evenly;
     flex-direction: row;
 };
 
@@ -75,6 +81,9 @@
     };
     div.editFalse-info h3 {
         font-size: 12px;
+    };
+    div.stacked-buttons {
+        width: 40vw;
     };
 };
 
@@ -110,6 +119,15 @@
     div.editFalse-info h3 {
         font-size: 11.75px;
     };
+    div.stacked-buttons {
+        width: 45vw;
+    };
+};
+
+@media screen and (max-width: 560px) {
+    div.stacked-buttons {
+        width: 48vw;
+    };
 };
 
 @media screen and (max-width: 539px) {
@@ -132,6 +150,12 @@
     };
     .contact-labels #number-input {
         width: 35vw;
+    };
+};
+
+@media screen and (max-width: 560px) {
+    div.stacked-buttons {
+        width: 52vw;
     };
 };
 

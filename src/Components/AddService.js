@@ -50,7 +50,7 @@ class AddService extends Component {
                 </div>
                 <br />
                 <div className="category">
-                    <label className="category-title">Category: </label>
+                    <label className="category-title">Category:</label>
                     <br />
                     <select onChange={this.handleMenuChange} className="dropDown">
                         <option value="0">Choose a category</option>

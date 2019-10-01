@@ -73,6 +73,11 @@
   cursor: pointer;
 }
 
+.underline {
+  -webkit-text-decoration: underline #0A0708;
+          text-decoration: underline #0A0708;
+}
+
 .editFalse-info, .editTrue-info {
   margin-bottom: 10px;
   text-align: center;
@@ -90,7 +95,7 @@
   margin-bottom: 20px;
 }
 
-#stacked-buttons {
+.stacked-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,6 +105,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 30vw;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -185,6 +194,9 @@
   div.editFalse-info h3, div.editTrue-info h3 {
     font-size: 12px;
   }
+  div.stacked-buttons {
+    width: 40vw;
+  }
 }
 
 @media screen and (max-width: 809px) {
@@ -222,6 +234,15 @@
   div.editFalse-info h3, div.editTrue-info h3 {
     font-size: 11.75px;
   }
+  div.stacked-buttons {
+    width: 45vw;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  div.stacked-buttons {
+    width: 48vw;
+  }
 }
 
 @media screen and (max-width: 539px) {
@@ -246,6 +267,12 @@
   }
   .contact-labels #number-input {
     width: 35vw;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  div.stacked-buttons {
+    width: 52vw;
   }
 }
 

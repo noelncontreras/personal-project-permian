@@ -71,18 +71,18 @@ export default class EditCheck extends Component {
 
                 {!this.state.edit ?
                     <div className="editFalse-info">
-                        <h1>{service.name}</h1>
+                        <h1 className="underline">{service.name}</h1>
                         <h3>{service.service_description}</h3>
                     </div>
                     :
                     <div className="editTrue-info">
-                        <h1>{service.name}</h1>
+                        <h1 className="underline">{service.name}</h1>
                         <textarea
                             rows="3"
                             cols="50"
                             value={this.state.service_description}
                             onChange={this.handleEditChange} />
-                        <div id="stacked-buttons">
+                        <div className="stacked-buttons">
                             <button onClick={() => this.handleSubmit(service.category_id, service.service_id)}>SUBMIT</button>
                             <button onClick={this.handleCancel}>CANCEL</button>
                         </div>
@@ -90,7 +90,7 @@ export default class EditCheck extends Component {
                 }
                 {
                     this.props.userId === service.user_id ?
-                        <div id="stacked-buttons">
+                        <div className="stacked-buttons">
                             <button onClick={() => this.handleEdit(service.service_description)}>EDIT</button>
                             <button onClick={() => this.handleDelete(service.service_id, service.category_id)}>DELETE</button>
                         </div>
@@ -101,7 +101,7 @@ export default class EditCheck extends Component {
                     :
                     <form className="contact-form">
                         <div className="contact-labels">
-                            <label>Your Phone Number:</label>
+                            <label className="underline">Your Phone Number:</label>
                             <input
                                 required
                                 type="tel"
@@ -109,7 +109,7 @@ export default class EditCheck extends Component {
                                 placeholder={`To be contacted by ${service.name}`}
                                 value={this.state.userNumber}
                                 onChange={this.handleUserNumberChange} />
-                            <label>Message:</label>
+                            <label className="underline">Message:</label>
                             <textarea
                                 rows="3"
                                 cols="50"
@@ -118,7 +118,7 @@ export default class EditCheck extends Component {
                                 placeholder={`Please leave a message to send to ${service.name}`}
                                 value={this.state.message}
                                 onChange={this.handleMessageChange} />
-                            <div id="stacked-buttons">
+                            <div className="stacked-buttons">
                                 <button
                                     disabled={!this.state.userNumber}
                                     onClick={() => this.sendMessage(service.user_phone_number, service.name)}>SEND</button>
