@@ -51,7 +51,6 @@ class AddService extends Component {
                 <br />
                 <div className="category">
                     <label className="category-title">Category:</label>
-                    <br />
                     <select onChange={this.handleMenuChange} className="dropDown">
                         <option value="0">Choose a category</option>
                         <option value="1">HotShot</option>
@@ -62,7 +61,7 @@ class AddService extends Component {
                 <div className="service-description">
                     <label className="service-description-title">Service Description:</label>
                     <br />
-                    <form onSubmit={this.handleSubmit}>
+                    <form>
                         <textarea
                             rows="4"
                             cols="40"
@@ -70,7 +69,7 @@ class AddService extends Component {
                             placeholder="Please provide a description of your service"
                             value={this.state.service_description}
                             onChange={this.handleInputChange} />
-                        <button type="submit">SUBMIT</button>
+                        <button type="submit" onClick={this.handleSubmit}>SUBMIT</button>
                     </form>
                 </div>
             </section>
