@@ -27,10 +27,10 @@ module.exports = {
         };
     },
     editService: async (req, res) => {
-        const { category_id, service_id, service_description } = req.body;
+        const { category_id, service_id, service_description, file_url } = req.body;
         const db = req.app.get("db");
 
-        const editService = await db.service.editService(category_id, service_id, service_description);
+        const editService = await db.service.editService(category_id, service_id, service_description, file_url);
 
         res.status(200).json(editService);
     },

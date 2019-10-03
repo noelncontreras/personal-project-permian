@@ -1,5 +1,6 @@
 UPDATE service
-SET service_description = $3
+SET service_description = $3,
+    file_url = $4
 WHERE service_id = $2;
 
 SELECT s.service_id, s.category_id, s.user_id, s.service_description, s.file_url, u.user_id, u.name FROM service s

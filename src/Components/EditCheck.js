@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { storage } from "../Config/FirebaseConfig";
 import "../styles/EditCheck/EditCheck.scss";
 
 
@@ -9,6 +10,8 @@ export default class EditCheck extends Component {
         this.state = {
             number: "",
             edit: false,
+            file: null,
+            file_url: "",
             message: "",
             userNumber: "",
             contactButton: false,
@@ -17,7 +20,7 @@ export default class EditCheck extends Component {
     };
 
     handleEdit = (service_description) => {
-        this.setState({ edit: true, service_description });
+        this.setState({ edit: true, service_description, file: this.state.file });
     };
 
     handleEditChange = e => {
@@ -46,13 +49,41 @@ export default class EditCheck extends Component {
             });
     };
 
-    handleSubmit = (category_id, service_id) => {
-        const serviceInfo = { category_id, service_id, service_description: this.state.service_description };
-
-        this.props.editService(serviceInfo);
-
-        this.setState({ edit: false });
+    handleFileEditChange = e => {
+        if (e.target.files[0]) {
+            const file = e.target.files[0];
+            this.setState(() => ({ file }));
+        };
     };
+
+    handleSubmit = (category_id, service_id) => {
+        const { file } = this.state;
+        const uploadTask = storage.ref(`files/${file.name}`).put(file);
+
+        const setEditFileUrl = url => {
+            this.setState({ file_url: url }, () => {
+                const serviceInfo = { category_id, service_id, service_description: this.state.service_description, file_url: this.state.file_url };
+                this.props.editService(serviceInfo);
+                this.setState({ edit: false });
+            });
+        };
+        //put upload task here
+        uploadTask.on("state_changed",
+            snapshot => {
+                console.log(snapshot);
+                // const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                // this.setState({ progress });
+            },
+            error => {
+                console.log(error);
+            },
+            () => {
+                storage.ref("files").child(file.name).getDownloadURL().then(url => {
+                    setEditFileUrl(url)
+                });
+            });
+    };
+
 
     handleCancel = () => {
         this.setState({ edit: false, contactButton: false });
@@ -72,17 +103,21 @@ export default class EditCheck extends Component {
                 {!this.state.edit ?
                     <div className="editFalse-info">
                         <h1 className="underline">{service.name}</h1>
-                        <a 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        href={service.file_url}><span>&#9776;</span></a>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={service.file_url}><span>&#9776;</span></a>
                         <div>
                             <h3>{service.service_description}</h3>
                         </div>
                     </div>
                     :
                     <div className="editTrue-info">
-                        <h1 className="underline">{service.name}</h1>
+                        <div>
+                            <h1 className="underline">{service.name}</h1>
+                            <input type="file" onChange={this.handleFileEditChange} />
+                            <a href={this.state.file_url}><span>&#9776;</span></a>
+                        </div>
                         <textarea
                             rows="3"
                             cols="50"
@@ -97,7 +132,7 @@ export default class EditCheck extends Component {
                 {
                     this.props.userId === service.user_id ?
                         <div className="stacked-buttons">
-                            <button onClick={() => this.handleEdit(service.service_description)}>EDIT</button>
+                            <button onClick={() => this.handleEdit(service.service_description, service.file_url)}>EDIT</button>
                             <button onClick={() => this.handleDelete(service.service_id, service.category_id)}>DELETE</button>
                         </div>
                         : <button onClick={() => this.setState({ contactButton: true })}>CONTACT</button>

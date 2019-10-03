@@ -40,7 +40,6 @@ class AddService extends Component {
         const uploadTask = storage.ref(`files/${file.name}`).put(file);
 
         const setThatState = url => {
-            console.log(url)
             this.setState({ fileUrl: url }, () => {
                 const newService = { category_id: category_id, user_id, service_description: service_description, file_url: this.state.fileUrl };
 
@@ -56,13 +55,13 @@ class AddService extends Component {
             });
         };
 
-        if(this.state.file === null) {
+        if (this.state.file === null) {
             alert("Please add a price sheet");
         } else {
             uploadTask.on("state_changed",
                 snapshot => {
                     const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                    this.setState({progress});
+                    this.setState({ progress });
                 },
                 error => {
                     console.log(error);
@@ -108,17 +107,17 @@ class AddService extends Component {
                             onChange={this.handleInputChange} />
                         <div>
                             <p>File Upload Progress</p>
-                            <progress value={this.state.progress} max="100"/>
+                            <progress value={this.state.progress} max="100" />
                             <label>Add a Price Sheet</label>
-                            <input 
-                            type="file" 
-                            required 
-                            onChange={this.handleFileChange} />
+                            <input
+                                type="file"
+                                required
+                                onChange={this.handleFileChange} />
                         </div>
-                        <button 
-                        type="submit" 
-                        // disabled={this.state.file === null}
-                        onClick={this.handleSubmit}>SUBMIT</button>
+                        <button
+                            type="submit"
+                            // disabled={this.state.file === null}
+                            onClick={this.handleSubmit}>SUBMIT</button>
                     </form>
                 </div>
             </section>
