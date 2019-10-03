@@ -7,12 +7,12 @@ export default class EditCheck extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            service_description: "",
-            edit: false,
-            contactButton: false,
             number: "",
+            edit: false,
+            message: "",
             userNumber: "",
-            message: ""
+            contactButton: false,
+            service_description: ""
         };
     };
 
@@ -75,7 +75,7 @@ export default class EditCheck extends Component {
                         <a 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        href={service.fileurl}><span>&#9776;</span></a>
+                        href={service.file_url}><span>&#9776;</span></a>
                         <div>
                             <h3>{service.service_description}</h3>
                         </div>

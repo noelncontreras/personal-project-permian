@@ -11,7 +11,7 @@ class AddService extends Component {
         super();
         this.state = {
             file: null,
-            fileUrl: "",
+            file_url: "",
             progress: 0,
             category_id: 0,
             service_description: ""
@@ -42,7 +42,7 @@ class AddService extends Component {
         const setThatState = url => {
             console.log(url)
             this.setState({ fileUrl: url }, () => {
-                const newService = { category_id: category_id, user_id, service_description: service_description, fileUrl: this.state.fileUrl };
+                const newService = { category_id: category_id, user_id, service_description: service_description, file_url: this.state.fileUrl };
                 console.log(newService)
 
                 if (category_id === 0) {
@@ -53,7 +53,7 @@ class AddService extends Component {
                 if (user_id) {
                     this.props.addService(newService);
                 };
-                // this.props.history.push(`/service/${category_id}`);
+                this.props.history.push(`/service/${category_id}`);
             });
         };
 
@@ -116,8 +116,9 @@ class AddService extends Component {
                             value={this.state.service_description}
                             onChange={this.handleInputChange} />
                         <div>
+                            <p>File Upload Progress</p>
                             <progress value={this.state.progress} max="100"/>
-                            <label>Add a Pricesheet</label>
+                            <label>Add a Price Sheet</label>
                             <input 
                             type="file" 
                             required 

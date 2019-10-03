@@ -15,13 +15,13 @@ module.exports = {
         res.status(200).json(service);
     },
     addService: async (req, res) => {
-        const { category_id, user_id, service_description, fileUrl } = req.body;
+        const { category_id, user_id, service_description, file_url } = req.body;
         const db = req.app.get("db");
 
         if (!service_description) {
             res.status(409).json("Please provide a description of your service.");
         } else {
-            const newService = await db.service.addService(category_id, user_id, service_description, fileUrl);
+            const newService = await db.service.addService(category_id, user_id, service_description, file_url);
 
             res.status(200).json(newService);
         };
