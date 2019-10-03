@@ -12,6 +12,7 @@ class AddService extends Component {
         this.state = {
             file: null,
             fileUrl: "",
+            progress: 0,
             category_id: 0,
             service_description: ""
         };
@@ -52,30 +53,35 @@ class AddService extends Component {
                 if (user_id) {
                     this.props.addService(newService);
                 };
-                // this.setState({fileUrl: ""}); //uncomment after successful post
-                this.props.history.push(`/service/${category_id}`);
+                // this.props.history.push(`/service/${category_id}`);
             });
         };
 
-        uploadTask.on("state_changed",
-            snapshot => {
-                console.log(snapshot)
-            },
-            error => {
-                console.log(error);
-            },
-            () => {
-                storage.ref("files").child(file.name).getDownloadURL().then(url => {
-                    // console.log('hit1')
-                    // console.log(this)
-                    // this.setState({ fileUrl: url }, () => {
-                    //     console.log('hit2')
-                    //     console.log(this.state.fileUrl)
-                    // });
-                    // console.log(this.state.fileUrl)
-                    setThatState(url)
+        // const updateProgress = progress => {
+        //     console.log(progress);
+        //     this.setState({progress});
+        // };
+
+        if(this.state.file === null) {
+            alert("Please add a price sheet");
+        } else {
+            uploadTask.on("state_changed",
+                snapshot => {
+                    console.log(snapshot);
+                    const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                    console.log(progress);
+                    this.setState({progress});
+                    // updateProgress(progress);
+                },
+                error => {
+                    console.log(error);
+                },
+                () => {
+                    storage.ref("files").child(file.name).getDownloadURL().then(url => {
+                        setThatState(url)
+                    });
                 });
-            });
+        }
     };
 
 
@@ -110,9 +116,17 @@ class AddService extends Component {
                             value={this.state.service_description}
                             onChange={this.handleInputChange} />
                         <div>
-                            <input type="file" onChange={this.handleFileChange} />
+                            <progress value={this.state.progress} max="100"/>
+                            <label>Add a Pricesheet</label>
+                            <input 
+                            type="file" 
+                            required 
+                            onChange={this.handleFileChange} />
                         </div>
-                        <button type="submit" onClick={this.handleSubmit}>SUBMIT</button>
+                        <button 
+                        type="submit" 
+                        // disabled={this.state.file === null}
+                        onClick={this.handleSubmit}>SUBMIT</button>
                     </form>
                 </div>
             </section>

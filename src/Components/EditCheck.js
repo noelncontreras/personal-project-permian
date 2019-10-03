@@ -72,7 +72,10 @@ export default class EditCheck extends Component {
                 {!this.state.edit ?
                     <div className="editFalse-info">
                         <h1 className="underline">{service.name}</h1>
-                        <a href={service.fileurl}><span>&#9776;</span></a>
+                        <a 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        href={service.fileurl}><span>&#9776;</span></a>
                         <div>
                             <h3>{service.service_description}</h3>
                         </div>
