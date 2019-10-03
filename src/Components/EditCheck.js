@@ -30,7 +30,7 @@ export default class EditCheck extends Component {
 
     handleUserNumberChange = e => {
         this.setState({ userNumber: e.target.value });
-    }
+    };
 
     sendMessage = (number, name) => {
         const { userNumber, message } = this.state;
@@ -72,7 +72,10 @@ export default class EditCheck extends Component {
                 {!this.state.edit ?
                     <div className="editFalse-info">
                         <h1 className="underline">{service.name}</h1>
-                        <h3>{service.service_description}</h3>
+                        <a href={service.fileurl}><span>&#9776;</span></a>
+                        <div>
+                            <h3>{service.service_description}</h3>
+                        </div>
                     </div>
                     :
                     <div className="editTrue-info">
