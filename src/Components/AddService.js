@@ -43,7 +43,6 @@ class AddService extends Component {
             console.log(url)
             this.setState({ fileUrl: url }, () => {
                 const newService = { category_id: category_id, user_id, service_description: service_description, file_url: this.state.fileUrl };
-                console.log(newService)
 
                 if (category_id === 0) {
                     alert("Please choose a category");
@@ -57,21 +56,13 @@ class AddService extends Component {
             });
         };
 
-        // const updateProgress = progress => {
-        //     console.log(progress);
-        //     this.setState({progress});
-        // };
-
         if(this.state.file === null) {
             alert("Please add a price sheet");
         } else {
             uploadTask.on("state_changed",
                 snapshot => {
-                    console.log(snapshot);
                     const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                    console.log(progress);
                     this.setState({progress});
-                    // updateProgress(progress);
                 },
                 error => {
                     console.log(error);
@@ -81,7 +72,7 @@ class AddService extends Component {
                         setThatState(url)
                     });
                 });
-        }
+        };
     };
 
 
