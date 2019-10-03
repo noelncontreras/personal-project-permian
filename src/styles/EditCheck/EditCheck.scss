@@ -2,6 +2,7 @@
 
 .user-and-description {
     @include box-background;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -28,9 +29,19 @@
     text-decoration: underline;
 };
 
+#pdf-img {
+    text-decoration: none;
+};
+
 .editFalse-info {
+    width: 100%;
     margin-bottom: 10px;
     text-align: center;
+        .name-and-link {
+            width: 100%;
+            @include box-center;
+            justify-content: space-evenly;
+        };
         h1 {
             font-size: 20px;
         };
@@ -39,8 +50,12 @@
         };
 };
 
-.editTrue-info {
-    @extend .editFalse-info;
+#editTrue-input {
+    outline: none;
+};
+
+.editTrue-info textarea {
+    width: 100%;
     margin-bottom: 20px;
 };
 
@@ -49,6 +64,7 @@
     width: 30vw;
     justify-content: space-evenly;
     flex-direction: row;
+    margin-bottom: 15px;
 };
 
 .contact-labels {
@@ -83,7 +99,7 @@
         font-size: 12px;
     };
     div.stacked-buttons {
-        width: 40vw;
+        width: 30vw;
     };
 };
 
@@ -95,6 +111,9 @@
     .contact-labels #number-input {
         width: 30vw;
     };
+    #editTrue-input {
+        width: 20vw;
+    };
 };
 
 @media screen and (max-width: 780px) {
@@ -103,6 +122,12 @@
     };
     .editFalse-info textarea {
         resize: horizontal; max-width: 250px;
+    };
+    div.stacked-buttons {
+        width: 40vw;
+    };
+    #editTrue-input {
+        width: 24vw;
     };
 };
 
@@ -122,11 +147,23 @@
     div.stacked-buttons {
         width: 45vw;
     };
+    #editTrue-input {
+        width: 28vw;
+    };
+    .editTrue-info textarea {
+        resize: horizontal; max-width: 250px;
+    };
 };
 
 @media screen and (max-width: 560px) {
     div.stacked-buttons {
         width: 48vw;
+    };
+    .editTrue-info textarea {
+        resize: horizontal; max-width: 220px;
+    };
+    #editTrue-input {
+        width: 30vw;
     };
 };
 
@@ -151,11 +188,26 @@
     .contact-labels #number-input {
         width: 35vw;
     };
+    #editTrue-input {
+        width: 35vw;
+    };
 };
 
 @media screen and (max-width: 560px) {
     div.stacked-buttons {
         width: 52vw;
+    };
+};
+
+@media screen and (max-width: 460px) {
+    .editTrue-info textarea {
+        resize: horizontal; max-width: 200px;
+    };
+    div.stacked-buttons {
+        width: 57vw;
+    };
+    #editTrue-input {
+        width: 38vw;
     };
 };
 
@@ -190,15 +242,21 @@
         font-size: 18px;
     };
     div.editFalse-info h1 {
-        font-size: 17px;
+        font-size: 15px;
     };
     div.editFalse-info h3 {
         font-size: 11px;
+    };
+    div.stacked-buttons {
+        width: 60vw;
     };
     .contact-labels textarea {
         resize: horizontal; max-width: 200px;
     };
     .contact-labels #number-input {
         width: 40vw;
+    };
+    #editTrue-input {
+        width: 42vw;
     };
 };

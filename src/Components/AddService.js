@@ -56,7 +56,7 @@ class AddService extends Component {
         };
 
         if (this.state.file === null) {
-            alert("Please add a price sheet");
+            return alert("Please add a price sheet");
         } else {
             uploadTask.on("state_changed",
                 snapshot => {
@@ -96,7 +96,6 @@ class AddService extends Component {
                 <br />
                 <div className="service-description">
                     <label className="service-description-title">Service Description:</label>
-                    <br />
                     <form>
                         <textarea
                             rows="4"
@@ -105,19 +104,21 @@ class AddService extends Component {
                             placeholder="Please provide a description of your service"
                             value={this.state.service_description}
                             onChange={this.handleInputChange} />
-                        <div>
+                        <div className="upload-feature">
                             <p>File Upload Progress</p>
                             <progress value={this.state.progress} max="100" />
                             <label>Add a Price Sheet</label>
+                            <br />
                             <input
                                 type="file"
                                 required
                                 onChange={this.handleFileChange} />
                         </div>
-                        <button
+                        <br />
+                        {!this.state.file ? <p className="sudo-alert">Please add a file to submit a service</p>
+                        : <button
                             type="submit"
-                            // disabled={this.state.file === null}
-                            onClick={this.handleSubmit}>SUBMIT</button>
+                            onClick={this.handleSubmit}>SUBMIT</button>}
                     </form>
                 </div>
             </section>

@@ -67,12 +67,10 @@ export default class EditCheck extends Component {
                 this.setState({ edit: false });
             });
         };
-        //put upload task here
+
         uploadTask.on("state_changed",
             snapshot => {
                 console.log(snapshot);
-                // const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                // this.setState({ progress });
             },
             error => {
                 console.log(error);
@@ -83,7 +81,6 @@ export default class EditCheck extends Component {
                 });
             });
     };
-
 
     handleCancel = () => {
         this.setState({ edit: false, contactButton: false });
@@ -102,21 +99,26 @@ export default class EditCheck extends Component {
 
                 {!this.state.edit ?
                     <div className="editFalse-info">
-                        <h1 className="underline">{service.name}</h1>
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href={service.file_url}><span>&#9776;</span></a>
+                        <div className="name-and-link">
+                            <h1 className="underline">{service.name}</h1>
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href={service.file_url}
+                                id="pdf-img">
+                                    <span 
+                                    role="img" 
+                                    aria-label="file">&#128193;</span></a>
+                        </div>
                         <div>
                             <h3>{service.service_description}</h3>
                         </div>
                     </div>
                     :
                     <div className="editTrue-info">
-                        <div>
+                        <div className="name-and-link">
                             <h1 className="underline">{service.name}</h1>
-                            <input type="file" onChange={this.handleFileEditChange} />
-                            <a href={this.state.file_url}><span>&#9776;</span></a>
+                            <input id="editTrue-input" type="file" onChange={this.handleFileEditChange} />
                         </div>
                         <textarea
                             rows="3"
