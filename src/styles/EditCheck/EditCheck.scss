@@ -29,18 +29,6 @@
     text-decoration: underline;
 };
 
-//wiggle
-// .name-and-link a:hover {
-//     animation: wiggle 300ms infinite;
-//     animation-timing-function: linear;
-// };
-
-//shake
-// .name-and-link a:hover {
-//     animation: shake 150ms infinite;
-//     animation-timing-function: linear;
-// };
-
 // pulse
 .name-and-link a:hover {
     animation: pulse 1s infinite;
@@ -113,20 +101,6 @@
             width: 22vw;
         };
 };
-
-//wiggle
-// @keyframes wiggle {
-//     0% { transform: translate(2px, 0); }
-//     50% { transform: translate(-5px, 0); }
-//     100% { transform: translate(2px, 0); }
-// };
-
-//shake
-// @keyframes shake {
-//     0% { transform: rotate(5deg); }
-//     50% { transform: rotate(-5deg); }
-//     100% { transform: rotate(5deg); }
-// };
 
 //pulse
 @keyframes pulse {

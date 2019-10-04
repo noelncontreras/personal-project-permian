@@ -20,7 +20,7 @@ export default class EditCheck extends Component {
     };
 
     handleEdit = (service_description) => {
-        this.setState({ edit: true, service_description, file: this.state.file });
+        this.setState({ edit: true, service_description });
     };
 
     handleEditChange = e => {
@@ -79,7 +79,6 @@ export default class EditCheck extends Component {
         this.props.editService(serviceInfo);
         this.setState({ edit: false });
 
-
     //     const { file } = this.state;
     //     const uploadTask = storage.ref(`files/${file.name}`).put(file);
 
@@ -104,7 +103,8 @@ export default class EditCheck extends Component {
     //             });
     //         });
     // };
-    }
+    };
+
     handleCancel = () => {
         this.setState({ edit: false, contactButton: false });
         this.setState({ message: "" });
@@ -131,7 +131,7 @@ export default class EditCheck extends Component {
                                 className="pdf-img">
                                     <span 
                                     role="img" 
-                                    aria-label="file">&#128203;</span></a>
+                                    aria-label="clipboard">&#128203;</span></a>
                         </div>
                         <div>
                             <h3>{service.service_description}</h3>

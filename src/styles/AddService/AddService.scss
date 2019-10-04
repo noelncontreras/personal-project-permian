@@ -59,6 +59,10 @@
                     @include login-buttons;
                     cursor: pointer;
                 };
+                button:hover {
+                    @include button-hover;
+                    text-shadow: 0px 0px 5px $whitesmoke;
+                };
 };
 
 .upload-feature, p, progress {
@@ -74,6 +78,17 @@
             outline: none;
             justify-content: center;
         };
+};
+
+.sudo-alert {
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
+};
+
+@keyframes pulse {
+    0% { transform: scale(1)};
+    50% { transform: scale(1.1)};
+    100% { transform: scale(1)};
 };
 
 

@@ -23,7 +23,11 @@ class Header extends Component {
             <>
                 <header>
                     <div className="nav-container">
-                        <h1>Permian</h1>
+                        <Link
+                            style={{ textDecoration: "none" }}
+                            to="/">
+                            <h1 id="permian">Permian</h1>
+                        </Link>
                         {this.props.user_id ?
                             <div className="welcome-box">
                                 <h6>Welcome, {userOnSession}</h6>

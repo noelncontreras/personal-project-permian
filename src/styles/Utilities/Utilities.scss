@@ -30,10 +30,9 @@
 };
 
 @mixin button-hover {
-    color: $ebony;
+    color: $white;
     font-weight: bold;
-    background: $header-gray;
-    text-shadow: 0px 0px 10px $white;
+    text-shadow: 0px 0px 5px $white;
     cursor: pointer;
 };
 
@@ -56,4 +55,5 @@ $header-gray: #8C8C8C;
 $white: white;
 $whitesmoke: whitesmoke;
 $ebony: #0A0708;
-$logout: #F51720;
+$lightEbony: #2E2D29;
+$logout: #C62828;
