@@ -56,18 +56,9 @@ export default class EditCheck extends Component {
         };
     };
 
-    handleSubmit = (category_id, service_id) => {
+    handleFileUploadChange = () => {
         const { file } = this.state;
         const uploadTask = storage.ref(`files/${file.name}`).put(file);
-
-        const setEditFileUrl = url => {
-            this.setState({ file_url: url }, () => {
-                const serviceInfo = { category_id, service_id, service_description: this.state.service_description, file_url: this.state.file_url };
-                this.props.editService(serviceInfo);
-                this.setState({ edit: false });
-            });
-        };
-
         uploadTask.on("state_changed",
             snapshot => {
                 console.log(snapshot);
@@ -77,11 +68,43 @@ export default class EditCheck extends Component {
             },
             () => {
                 storage.ref("files").child(file.name).getDownloadURL().then(url => {
-                    setEditFileUrl(url)
+                    this.setState({file_url: url})
                 });
             });
     };
 
+
+    handleSubmit = (category_id, service_id) => {
+        const serviceInfo = { category_id, service_id, service_description: this.state.service_description, file_url: this.state.file_url };
+        this.props.editService(serviceInfo);
+        this.setState({ edit: false });
+
+
+    //     const { file } = this.state;
+    //     const uploadTask = storage.ref(`files/${file.name}`).put(file);
+
+    //     const setEditFileUrl = url => {
+    //         this.setState({ file_url: url }, () => {
+    //             const serviceInfo = { category_id, service_id, service_description: this.state.service_description, file_url: this.state.file_url };
+    //             this.props.editService(serviceInfo);
+    //             this.setState({ edit: false });
+    //         });
+    //     };
+
+    //     uploadTask.on("state_changed",
+    //         snapshot => {
+    //             console.log(snapshot);
+    //         },
+    //         error => {
+    //             console.log(error);
+    //         },
+    //         () => {
+    //             storage.ref("files").child(file.name).getDownloadURL().then(url => {
+    //                 setEditFileUrl(url)
+    //             });
+    //         });
+    // };
+    }
     handleCancel = () => {
         this.setState({ edit: false, contactButton: false });
         this.setState({ message: "" });
@@ -105,10 +128,10 @@ export default class EditCheck extends Component {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href={service.file_url}
-                                id="pdf-img">
+                                className="pdf-img">
                                     <span 
                                     role="img" 
-                                    aria-label="file">&#128193;</span></a>
+                                    aria-label="file">&#128451;</span></a>
                         </div>
                         <div>
                             <h3>{service.service_description}</h3>
@@ -118,7 +141,11 @@ export default class EditCheck extends Component {
                     <div className="editTrue-info">
                         <div className="name-and-link">
                             <h1 className="underline">{service.name}</h1>
-                            <input id="editTrue-input" type="file" onChange={this.handleFileEditChange} />
+                            <input 
+                            type="file" 
+                            id="editTrue-input" 
+                            onChange={this.handleFileEditChange} />
+                            <button id="upload-button" onClick={this.handleFileUploadChange}>UPLOAD</button>
                         </div>
                         <textarea
                             rows="3"

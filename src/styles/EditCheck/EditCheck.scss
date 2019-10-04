@@ -29,8 +29,28 @@
     text-decoration: underline;
 };
 
-#pdf-img {
+//wiggle
+// .name-and-link a:hover {
+//     animation: wiggle 300ms infinite;
+//     animation-timing-function: linear;
+// };
+
+//shake
+// .name-and-link a:hover {
+//     animation: shake 150ms infinite;
+//     animation-timing-function: linear;
+// };
+
+//pulse
+// .name-and-link a:hover {
+//     animation: pulse 1s infinite;
+//     animation-timing-function: linear;
+// };
+
+.pdf-img {
     text-decoration: none;
+    animation: pulse 1s infinite;
+    animation-timing-function: linear;
 };
 
 .editFalse-info {
@@ -51,7 +71,15 @@
 };
 
 #editTrue-input {
+    width: 15vw;
     outline: none;
+};
+
+#upload-button {
+    @include login-buttons;
+    width: 55px;
+    height: 18px;
+    font-size: 10px;
 };
 
 .editTrue-info textarea {
@@ -88,6 +116,27 @@
         };
 };
 
+//wiggle
+// @keyframes wiggle {
+//     0% { transform: translate(2px, 0); }
+//     50% { transform: translate(-5px, 0); }
+//     100% { transform: translate(2px, 0); }
+// };
+
+//shake
+// @keyframes shake {
+//     0% { transform: rotate(5deg); }
+//     50% { transform: rotate(-5deg); }
+//     100% { transform: rotate(5deg); }
+// };
+
+//pulse
+@keyframes pulse {
+    0% { transform: scale(1)};
+    50% { transform: scale(1.5)};
+    100% { transform: scale(1)};
+};
+
 @media screen and (max-width: 1106px) {
     form.contact-form label {
         font-size: $nav-size;
@@ -101,6 +150,9 @@
     div.stacked-buttons {
         width: 30vw;
     };
+    #editTrue-input {
+        width: 22vw;
+    };
 };
 
 @media screen and (max-width: 809px) {
@@ -112,7 +164,7 @@
         width: 30vw;
     };
     #editTrue-input {
-        width: 20vw;
+        width: 24vw;
     };
 };
 
@@ -127,7 +179,7 @@
         width: 40vw;
     };
     #editTrue-input {
-        width: 24vw;
+        width: 26vw;
     };
 };
 
@@ -257,6 +309,11 @@
         width: 40vw;
     };
     #editTrue-input {
-        width: 42vw;
+        width: 43vw;
+    };
+    #upload-button {
+        width: 50px;
+        height: 18px;
+        font-size: 8px;
     };
 };
