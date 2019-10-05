@@ -21,7 +21,7 @@ class Header extends Component {
 
         return (
             <>
-                <header>
+                <nav>
                     <div className="nav-container">
                         <Link
                             style={{ textDecoration: "none" }}
@@ -47,7 +47,7 @@ class Header extends Component {
                             </div>
                             : null}
                     </div>
-                </header>
+                </nav>
             </>
         );
     };

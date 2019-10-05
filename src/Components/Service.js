@@ -14,7 +14,6 @@ class Service extends Component {
     render() {
         const { loading } = this.props.userReducer;
 
-        console.log(this.props.service)
         const serviceMapped = this.props.service.map((service, i) => {
             return (
                 <EditCheck

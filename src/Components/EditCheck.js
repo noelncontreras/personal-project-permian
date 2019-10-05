@@ -68,7 +68,7 @@ export default class EditCheck extends Component {
             },
             () => {
                 storage.ref("files").child(file.name).getDownloadURL().then(url => {
-                    this.setState({file_url: url})
+                    this.setState({ file_url: url })
                 });
             });
     };
@@ -78,31 +78,6 @@ export default class EditCheck extends Component {
         const serviceInfo = { category_id, service_id, service_description: this.state.service_description, file_url: this.state.file_url };
         this.props.editService(serviceInfo);
         this.setState({ edit: false });
-
-    //     const { file } = this.state;
-    //     const uploadTask = storage.ref(`files/${file.name}`).put(file);
-
-    //     const setEditFileUrl = url => {
-    //         this.setState({ file_url: url }, () => {
-    //             const serviceInfo = { category_id, service_id, service_description: this.state.service_description, file_url: this.state.file_url };
-    //             this.props.editService(serviceInfo);
-    //             this.setState({ edit: false });
-    //         });
-    //     };
-
-    //     uploadTask.on("state_changed",
-    //         snapshot => {
-    //             console.log(snapshot);
-    //         },
-    //         error => {
-    //             console.log(error);
-    //         },
-    //         () => {
-    //             storage.ref("files").child(file.name).getDownloadURL().then(url => {
-    //                 setEditFileUrl(url)
-    //             });
-    //         });
-    // };
     };
 
     handleCancel = () => {
@@ -129,8 +104,8 @@ export default class EditCheck extends Component {
                                 rel="noopener noreferrer"
                                 href={service.file_url}
                                 className="pdf-img">
-                                    <span 
-                                    role="img" 
+                                <span
+                                    role="img"
                                     aria-label="clipboard">&#128203;</span></a>
                         </div>
                         <div>
@@ -141,10 +116,10 @@ export default class EditCheck extends Component {
                     <div className="editTrue-info">
                         <div className="name-and-link">
                             <h1 className="underline">{service.name}</h1>
-                            <input 
-                            type="file" 
-                            id="editTrue-input" 
-                            onChange={this.handleFileEditChange} />
+                            <input
+                                type="file"
+                                id="editTrue-input"
+                                onChange={this.handleFileEditChange} />
                             <button id="upload-button" onClick={this.handleFileUploadChange}>UPLOAD</button>
                         </div>
                         <textarea

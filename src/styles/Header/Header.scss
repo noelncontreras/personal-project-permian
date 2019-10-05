@@ -6,13 +6,18 @@
     @include box-center;
     justify-content: space-around;
     background: $header-gray;
+    background: #5F5C5B;
     font-family: $web-font;
     font-size: $title-size;
+    position: fixed;
+    top: 0;
+    z-index: 1;
     #permian {
         color: $ebony;
     };
     .logout-button {
         @include login-buttons;
+        border: none;
         
         &:hover {
             @include button-hover;
@@ -58,6 +63,7 @@
         font-size: 10px;
         .logout-button {
                 width: 55px;
+                height: 20px;
                 font-size: 10px;
         };
         li {

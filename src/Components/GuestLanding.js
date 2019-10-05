@@ -11,8 +11,8 @@ class GuestLanding extends Component {
         super();
         this.state = {
             realName: "",
-            username: "noelnc",
-            password: "0000",
+            username: "",
+            password: "",
             user_phone_number: ""
         };
     };
@@ -29,6 +29,9 @@ class GuestLanding extends Component {
 
         const { registerUser, loginUser } = this.props;
 
+
+        //commented code below is what I had written for user login and user registration to function with redux serviceReducer.js file.
+        //used below code to implement authentication feature in place now.
         if (formName === "login") {
             // loginUser({username, password})
             axios.post("/auth/login", {

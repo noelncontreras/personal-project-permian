@@ -116,9 +116,9 @@ class AddService extends Component {
                         </div>
                         <br />
                         {!this.state.file ? <p className="sudo-alert">Please add a file to submit a service</p>
-                        : <button
-                            type="submit"
-                            onClick={this.handleSubmit}>SUBMIT</button>}
+                            : <button
+                                type="submit"
+                                onClick={this.handleSubmit}>SUBMIT</button>}
                     </form>
                 </div>
             </section>
