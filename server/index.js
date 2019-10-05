@@ -8,8 +8,11 @@ const AC = require("./controllers/authController");
 const SC = require("./controllers/serviceController");
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, ACCOUNT_SID, AUTH_TOKEN, TWILIO_NUMBER } = process.env;
 const client = new twilio(ACCOUNT_SID, AUTH_TOKEN);
+const path = require('path');
 
 app.use(express.json());
+
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(session({
     secret: SESSION_SECRET,
@@ -64,6 +67,10 @@ app.post("/sms", (req, res) => {
             console.log(err);
             res.json({ success: false });
         })
+});
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on Port ${SERVER_PORT}`));
