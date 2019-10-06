@@ -4,12 +4,12 @@
     @include login-section;
     justify-content: space-evenly;
     width: 100vw;
-    height: 90vh;
-    margin-top: 79px;
+    height: 100vh;
+    // margin-top: 79px;
     font-family: $web-font;
     background: url("https://images.unsplash.com/photo-1562237553-36ad661d6f2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
-    background-size: 100% 100%;
-    background-position: initial;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     .form-box {
         width: 40vw;
@@ -86,17 +86,17 @@
     .main-guestLanding {
         flex-direction: column;
         justify-content: center;
-        height: 100vh;
+        height: 100%;
         background: $ebony;
         form, .existing-user, .new-user {
             width: 40vw;
-            height: 28vh;
+            height: 35vh;
             #existing-user-p {
                 font-size: 10px;
             };
             button {
                 width: 60px;
-                height: 15px;
+                height: 25px;
                 font-size: 10px;
             };
         };
