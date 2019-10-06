@@ -86,6 +86,8 @@
     .main-guestLanding {
         flex-direction: column;
         justify-content: center;
+        height: 100vh;
+        background: $ebony;
         form, .existing-user, .new-user {
             width: 40vw;
             height: 28vh;

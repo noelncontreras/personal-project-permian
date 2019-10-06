@@ -31,7 +31,7 @@ class Header extends Component {
                         {this.props.user_id ?
                             <div className="welcome-box">
                                 <h6>Welcome, {userOnSession}</h6>
-                                <ul>
+                                <ul id="header-routes">
                                     <Link
                                         style={{ textDecoration: "none" }}
                                         to="/category"><li

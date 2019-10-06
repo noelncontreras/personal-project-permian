@@ -24,14 +24,14 @@
         };
     };
     .welcome-box {
-        width: 40vw;
+        width: 50vw;
         @include box-center;
         justify-content: space-evenly;
         font-size: $nav-size;
         font-weight: bolder;
     };
     ul {
-        width: 12vw;
+        width: 16vw;
         @include box-center;
         justify-content: space-between;
         text-decoration: none;
