@@ -38,6 +38,12 @@ app.post("/auth/register", AC.register);
 app.post("/auth/login", AC.login);
 //below will logout a user
 app.post("/auth/logout", AC.logout);
+//below will update the user on session's name in DB from req.body
+app.put("/auth/name", AC.updateName);
+//below will update the user on session's username in DB from req.body
+app.put("/auth/username", AC.updateUsername);
+//below will update the user on session's phone number in DB from req.body
+app.put("/auth/number", AC.updateNumber);
 
 //user service post endpoints
 
