@@ -93,7 +93,6 @@ export default function reducer(state = initialState, action) {
                 loading: true
             };
         case `${EDIT_SERVICE}_FULFILLED`:
-            console.log(payload.data)
             return {
                 ...state,
                 service: payload.data,

@@ -30,7 +30,7 @@ class Header extends Component {
                         </Link>
                         {this.props.user_id ?
                             <div className="welcome-box">
-                                <h6>Welcome, {userOnSession}</h6>
+                                <Link to="/user/profile"><h6>Welcome, {userOnSession}</h6></Link>
                                 <ul id="header-routes">
                                     <Link
                                         style={{ textDecoration: "none" }}

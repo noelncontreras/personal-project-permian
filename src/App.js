@@ -7,7 +7,9 @@ function App() {
   return (
     <div>
       <Header />
-      {routes}
+      <div id="routes-container">
+        {routes}
+      </div>
     </div>
   );
 };
