@@ -11,8 +11,8 @@ class GuestLanding extends Component {
         super();
         this.state = {
             realName: "",
-            username: "",
-            password: "",
+            username: "noelnc",
+            password: "0000",
             user_phone_number: ""
         };
     };

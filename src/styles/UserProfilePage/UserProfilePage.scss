@@ -1,5 +1,32 @@
 @import "../Utilities/Utilities.scss";
 
 .main-profile {
-    color: white;
-}
+    @include column-box;
+    width: 100vw;
+    height: 100vh;
+    color: $whitesmoke;
+    font-size: $title-size;
+    font-family: $web-font;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 10px;
+};
+
+.profile-information {
+    @include box-background;
+    @include column-box;
+    width: 30vw;
+    height: 35vh;
+    .profile-buttons {
+        width: 20vw;
+        height: 5vh;
+        @include login-section;
+        justify-content: space-evenly;
+        button {
+            @include login-buttons;
+        };
+    };
+    h3 {
+        font-size: $nav-size;
+    };
+};

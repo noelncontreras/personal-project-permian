@@ -39,6 +39,7 @@
 
 @mixin box-background {
     border: 1px solid transparent;
+    border-radius: 15px;
     padding: 50px;
     color: $ebony;
     background: $header-gray;

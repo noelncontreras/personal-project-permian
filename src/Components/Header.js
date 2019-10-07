@@ -32,18 +32,19 @@ class Header extends Component {
                             <div className="welcome-box">
                                 <Link
                                     to="/user/profile"
-                                    style={{ textDecoration: "none" }}><h6>Welcome, {userOnSession}</h6>
+                                    style={{ textDecoration: "none" }}>
+                                    <h6 className="profile-route">Welcome, {userOnSession}</h6>
                                 </Link>
                                 <ul id="header-routes">
                                     <Link
                                         style={{ textDecoration: "none" }}
-                                        to="/category"><li
-                                        className="home-route">Home</li>
+                                        to="/category">
+                                        <li className="home-route">Home</li>
                                     </Link>
                                     <Link
                                         style={{ textDecoration: "none" }}
-                                        to="/service/addService"><li
-                                        className="addService-route">Add Service</li>
+                                        to="/service/addService">
+                                        <li className="addService-route">Add Service</li>
                                     </Link>
                                 </ul>
                                 <button

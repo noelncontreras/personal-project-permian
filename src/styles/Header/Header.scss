@@ -29,6 +29,14 @@
         justify-content: space-evenly;
         font-size: $nav-size;
         font-weight: bolder;
+        .profile-route {
+            color: $ebony;
+        };
+        h6.profile-route:hover {
+            font-size: 20px;
+            text-decoration: underline;
+            text-shadow: 0px 0px 5px $white;
+        };
     };
     ul {
         width: 16vw;
@@ -39,9 +47,9 @@
                 color: $ebony;
             };
                 .home-route:hover {
-                    font-size: 20px;
-                    text-decoration: underline;
-                    text-shadow: 0px 0px 5px $white;
+                font-size: 20px;
+                text-decoration: underline;
+                text-shadow: 0px 0px 5px $white;
                 };
                 .addService-route:hover {
                     @extend .home-route, :hover;
@@ -66,7 +74,7 @@
                 height: 20px;
                 font-size: 10px;
         };
-        li {
+        .welcome-box, h6, li {
             pointer-events: none;
         };
     };
