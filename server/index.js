@@ -39,11 +39,13 @@ app.post("/auth/login", AC.login);
 //below will logout a user
 app.post("/auth/logout", AC.logout);
 //below will update the user on session's name in DB from req.body
-app.put("/auth/name", AC.updateName);
+app.put("/auth/profile/name", AC.updateName);
 //below will update the user on session's username in DB from req.body
-app.put("/auth/username", AC.updateUsername);
+app.put("/auth/profile/username", AC.updateUsername);
 //below will update the user on session's phone number in DB from req.body
-app.put("/auth/number", AC.updateNumber);
+app.put("/auth/profile/number", AC.updateNumber);
+//below will delete the user on session's account in DB from req.params
+app.delete("/auth/profile/user", AC.deleteUser);
 
 //user service post endpoints
 

@@ -44,7 +44,6 @@ module.exports = {
             if (!isAuthenticated) {
                 res.status(403).json("Username or Password Incorrect");
             } else {
-                console.log(foundUser[0])
                 req.session.user = {
                     user_id: foundUser[0].user_id,
                     username: foundUser[0].username,
@@ -112,5 +111,12 @@ module.exports = {
         };
 
         res.status(200).json(req.session.user);
+    },
+    deleteUser: async (req, res) => {
+        const {user_id} = req.session.user;
+        const db = req.app.get("db");
+
+        await db.auth.deleteUser(user_id);
+        res.sendStatus(200);
     }
 };

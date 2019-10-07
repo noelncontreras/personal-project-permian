@@ -17,6 +17,7 @@ const LOGOUT_USER = "LOGOUT_USER";
 const UPDATE_NAME = "UPDATE_NAME";
 const UPDATE_USERNAME = "UPDATE_USERNAME";
 const UPDATE_USER_PHONE_NUMBER = "UPDATE_USER_PHONE_NUMBER";
+const DELETE_USER = "DELETE_USER";
 
 //action creators
 export function getSession() {
@@ -50,21 +51,28 @@ export function logoutUser() {
 export function updateName(name) {
     return {
         type: UPDATE_NAME,
-        payload: axios.put("/auth/name", name)
+        payload: axios.put("/auth/profile/name", name)
     };
 };
 
 export function updateUsername(username) {
     return {
         type: UPDATE_USERNAME,
-        payload: axios.put("/auth/username", username)
+        payload: axios.put("/auth/profile/username", username)
     };
 };
 
 export function updateUserPhoneNumber(user_phone_number) {
     return {
         type: UPDATE_USER_PHONE_NUMBER,
-        payload: axios.put("/auth/number", user_phone_number)
+        payload: axios.put("/auth/profile/number", user_phone_number)
+    };
+};
+
+export function deleteUser() {
+    return {
+        type: DELETE_USER,
+        payload: axios.delete("/auth/profile/user")
     };
 };
 
@@ -185,6 +193,20 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 user_phone_number: payload.data.user_phone_number,
+                loading: false
+            };
+        case `${DELETE_USER}_PENDING`:
+            return {
+                ...state,
+                loading: true
+            };
+        case `${DELETE_USER}_FULFILLED`:
+            return {
+                ...state,
+                user_id: null,
+                name: "",
+                username: "",
+                user_phone_number: "",
                 loading: false
             };
         default:

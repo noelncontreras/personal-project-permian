@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Loading from "./Loading";
 import { connect } from "react-redux";
-import { getSession, updateName, updateUsername, updateUserPhoneNumber } from "../redux/reducers/userReducer";
+import { getSession, updateName, updateUsername, updateUserPhoneNumber, deleteUser } from "../redux/reducers/userReducer";
+import "../styles/UserProfilePage/UserProfilePage.scss";
 
 class UserProfilePage extends Component {
     constructor() {
@@ -27,30 +28,24 @@ class UserProfilePage extends Component {
     };
 
     handleUserChanges = () => {
-        //on click, changes will be sent to reducer to make changes in backend
-        // const {name, username, user_phone_number} = this.props;
-        const {name, username, user_phone_number} = this.state;
-        console.log(name)
-        console.log(username)
-        console.log(user_phone_number)
-        // const newName = name;
-        // const newUsername = username;
-        // const new_user_phone_number = user_phone_number;
+        const { name, username, user_phone_number } = this.state;
 
-        if(name === "") {
-            this.setState({name: this.props.name})
+        if (name === "") {
+            this.setState({ name: this.props.name })
         } else {
-            this.props.updateName({name});
+            this.props.updateName({ name });
         };
-        if(username === "") {
-            this.setState({username: this.props.username})
+
+        if (username === "") {
+            this.setState({ username: this.props.username })
         } else {
-            this.props.updateUsername({username});
+            this.props.updateUsername({ username });
         };
-        if(user_phone_number === "") {
-            this.setState({user_phone_number: this.props.user_phone_number})
+
+        if (user_phone_number === "") {
+            this.setState({ user_phone_number: this.props.user_phone_number })
         } else {
-            this.props.updateUserPhoneNumber({user_phone_number});
+            this.props.updateUserPhoneNumber({ user_phone_number });
         };
 
         this.setState({ editStatus: false });
@@ -60,13 +55,24 @@ class UserProfilePage extends Component {
         this.setState({ editStatus: false });
     };
 
+    handleDeleteUser = () => {
+        const { name } = this.props;
+        console.log(this.props.user_id, name);
+
+        const result = window.confirm(`${name}: Your account will be deleted if you click OK!`);
+        if (result) {
+            this.props.deleteUser();
+            this.props.history.push("/category");
+        };
+    };
+
 
     render() {
         const { loading } = this.props.userReducer;
         const { name, username, user_phone_number } = this.props;
 
         return (
-            <main className="money">
+            <main className="main-profile">
                 {loading ? <Loading /> : null}
                 <div>
                     <h1>{`${name}'s Profile`}</h1>
@@ -83,7 +89,7 @@ class UserProfilePage extends Component {
                                 <input
                                     type="text"
                                     name="name"
-                                    defaultValue={name} 
+                                    defaultValue={name}
                                     onChange={this.handleInputChange} />
                                 <label>Username:</label>
                                 <input
@@ -110,15 +116,15 @@ class UserProfilePage extends Component {
                         </div>
                         <div>
                             <label>Name:</label>
-                            <h2>{name}</h2>
+                            <h3>{name}</h3>
                             <br />
                             <label>Username:</label>
-                            <h2>{username}</h2>
+                            <h3>{username}</h3>
                             <br />
                             <label>Phone Number:</label>
-                            <h2>{user_phone_number}</h2>
+                            <h3>{user_phone_number}</h3>
                             <button onClick={this.handleEditStatus}>EDIT</button>
-                            <button>DELETE</button>
+                            <button onClick={this.handleDeleteUser}>DELETE</button>
                         </div>
                     </div>
                 }
@@ -137,4 +143,4 @@ const mapPropsToState = reduxState => {
     };
 };
 
-export default connect(mapPropsToState, { getSession, updateName, updateUsername, updateUserPhoneNumber })(UserProfilePage)
+export default connect(mapPropsToState, { getSession, updateName, updateUsername, updateUserPhoneNumber, deleteUser })(UserProfilePage)
