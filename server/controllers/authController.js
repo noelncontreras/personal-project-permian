@@ -116,7 +116,7 @@ module.exports = {
         const {user_id} = req.session.user;
         const db = req.app.get("db");
 
-        await db.auth.deleteUser(user_id);
+        await db.auth.deleteUser(user_id, user_id);
         res.sendStatus(200);
     }
 };

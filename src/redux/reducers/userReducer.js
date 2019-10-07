@@ -90,6 +90,7 @@ export default function reducer(state = initialState, action) {
                 user_id: payload.data.user_id,
                 name: payload.data.name,
                 username: payload.data.username,
+                user_phone_number: payload.data.user_phone_number,
                 loading: false
             };
         case REGISTER_USER:
@@ -98,6 +99,7 @@ export default function reducer(state = initialState, action) {
                 user_id: payload.user_id,
                 name: payload.name,
                 username: payload.username,
+                user_phone_number: payload.user_phone_number
             };
         // case `${REGISTER_USER}_PENDING`:
         //     return {
@@ -160,6 +162,7 @@ export default function reducer(state = initialState, action) {
                 user_id: null,
                 name: "",
                 username: "",
+                user_phone_number: "",
                 loading: false
             };
         case `${UPDATE_NAME}_PENDING`:
@@ -195,11 +198,11 @@ export default function reducer(state = initialState, action) {
                 user_phone_number: payload.data.user_phone_number,
                 loading: false
             };
-        case `${DELETE_USER}_PENDING`:
-            return {
-                ...state,
-                loading: true
-            };
+        // case `${DELETE_USER}_PENDING`:
+        //     return {
+        //         ...state,
+        //         loading: true
+        //     };
         case `${DELETE_USER}_FULFILLED`:
             return {
                 ...state,

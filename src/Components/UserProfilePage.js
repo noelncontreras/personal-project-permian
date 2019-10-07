@@ -62,7 +62,7 @@ class UserProfilePage extends Component {
         const result = window.confirm(`${name}: Your account will be deleted if you click OK!`);
         if (result) {
             this.props.deleteUser();
-            this.props.history.push("/category");
+            this.props.history.push("/");
         };
     };
 
