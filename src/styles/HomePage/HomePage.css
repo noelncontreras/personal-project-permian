@@ -23,9 +23,11 @@
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid transparent;
+  border-radius: 15px;
   padding: 50px;
   color: #0A0708;
-  background: whitesmoke;
+  background: #8C8C8C;
+  background: #F2EEEC;
   opacity: 0.95;
   font-weight: bolder;
   font-size: 25px;
@@ -36,9 +38,9 @@
 h2:hover {
   width: 6vw;
   height: 6vh;
-  font-size: 27px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  -webkit-box-shadow: 0 0 25px black;
+          box-shadow: 0 0 25px black;
 }
 
 .main-homepage {
@@ -60,7 +62,7 @@ h2:hover {
 
 .service-categories {
   height: 30vh;
-  margin-top: 40px;
+  margin-top: 50px;
   margin-bottom: 10px;
   font-size: 40px;
 }

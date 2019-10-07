@@ -13,32 +13,41 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   background: #8C8C8C;
+  background: #5F5C5B;
   font-family: "Exo", sans-serif;
   font-size: 40px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.nav-container #permian {
+  color: #0A0708;
 }
 
 .nav-container .logout-button {
   width: 100px;
-  height: 20px;
+  height: 30px;
   border-radius: 7px;
-  color: white;
+  color: #F2EEEC;
   font-weight: bold;
   font-size: 15px;
   font-family: "Exo", sans-serif;
   background: #0A0708;
   outline: none;
+  border: none;
+  border: none;
 }
 
 .nav-container .logout-button:hover, .nav-container ul .logout-button.addService-route:hover {
-  color: #0A0708;
+  color: white;
   font-weight: bold;
-  background: #8C8C8C;
-  text-shadow: 0px 0px 10px white;
+  text-shadow: 0px 0px 5px white;
   cursor: pointer;
 }
 
 .nav-container .welcome-box {
-  width: 40vw;
+  width: 50vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,8 +64,18 @@
   font-weight: bolder;
 }
 
+.nav-container .welcome-box .profile-route {
+  color: #0A0708;
+}
+
+.nav-container .welcome-box h6.profile-route:hover {
+  font-size: 20px;
+  text-decoration: underline;
+  text-shadow: 0px 0px 5px white;
+}
+
 .nav-container ul {
-  width: 12vw;
+  width: 16vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,17 +98,17 @@
 .nav-container ul .home-route:hover, .nav-container ul .addService-route:hover {
   font-size: 20px;
   text-decoration: underline;
+  text-shadow: 0px 0px 5px white;
 }
 
 .nav-container .logout-button:hover, .nav-container ul .logout-button.addService-route:hover {
-  color: #0A0708;
+  color: white;
   font-weight: bold;
-  background: #8C8C8C;
-  text-shadow: 0px 0px 10px white;
+  text-shadow: 0px 0px 5px white;
   cursor: pointer;
   outline: none;
-  background: #F51720;
-  text-shadow: 0px 0px 10px #8C8C8C;
+  background: #C62828;
+  text-shadow: 0px 0px 10px white;
 }
 
 @media screen and (max-width: 1080px) {
@@ -99,7 +118,11 @@
   }
   .welcome-box .logout-button, h6 .logout-button, ul .logout-button, button .logout-button {
     width: 55px;
+    height: 20px;
     font-size: 10px;
+  }
+  .welcome-box .welcome-box, .welcome-box h6, .welcome-box li, h6 .welcome-box, h6 h6, h6 li, ul .welcome-box, ul h6, ul li, button .welcome-box, button h6, button li {
+    pointer-events: none;
   }
 }
 
@@ -112,9 +135,6 @@
     width: 40px;
     height: 18px;
     font-size: 7px;
-  }
-  .welcome-box li, h6 li, ul li, button li {
-    pointer-events: none;
   }
 }
 

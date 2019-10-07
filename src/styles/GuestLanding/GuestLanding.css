@@ -16,11 +16,11 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: 100vw;
-  height: 90vh;
+  height: 100%;
   font-family: "Exo", sans-serif;
   background: url("https://images.unsplash.com/photo-1562237553-36ad661d6f2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
   background-size: 100% 100%;
-  background-position: initial;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -43,21 +43,25 @@
 }
 
 .main-guestLanding form {
+  border: 1px solid transparent;
+  border-radius: 15px;
+  padding: 50px;
+  color: #0A0708;
+  background: #8C8C8C;
+  background: #F2EEEC;
+  opacity: 0.95;
+  font-weight: bolder;
+  font-size: 25px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: 1px solid transparent;
   width: 20vw;
   height: 40vh;
-  padding: 50px;
-  opacity: 0.95;
   text-align: center;
-  font-weight: bolder;
   font-size: 22px;
-  background: whitesmoke;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .main-guestLanding form input::-webkit-input-placeholder {
@@ -87,21 +91,21 @@
 
 .main-guestLanding button {
   width: 100px;
-  height: 20px;
+  height: 30px;
   border-radius: 7px;
-  color: white;
+  color: #F2EEEC;
   font-weight: bold;
   font-size: 15px;
   font-family: "Exo", sans-serif;
   background: #0A0708;
   outline: none;
+  border: none;
 }
 
 .main-guestLanding button:hover {
-  color: #0A0708;
+  color: white;
   font-weight: bold;
-  background: #8C8C8C;
-  text-shadow: 0px 0px 10px white;
+  text-shadow: 0px 0px 5px white;
   cursor: pointer;
 }
 
@@ -122,6 +126,9 @@
 }
 
 @media screen and (max-width: 1080px) {
+  main.main-guestLanding {
+    margin-top: 65px;
+  }
   .main-guestLanding, h4, p, label {
     font-size: 15px;
   }
@@ -136,7 +143,7 @@
   }
   .main-guestLanding form button, h4 form button, p form button, label form button {
     width: 85px;
-    height: 18px;
+    height: 20px;
     font-size: 13px;
   }
   .main-guestLanding #existing-user-p, .main-guestLanding #new-user-p, .main-guestLanding #number-format, h4 #existing-user-p, h4 .main-guestLanding #new-user-p, .main-guestLanding h4 #new-user-p, h4 .main-guestLanding #number-format, .main-guestLanding h4 #number-format, p #existing-user-p, p .main-guestLanding #new-user-p, .main-guestLanding p #new-user-p, p .main-guestLanding #number-format, .main-guestLanding p #number-format, label #existing-user-p, label .main-guestLanding #new-user-p, .main-guestLanding label #new-user-p, label .main-guestLanding #number-format, .main-guestLanding label #number-format {
@@ -153,18 +160,26 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    height: 100%;
+    background: #0A0708;
   }
-  .main-guestLanding form, .main-guestLanding .existing-user, .main-guestLanding .new-user, .main-guestLanding .new-user {
+  .main-guestLanding form, .main-guestLanding .existing-user, .main-guestLanding .new-user {
     width: 40vw;
-    height: 28vh;
+    height: 30vh;
+    margin-top: 50px;
   }
-  .main-guestLanding form #existing-user-p, .main-guestLanding form #new-user-p, .main-guestLanding form #number-format, .main-guestLanding .existing-user #existing-user-p, .main-guestLanding .new-user #existing-user-p, .main-guestLanding .existing-user #new-user-p, .main-guestLanding .new-user #new-user-p, .main-guestLanding .existing-user #number-format, .main-guestLanding .new-user #number-format, .main-guestLanding .new-user #existing-user-p, .main-guestLanding .new-user #new-user-p, .main-guestLanding .new-user #number-format {
+  .main-guestLanding form #existing-user-p, .main-guestLanding form #new-user-p, .main-guestLanding form #number-format, .main-guestLanding .existing-user #existing-user-p, .main-guestLanding .new-user #existing-user-p, .main-guestLanding .existing-user #new-user-p, .main-guestLanding .new-user #new-user-p, .main-guestLanding .existing-user #number-format, .main-guestLanding .new-user #number-format {
     font-size: 10px;
   }
-  .main-guestLanding form button, .main-guestLanding .existing-user button, .main-guestLanding .new-user button, .main-guestLanding .new-user button {
-    width: 60px;
-    height: 15px;
+  .main-guestLanding form form button, .main-guestLanding .existing-user form button, .main-guestLanding .new-user form button {
+    width: 70px;
+    height: 35px;
     font-size: 10px;
+  }
+  .main-guestLanding form, .main-guestLanding .new-user {
+    width: 40vw;
+    height: 55vh;
+    margin-top: 250px;
   }
 }
 /*# sourceMappingURL=GuestLanding.css.map */

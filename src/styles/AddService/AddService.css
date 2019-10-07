@@ -23,9 +23,11 @@
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid transparent;
+  border-radius: 15px;
   padding: 50px;
   color: #0A0708;
-  background: whitesmoke;
+  background: #8C8C8C;
+  background: #F2EEEC;
   opacity: 0.95;
   font-weight: bolder;
   font-size: 25px;
@@ -36,9 +38,9 @@
 h2:hover {
   width: 6vw;
   height: 6vh;
-  font-size: 27px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  -webkit-box-shadow: 0 0 25px black;
+          box-shadow: 0 0 25px black;
 }
 
 .main-homepage, .background-addService {
@@ -60,7 +62,7 @@ h2:hover {
 
 .service-categories {
   height: 30vh;
-  margin-top: 40px;
+  margin-top: 50px;
   margin-bottom: 10px;
   font-size: 40px;
 }
@@ -84,6 +86,9 @@ h2:hover {
   #homepage-title {
     font-size: 30px;
   }
+  div.category-name h2 {
+    font-size: 20px;
+  }
 }
 
 .background-addService {
@@ -95,8 +100,7 @@ h2:hover {
 }
 
 .addService-title {
-  height: 10vh;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 10px;
   font-size: 40px;
   color: whitesmoke;
@@ -119,9 +123,11 @@ h2:hover {
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid transparent;
+  border-radius: 15px;
   padding: 50px;
   color: #0A0708;
-  background: whitesmoke;
+  background: #8C8C8C;
+  background: #F2EEEC;
   opacity: 0.95;
   font-weight: bolder;
   font-size: 25px;
@@ -146,11 +152,11 @@ h2:hover {
 
 .service-description {
   width: 20vw;
-  height: 20vh;
+  height: 25vh;
   color: #0A0708;
   text-align: center;
   font-weight: bolder;
-  margin-bottom: 120px;
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,9 +168,11 @@ h2:hover {
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid transparent;
+  border-radius: 15px;
   padding: 50px;
   color: #0A0708;
-  background: whitesmoke;
+  background: #8C8C8C;
+  background: #F2EEEC;
   opacity: 0.95;
   font-weight: bolder;
   font-size: 25px;
@@ -198,21 +206,147 @@ h2:hover {
 
 .service-description button {
   width: 100px;
-  height: 20px;
+  height: 30px;
   border-radius: 7px;
-  color: white;
+  color: #F2EEEC;
   font-weight: bold;
   font-size: 15px;
   font-family: "Exo", sans-serif;
   background: #0A0708;
   outline: none;
+  border: none;
   cursor: pointer;
+}
+
+.service-description button:hover {
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px white;
+  cursor: pointer;
+  text-shadow: 0px 0px 5px whitesmoke;
+}
+
+.upload-feature, .upload-feature label, p label, progress label, p, progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.upload-feature input, p label input, progress label input, p input, progress input {
+  width: 12vw;
+  outline: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sudo-alert {
+  -webkit-animation: pulse 1s infinite;
+          animation: pulse 1s infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .upload-feature input, p label input, progress label input {
+    width: 17vw;
+  }
+  .category, .category-title {
+    width: 20vw;
+    height: 10vh;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .upload-feature input, p label input, progress label input {
+    width: 17vw;
+  }
+  div.service-description button {
+    width: 80px;
+    height: 25px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 921px) {
+  .upload-feature input, p label input, progress label input {
+    width: 18vw;
+  }
+  div.service-description button {
+    width: 75px;
+    height: 23px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .upload-feature input, p label input, progress label input {
+    width: 20.5vw;
+  }
 }
 
 @media screen and (max-width: 800px) {
   .service-description textarea {
     resize: horizontal;
     max-width: 215px;
+  }
+  .upload-feature input, p label input, progress label input {
+    width: 22vw;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .upload-feature input, p label input, progress label input {
+    width: 24vw;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .upload-feature input, p label input, progress label input {
+    width: 26.5vw;
   }
 }
 
@@ -222,20 +356,47 @@ h2:hover {
     height: 15vh;
     font-size: 30px;
   }
+  .service-description {
+    height: 35vh;
+  }
   .service-description, .service-description-title {
     width: 40vw;
-    height: 15vh;
     font-size: 30px;
+  }
+  .service-description button, .service-description-title button {
+    width: 80px;
+    height: 20px;
+    font-size: 12px;
   }
   .service-description textarea {
     resize: horizontal;
     max-width: 200px;
+    resize: vertical;
+    max-height: 35px;
+  }
+  .upload-feature input, p label input, progress label input {
+    width: 29vw;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .upload-feature input, p label input, progress label input {
+    width: 32vw;
   }
 }
 
 @media screen and (max-width: 495px) {
   label.category-title, label.service-description-title {
     font-size: 18px;
+  }
+  .upload-feature input, p label input, progress label input {
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .upload-feature input, p label input, progress label input {
+    width: 38vw;
   }
 }
 
@@ -245,6 +406,24 @@ h2:hover {
   }
   label.category-title, label.service-description-title {
     font-size: 17px;
+  }
+  .upload-feature input, p label input, progress label input {
+    width: 41vw;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  div.service-description {
+    width: 40vw;
+    height: 90vh;
+    font-size: 20px;
+  }
+  .service-description-title {
+    width: 40vw;
+    font-size: 30px;
+  }
+  .upload-feature input, p label input, progress label input {
+    width: 45vw;
   }
 }
 /*# sourceMappingURL=AddService.css.map */
