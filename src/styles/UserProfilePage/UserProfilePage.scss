@@ -16,7 +16,7 @@
     @include box-background;
     @include column-box;
     width: 30vw;
-    height: 40vh;
+    height: 35vh;
     .profile-buttons {
         width: 20vw;
         height: 5vh;
@@ -28,5 +28,20 @@
     };
     h3 {
         font-size: $nav-size;
+    };
+};
+
+@media screen and (max-width: 420px) {
+    .main-profile h1 {
+        font-size: 30px;
+    };
+    .profile-information {
+        height: 45vh;
+    };
+};
+
+@media screen and (max-width: 375px) {
+    .main-profile h1 {
+        font-size: 25px;
     };
 };
