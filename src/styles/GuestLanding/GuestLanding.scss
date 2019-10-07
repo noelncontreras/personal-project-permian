@@ -67,25 +67,34 @@
     };
 };
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1024px) {
     .main-guestLanding, h4, p, label {
-        font-size: 12px;
-        form button {
-            width: 85px;
-            height: 20px;
-            font-size: 13px;
-        };
-        #existing-user-p {
-            font-size: 10px;
-        };
+        font-size: 20px;
+    };
+};
+
+@media screen and (max-width: 780px) {
+    .main-guestLanding button {
+        width: 85px;
+        height: 20px;
+        font-size: 13px;
+    };
+    #existing-user-p {
+        font-size: 10px;
+    };
+};
+
+@media screen and (max-width: 768px) {
+    .main-guestLanding, h4, p, label {
+        font-size: 15px;
     };
 };
 
 @media screen and (max-width: 420px) {
     .main-guestLanding {
+        height: 100%;
         flex-direction: column;
         justify-content: center;
-        height: 100%;
         background: $ebony;
         form, .existing-user {
             width: 40vw;

@@ -17,6 +17,12 @@
     @include column-box;
     width: 30vw;
     height: 35vh;
+    label {
+        font-size: $label-size;
+    };
+    h3 {
+        font-size: $nav-size;
+    };
     .profile-buttons {
         width: 20vw;
         height: 5vh;
@@ -26,9 +32,6 @@
             @include login-buttons;
         };
     };
-    h3 {
-        font-size: $nav-size;
-    };
 };
 
 @media screen and (max-width: 420px) {
@@ -37,6 +40,13 @@
     };
     .profile-information {
         height: 55vh;
+        .profile-information h3 {
+            font-size: 1px;
+        };
+        .profile-buttons button {
+            height: 20px;
+            font-size: 12px;
+        };
     };
 };
 

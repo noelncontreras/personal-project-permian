@@ -84,7 +84,7 @@ class GuestLanding extends Component {
                         <br />
                         <label>Username:</label>
                         <input
-                            // required
+                            required
                             type="text"
                             name="username"
                             placeholder="Username"
@@ -92,7 +92,7 @@ class GuestLanding extends Component {
                         <br />
                         <label>Password:</label>
                         <input
-                            // required
+                            required
                             name="password"
                             type="password"
                             placeholder="Password"
