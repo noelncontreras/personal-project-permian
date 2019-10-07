@@ -67,12 +67,6 @@
     };
 };
 
-@media screen and (max-width: 1024px) {
-    .main-guestLanding, h4, p, label {
-        font-size: 20px;
-    };
-};
-
 @media screen and (max-width: 780px) {
     .main-guestLanding, h4, p, label {
         font-size: 12px;
@@ -84,12 +78,6 @@
         #existing-user-p {
             font-size: 10px;
         };
-    };
-};
-
-@media screen and (max-width: 768px) {
-    .main-guestLanding, h4, p, label {
-        font-size: 15px;
     };
 };
 
