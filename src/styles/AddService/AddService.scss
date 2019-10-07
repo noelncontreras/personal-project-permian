@@ -40,7 +40,7 @@
 
 .service-description {
     width: 20vw;
-    height: 30vh;
+    height: 25vh;
     color: $ebony;
     text-align: center;
     font-weight: bolder;
@@ -214,8 +214,8 @@
 @media screen and (max-width: 385px) {
     div.service-description {
         width: 40vw;
-        height: 100vh;
-        font-size: 30px;
+        height: 90vh;
+        font-size: 20px;
     };
     .service-description-title {
         width: 40vw;
