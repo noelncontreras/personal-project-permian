@@ -51,7 +51,8 @@ class AddService extends Component {
                 if (user_id) {
                     this.props.addService(newService);
                 };
-                this.props.history.push(`/service/${category_id}`);
+                // this.props.history.push(`/service/${category_id}`);
+                this.props.history.push(`/category`);
             });
         };
 

@@ -57,7 +57,6 @@ class UserProfilePage extends Component {
 
     handleDeleteUser = () => {
         const { name } = this.props;
-        console.log(this.props.user_id, name);
 
         const result = window.confirm(`${name}: Your account will be deleted if you click OK!`);
         if (result) {

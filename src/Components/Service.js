@@ -4,6 +4,7 @@ import EditCheck from "./EditCheck";
 import { connect } from "react-redux";
 import { updateService, addService, editService, deleteService } from "../redux/reducers/serviceReducer";
 import "../styles/Service/Service.scss";
+import { getSession } from "../redux/reducers/userReducer";
 
 class Service extends Component {
 
@@ -50,5 +51,5 @@ const mapPropsToState = reduxState => {
 export default connect(
     mapPropsToState,
     {
-        updateService, addService, editService, deleteService
+        updateService, addService, editService, deleteService, getSession
     })(Service);
