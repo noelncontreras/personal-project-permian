@@ -148,4 +148,4 @@ const mapPropsToState = reduxState => {
     };
 };
 
-export default connect(mapPropsToState, { getSession, updateName, updateUsername, updateUserPhoneNumber, deleteUser })(UserProfilePage)
+export default connect(mapPropsToState, { getSession, updateName, updateUsername, updateUserPhoneNumber, deleteUser })(UserProfilePage);

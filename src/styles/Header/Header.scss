@@ -4,15 +4,21 @@
     width: 100vw;
     height: 10vh;
     @include box-center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background: $header-gray;
     background: #5F5C5B;
     font-family: $web-font;
     font-size: $title-size;
+    color: $ebony;
     position: fixed;
     top: 0;
     z-index: 1;
-    .permian {
+    #permian-session-true {
+        color: $ebony;
+        font-size: $title-size;
+        font-weight: normal;
+    };
+    #permian-session-false {
         color: $ebony;
         font-size: $title-size;
         font-weight: normal;
@@ -33,6 +39,7 @@
         font-weight: bolder;
         .profile-route {
             color: $ebony;
+            margin-left: 30px;
         };
         h6.profile-route:hover {
             font-size: 20px;
@@ -41,7 +48,7 @@
         };
     };
     ul {
-        width: 15vw;
+        width: 20vw;
         @include box-center;
         justify-content: space-between;
         text-decoration: none;
@@ -109,6 +116,9 @@
             font-size: 7px;
         };
     };
+    .anchor-text {
+        width: 40vw;
+    };
 };
 
 @media screen and (max-width: 680px) {
@@ -134,6 +144,8 @@
         };
     };
 };
+
+
 
 @media screen and (max-width: 545px) {
     .welcome-box, h6, ul, button {
@@ -186,10 +198,16 @@
 };
 
 @media screen and (max-width: 420px) {
-    .permian {
+    .welcome-box #permian-session-true {
         font-size: 30px;
     };
-};
+    .guestLanding-header #permian-session-false {
+        font-size: 30px;
+    };
+    .guestLanding-header h6 {
+        display: none;
+    };
+};  
 
 @media screen and (max-width: 385px) {
     .welcome-box, h6, ul, button {

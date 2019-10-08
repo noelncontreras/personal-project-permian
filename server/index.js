@@ -25,7 +25,7 @@ app.use(session({
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
-    console.log('db connected')
+    console.log('db connected');
 });
 
 //authentication endpoints
@@ -74,7 +74,7 @@ app.post("/sms", (req, res) => {
         .catch(err => {
             console.log(err);
             res.json({ success: false });
-        })
+        });
 });
 
 app.get('*', (req, res)=>{

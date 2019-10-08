@@ -10,18 +10,26 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   background: #8C8C8C;
   background: #5F5C5B;
   font-family: "Exo", sans-serif;
   font-size: 40px;
+  color: #0A0708;
   position: fixed;
   top: 0;
   z-index: 1;
 }
 
-.nav-container .permian {
+.nav-container #permian-session-true {
+  color: #0A0708;
+  font-size: 40px;
+  font-weight: normal;
+}
+
+.nav-container #permian-session-false {
   color: #0A0708;
   font-size: 40px;
   font-weight: normal;
@@ -68,6 +76,7 @@
 
 .nav-container .welcome-box .profile-route {
   color: #0A0708;
+  margin-left: 30px;
 }
 
 .nav-container .welcome-box h6.profile-route:hover {
@@ -77,7 +86,7 @@
 }
 
 .nav-container ul {
-  width: 15vw;
+  width: 20vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,6 +192,9 @@
     height: 18px;
     font-size: 7px;
   }
+  .anchor-text {
+    width: 40vw;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -260,8 +272,14 @@
 }
 
 @media screen and (max-width: 420px) {
-  .permian {
+  .welcome-box #permian-session-true {
     font-size: 30px;
+  }
+  .guestLanding-header #permian-session-false {
+    font-size: 30px;
+  }
+  .guestLanding-header h6 {
+    display: none;
   }
 }
 

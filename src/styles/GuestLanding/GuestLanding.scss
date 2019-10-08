@@ -89,8 +89,8 @@
         background: $ebony;
         form, .existing-user {
             width: 40vw;
-            height: 30vh;
-            margin-top: 50px;
+            height: 27vh;
+            margin-top: 100px;
             #existing-user-p {
                 font-size: 10px;
             };
@@ -102,8 +102,11 @@
         };
         form, .new-user {
             width: 40vw;
-            height: 55vh;
-            margin-top: 250px;
+            height: 50vh;
+            margin-top: 225px;
         };
+    };
+    .main-guestLanding, h4, label {
+        font-size: 15px;
     };
 };

@@ -165,8 +165,8 @@
   }
   .main-guestLanding form, .main-guestLanding .existing-user, .main-guestLanding .new-user {
     width: 40vw;
-    height: 30vh;
-    margin-top: 50px;
+    height: 27vh;
+    margin-top: 100px;
   }
   .main-guestLanding form #existing-user-p, .main-guestLanding form #new-user-p, .main-guestLanding form #number-format, .main-guestLanding .existing-user #existing-user-p, .main-guestLanding .new-user #existing-user-p, .main-guestLanding .existing-user #new-user-p, .main-guestLanding .new-user #new-user-p, .main-guestLanding .existing-user #number-format, .main-guestLanding .new-user #number-format {
     font-size: 10px;
@@ -178,8 +178,11 @@
   }
   .main-guestLanding form, .main-guestLanding .new-user {
     width: 40vw;
-    height: 55vh;
-    margin-top: 250px;
+    height: 50vh;
+    margin-top: 225px;
+  }
+  .main-guestLanding, h4, label {
+    font-size: 15px;
   }
 }
 /*# sourceMappingURL=GuestLanding.css.map */

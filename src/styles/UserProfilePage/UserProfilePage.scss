@@ -39,13 +39,17 @@
         font-size: 30px;
     };
     .profile-information {
-        height: 60vh;
+        height: 50vh;
         .profile-information h3 {
             font-size: 1px;
         };
-        .profile-buttons button {
+        .profile-buttons {
+            width: 60vw;
             height: 20px;
             font-size: 12px;
+            button {
+                width: 22vw;
+            };
         };
     };
 };

@@ -28,7 +28,7 @@ class Header extends Component {
                                 <Link
                                     style={{ textDecoration: "none" }}
                                     to="/">
-                                    <h1 className="permian">Permian</h1>
+                                    <h1 id="permian-session-true">Permian</h1>
                                 </Link>
                                 <Link
                                     to="/user/profile"
@@ -57,7 +57,7 @@ class Header extends Component {
                                     <Link
                                         style={{ textDecoration: "none", color: "black" }}
                                         to="/">
-                                        <h1 className="permian">Permian</h1>
+                                        <h1 id="permian-session-false">Permian</h1>
                                     </Link>
                                 </div>
                                 <div className="anchor-text">
