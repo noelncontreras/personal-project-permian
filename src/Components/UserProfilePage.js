@@ -80,41 +80,37 @@ class UserProfilePage extends Component {
                 <br />
                 {this.state.editStatus ?
                     <div>
-                        <div>
-                        </div>
-                        <div>
-                            <form className="profile-information">
-                                <h1>Profile Information</h1>
-                                <br />
-                                <label>Name:</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    defaultValue={name}
-                                    onChange={this.handleInputChange} />
-                                <br />
-                                <label>Username:</label>
-                                <input
-                                    type="text"
-                                    name="username"
-                                    defaultValue={username}
-                                    onChange={this.handleInputChange} />
-                                <br />
-                                <label>Phone Number:</label>
-                                <p>In the format(12223334444)</p>
-                                <input
-                                    text="tel"
-                                    name="user_phone_number"
-                                    defaultValue={user_phone_number}
-                                    pattern="[1]{1}[0-9]{3}[0-9]{3}[0-9]{4}"
-                                    onChange={this.handleInputChange} />
-                                <br />
-                                <div className="profile-buttons">
-                                    <button onClick={this.handleUserChanges}>UPDATE</button>
-                                    <button onClick={this.handleCancelChanges}>CANCEL</button>
-                                </div>
-                            </form>
-                        </div>
+                        <form className="profile-information">
+                            <h1>Profile Information</h1>
+                            <br />
+                            <label>Name:</label>
+                            <input
+                                type="text"
+                                name="name"
+                                defaultValue={name}
+                                onChange={this.handleInputChange} />
+                            <br />
+                            <label>Username:</label>
+                            <input
+                                type="text"
+                                name="username"
+                                defaultValue={username}
+                                onChange={this.handleInputChange} />
+                            <br />
+                            <label>Phone Number:</label>
+                            <p>In the format(12223334444)</p>
+                            <input
+                                text="tel"
+                                name="user_phone_number"
+                                defaultValue={user_phone_number}
+                                pattern="[1]{1}[0-9]{3}[0-9]{3}[0-9]{4}"
+                                onChange={this.handleInputChange} />
+                            <br />
+                            <div className="profile-buttons">
+                                <button onClick={this.handleUserChanges}>UPDATE</button>
+                                <button onClick={this.handleCancelChanges}>CANCEL</button>
+                            </div>
+                        </form>
                     </div>
                     :
                     <div>

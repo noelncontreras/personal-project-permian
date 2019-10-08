@@ -16,26 +16,26 @@ class Header extends Component {
     };
 
     render() {
-        const { name } = this.props;
+        const { name, user_id } = this.props;
         const userOnSession = name ? name : null;
 
         return (
             <>
                 <nav>
                     <div className="nav-container">
-                        <Link
-                            style={{ textDecoration: "none" }}
-                            to="/">
-                            <h1 id="permian">Permian</h1>
-                        </Link>
-                        {this.props.user_id ?
+                        {user_id ?
                             <div className="welcome-box">
+                                <Link
+                                    style={{ textDecoration: "none" }}
+                                    to="/">
+                                    <h1 className="permian">Permian</h1>
+                                </Link>
                                 <Link
                                     to="/user/profile"
                                     style={{ textDecoration: "none" }}>
                                     <h6 className="profile-route">Welcome, {userOnSession}</h6>
                                 </Link>
-                                <ul id="header-routes">
+                                <ul>
                                     <Link
                                         style={{ textDecoration: "none" }}
                                         to="/category">
@@ -51,7 +51,27 @@ class Header extends Component {
                                     className="logout-button"
                                     onClick={this.handleLogout}>LOGOUT</button>
                             </div>
-                            : null}
+                            :
+                            <div className="guestLanding-header">
+                                <div>
+                                    <Link
+                                        style={{ textDecoration: "none", color: "black" }}
+                                        to="/">
+                                        <h1 className="permian">Permian</h1>
+                                    </Link>
+                                </div>
+                                <div className="anchor-text">
+                                    <h6>Created by Noel Contreras</h6>
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href="https://github.com/noelncontreras"
+                                        style={{ textDecoration: "none", color: "black" }}>
+                                        <img alt="github logo" src="https://img.icons8.com/ios-glyphs/60/000000/github.png" />
+                                    </a>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </nav>
             </>

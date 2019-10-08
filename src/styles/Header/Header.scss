@@ -12,8 +12,10 @@
     position: fixed;
     top: 0;
     z-index: 1;
-    #permian {
+    .permian {
         color: $ebony;
+        font-size: $title-size;
+        font-weight: normal;
     };
     .logout-button {
         @include login-buttons;
@@ -24,7 +26,7 @@
         };
     };
     .welcome-box {
-        width: 50vw;
+        width: 100vw;
         @include box-center;
         justify-content: space-evenly;
         font-size: $nav-size;
@@ -39,7 +41,7 @@
         };
     };
     ul {
-        width: 16vw;
+        width: 15vw;
         @include box-center;
         justify-content: space-between;
         text-decoration: none;
@@ -63,6 +65,23 @@
     };
 };
 
+.guestLanding-header {
+    @include login-section;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 100%;
+    font-family: $web-font;
+    text-decoration: none;
+};
+
+.anchor-text {
+    @include box-center;
+    width: 20vw;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: $nav-size;
+};
 
 
 @media screen and (max-width: 1080px) {
@@ -167,7 +186,7 @@
 };
 
 @media screen and (max-width: 420px) {
-    .nav-container h1 {
+    .permian {
         font-size: 30px;
     };
 };
