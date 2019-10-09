@@ -10,7 +10,7 @@ class HomePage extends Component {
     componentDidMount() {
         this.props.updateCategory();
     };
-
+    
     render() {
         if (!this.props.user_id) {
             return <Redirect to="/" />
