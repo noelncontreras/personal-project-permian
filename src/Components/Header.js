@@ -79,11 +79,11 @@ class Header extends Component {
     };
 };
 
-const mapPropsToState = reduxState => {
+const mapStateToProps = reduxState => {
     return {
         user_id: reduxState.userReducer.user_id,
         name: reduxState.userReducer.name
     };
 };
 
-export default withRouter(connect(mapPropsToState, { getSession, logoutUser })(Header));
+export default withRouter(connect(mapStateToProps, { getSession, logoutUser })(Header));

@@ -138,7 +138,7 @@ class UserProfilePage extends Component {
 };
 
 
-const mapPropsToState = reduxState => {
+const mapStateToProps = reduxState => {
     return {
         userReducer: reduxState.userReducer,
         name: reduxState.userReducer.name,
@@ -147,4 +147,4 @@ const mapPropsToState = reduxState => {
     };
 };
 
-export default connect(mapPropsToState, { getSession, updateName, updateUsername, updateUserPhoneNumber, deleteUser })(UserProfilePage);
+export default connect(mapStateToProps, { getSession, updateName, updateUsername, updateUserPhoneNumber, deleteUser })(UserProfilePage);

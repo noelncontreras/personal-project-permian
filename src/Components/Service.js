@@ -40,7 +40,7 @@ class Service extends Component {
     };
 };
 
-const mapPropsToState = reduxState => {
+const mapStateToProps = reduxState => {
     return {
         user_id: reduxState.userReducer.user_id,
         service: reduxState.serviceReducer.service,
@@ -49,7 +49,7 @@ const mapPropsToState = reduxState => {
 };
 
 export default connect(
-    mapPropsToState,
+    mapStateToProps,
     {
         updateService, addService, editService, deleteService, getSession
     })(Service);

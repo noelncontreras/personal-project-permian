@@ -43,7 +43,7 @@ class HomePage extends Component {
     };
 };
 
-const mapPropsToState = reduxState => {
+const mapStateToProps = reduxState => {
     return {
         user_id: reduxState.userReducer.user_id,
         category: reduxState.serviceReducer.category,
@@ -51,4 +51,4 @@ const mapPropsToState = reduxState => {
     };
 };
 
-export default connect(mapPropsToState, { getSession, logoutUser, updateCategory })(HomePage);
+export default connect(mapStateToProps, { getSession, logoutUser, updateCategory })(HomePage);

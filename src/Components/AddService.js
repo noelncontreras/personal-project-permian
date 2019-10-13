@@ -127,11 +127,11 @@ class AddService extends Component {
     };
 };
 
-const mapPropsToState = reduxState => {
+const mapStateToProps = reduxState => {
     return {
         user_id: reduxState.userReducer.user_id,
         userReducer: reduxState.userReducer
     };
 };
 
-export default connect(mapPropsToState, { addService })(AddService);
+export default connect(mapStateToProps, { addService })(AddService);
