@@ -30,10 +30,7 @@ class GuestLanding extends Component {
         const { registerUser, loginUser } = this.props;
 
 
-        //commented code below is what I had written for user login and user registration to function with redux serviceReducer.js file.
-        //used below code to implement authentication feature in place now.
         if (formName === "login") {
-            // loginUser({username, password})
             axios.post("/auth/login", {
                 username, password
             }).then(response => {
@@ -43,16 +40,9 @@ class GuestLanding extends Component {
                     alert(e.response.data);
                 };
             });
-            //     if (!username || !password) {
-            //         alert ("Please enter Username/Password");
-            //     };
-            // if(username !== this.props.username || password !== this.props.password) {
-            //         alert ("Please enter correct Username/Password");
-            //     };
         };
 
         if (formName === "register") {
-            // registerUser({name, username, password})
             axios.post("/auth/register", {
                 name: realName, username, password, user_phone_number
             }).then(response => {
@@ -62,9 +52,6 @@ class GuestLanding extends Component {
                     alert(e.response.data);
                 };
             });
-            // if(!name || !username || !password) {
-            //     alert("Please fill in credentials below");
-            // };
         };
     };
 

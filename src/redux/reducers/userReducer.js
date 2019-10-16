@@ -101,40 +101,6 @@ export default function reducer(state = initialState, action) {
                 username: payload.username,
                 user_phone_number: payload.user_phone_number
             };
-        // case `${REGISTER_USER}_PENDING`:
-        //     return {
-        //         ...state,
-        //         loading: true
-        //     };
-        // case `${REGISTER_USER}_FULFILLED`:
-        //     return {
-        //         ...state,
-        //         user_id: payload.data.user_id,
-        //         name: payload.data.name,
-        //         username: payload.data.username,
-        //         loading: false
-        //     };
-        // case `${REGISTER_USER}_REJECTED`:
-        //     return {
-        //         ...state,
-        //         user_id: null,
-        //         name: "",
-        //         username: "",
-        //         loading: false
-        //     };
-        // case `${LOGIN_USER}_PENDING`:
-        //     return {
-        //         ...state,
-        //         loading: true
-        //     };
-        // case `${LOGIN_USER}_FULFILLED`:
-        //     return {
-        //         ...state,
-        //         user_id: payload.data.user_id,
-        //         name: payload.data.name,
-        //         username: payload.data.username,
-        //         loading: false
-        //     };
         case LOGIN_USER:
             return {
                 ...state,
@@ -143,14 +109,6 @@ export default function reducer(state = initialState, action) {
                 username: payload.username,
                 user_phone_number: payload.user_phone_number
             };
-        // case `${LOGIN_USER}_REJECTED`:
-        //     return {
-        //         ...state,
-        //         user_id: null,
-        //         name: "",
-        //         username: "",
-        //         loading: false
-        //     };
         case `${LOGOUT_USER}_PENDING`:
             return {
                 ...state,
@@ -198,11 +156,6 @@ export default function reducer(state = initialState, action) {
                 user_phone_number: payload.data.user_phone_number,
                 loading: false
             };
-        // case `${DELETE_USER}_PENDING`:
-        //     return {
-        //         ...state,
-        //         loading: true
-        //     };
         case `${DELETE_USER}_FULFILLED`:
             return {
                 ...state,
