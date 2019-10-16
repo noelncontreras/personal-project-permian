@@ -59,7 +59,7 @@ app.post("/user/service", SC.addService);
 //below will PUT, or edit a user's service
 app.put("/user/service", SC.editService);
 //below will DELETE a user's service
-app.delete("/user/service/:service_id/:category_id", SC.deleteService);
+app.delete("/user/service/:category_id/:service_id", SC.deleteService);
 
 //below is twilio POST request to send user message to person of contact
 app.post("/sms", (req, res) => {

@@ -43,10 +43,10 @@ export function editService(serviceInfo) {
     };
 };
 
-export function deleteService(service_id, category_id) {
+export function deleteService(category_id, service_id) {
     return {
         type: DELETE_SERVICE,
-        payload: axios.delete(`/user/service/${service_id}/${category_id}`)
+        payload: axios.delete(`/user/service/${category_id}/${service_id}`)
     };
 };
 

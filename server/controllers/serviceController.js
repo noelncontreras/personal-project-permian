@@ -35,10 +35,10 @@ module.exports = {
         res.status(200).json(editService);
     },
     deleteService: async (req, res) => {
-        const { service_id, category_id } = req.params;
+        const { category_id, service_id } = req.params;
         const db = req.app.get("db");
 
-        const services = await db.service.deleteService(service_id, category_id);
+        const services = await db.service.deleteService(category_id, service_id);
 
         res.status(200).json(services);
     }

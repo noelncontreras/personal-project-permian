@@ -85,8 +85,8 @@ export default class EditCheck extends Component {
         this.setState({ message: "" });
     };
 
-    handleDelete = (service_id, category_id) => {
-        this.props.deleteService(service_id, category_id);
+    handleDelete = (category_id, service_id) => {
+        this.props.deleteService(category_id, service_id);
     };
 
     render() {
@@ -137,7 +137,7 @@ export default class EditCheck extends Component {
                     this.props.userId === service.user_id ?
                         <div className="stacked-buttons">
                             <button onClick={() => this.handleEdit(service.service_description, service.file_url)}>EDIT</button>
-                            <button onClick={() => this.handleDelete(service.service_id, service.category_id)}>DELETE</button>
+                            <button onClick={() => this.handleDelete(service.category_id, service.service_id)}>DELETE</button>
                         </div>
                         : <button onClick={() => this.setState({ contactButton: true })}>CONTACT</button>
                 }
