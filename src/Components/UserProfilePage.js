@@ -99,7 +99,7 @@ class UserProfilePage extends Component {
                             <label>Phone Number:</label>
                             <p>In the format(12223334444)</p>
                             <input
-                                text="tel"
+                                type="tel"
                                 name="user_phone_number"
                                 defaultValue={user_phone_number}
                                 pattern="[1]{1}[0-9]{3}[0-9]{3}[0-9]{4}"
