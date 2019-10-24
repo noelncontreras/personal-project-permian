@@ -11,7 +11,7 @@ class UserProfilePage extends Component {
             name: "",
             username: "",
             user_phone_number: "",
-            editStatus: false,
+            editStatus: false
         };
     };
 
