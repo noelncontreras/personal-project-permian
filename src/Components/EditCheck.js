@@ -106,7 +106,10 @@ export default class EditCheck extends Component {
                                 className="pdf-img">
                                 <span
                                     role="img"
-                                    aria-label="clipboard">&#128203;</span></a>
+                                    aria-label="clipboard">
+                                    &#128203;
+                                </span>
+                            </a>
                         </div>
                         <div>
                             <h3>{service.service_description}</h3>

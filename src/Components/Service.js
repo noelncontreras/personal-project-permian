@@ -26,12 +26,23 @@ class Service extends Component {
             );
         });
 
+        // const serviceName = this.props.category.map((category, i) => {
+        //     return (
+        //         <div key={i}>
+        //             <h1>
+                        // {this.props.match.params.category_id == category.category_id ? category.category_name[0] : category.category_name[1]};
+        //             </h1>
+        //         </div>
+        //     );
+        // });
+
         return (
             <div className="background-services">
                 <main className="main-services">
                     {loading ? <Loading /> : null}
                     <div className="services-title">
                         <h1 id="serviceMQ">Services</h1>
+                        {/* <h1 id="serviceMQ">{`${serviceName} Services`}</h1> */}
                     </div>
                     <span id="service-box">{serviceMapped}</span>
                 </main>
@@ -44,6 +55,7 @@ const mapStateToProps = reduxState => {
     return {
         user_id: reduxState.userReducer.user_id,
         service: reduxState.serviceReducer.service,
+        category: reduxState.serviceReducer.category,
         userReducer: reduxState.userReducer
     };
 };
